@@ -1,7 +1,7 @@
-package helper;
+package util;
 
-import model.Costumer;
-import model.Dados;
+import model.Customer;
+import model.Data;
 import model.Product;
 
 public class Print {
@@ -61,12 +61,12 @@ public class Print {
      * 
      * @see appmain.Register Register.sales()
      */
-    public static void costumers() {
+    public static void customers() {
         int contador = 1;
         Print.tituloAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
-        for (Costumer costumer : Dados.getCostumer()) {
-            System.out.printf(".%d - %s | %s | %s\n", contador, costumer.getName(), costumer.getAdress(),
-                    costumer.getCelNumber());
+        for (Customer customer : Data.getCustomer()) {
+            System.out.printf(".%d - %s | %s | %s\n", contador, customer.getName(), customer.getAdress(),
+                    customer.getCelNumber());
 
             contador++;
         }
@@ -83,7 +83,7 @@ public class Print {
 
         Print.tituloAndDescription("Mostrar Produtos em Estoque", "Nome | Valor (R$) | Quatidade em Estoque");
 
-        for (Product product : Dados.getProducts()) {
+        for (Product product : Data.getProducts()) {
             System.out.printf(".%d - %s | R$ %.2f | %d un.\n", contador, product.getName(), product.getValue(),
                     product.getInStockQuant());
 
