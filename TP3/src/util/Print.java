@@ -64,7 +64,7 @@ public class Print {
     public static void customers() {
         int contador = 1;
         Print.tituloAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
-        for (Customer customer : Data.getCustomer()) {
+        for (Customer customer : Data.getCustomers()) {
             System.out.printf(".%d - %s | %s | %s\n", contador, customer.getName(), customer.getAdress(),
                     customer.getCelNumber());
 

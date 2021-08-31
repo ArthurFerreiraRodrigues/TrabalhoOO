@@ -38,7 +38,7 @@ public class Fill {
      * @see model.Data
      */
     private static void addProfileToDataCustomer(Customer profile) {
-        Data.getCustomer().add(profile);
+        Data.getCustomers().add(profile);
     }
 
     // Product
