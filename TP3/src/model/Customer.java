@@ -52,7 +52,7 @@ public class Customer {
      * @see appmain.Search
      */
     public void updateCustomerInfo() {
-        Print.titulo("Alterar Dados do Cliente");
+        Print.title("Alterar Dados do Cliente");
         System.out.printf("Novo Nome :");
         name = Read.Line();
         System.out.printf("Novo Endereço :");

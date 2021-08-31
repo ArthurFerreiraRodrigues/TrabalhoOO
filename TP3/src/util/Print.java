@@ -11,7 +11,7 @@ public class Print {
      * 
      * @param tamTexto,tamDivisor
      */
-    private static void printEspacoMeio(int tamTexto, int tamDivisor) {
+    private static void spaces(int tamTexto, int tamDivisor) {
 
         int quantEspacos, i;
         quantEspacos = (tamDivisor - tamTexto) / 2;
@@ -32,26 +32,26 @@ public class Print {
     /**
      * Imprime uma string ao centro da linha.
      * 
-     * @param titulo
+     * @param title
      */
-    public static void titulo(String titulo) {
+    public static void title(String title) {
         Print.split();
-        Print.printEspacoMeio(titulo.length(), 60);
-        System.out.print(titulo);
+        Print.spaces(title.length(), 60);
+        System.out.print(title);
         Print.split();
     }
 
     /**
      * Imprime uma string ao centro da linha.
      * 
-     * @param titulo,description
+     * @param title,description
      */
-    public static void tituloAndDescription(String titulo, String description) {
+    public static void titleAndDescription(String title, String description) {
         Print.split();
-        Print.printEspacoMeio(titulo.length(), 60);
-        System.out.println(titulo);
+        Print.spaces(title.length(), 60);
+        System.out.println(title);
 
-        Print.printEspacoMeio(description.length(), 60);
+        Print.spaces(description.length(), 60);
         System.out.print(description);
         Print.split();
     }
@@ -63,7 +63,7 @@ public class Print {
      */
     public static void customers() {
         int contador = 1;
-        Print.tituloAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
+        Print.titleAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
         for (Customer customer : Data.getCustomers()) {
             System.out.printf(".%d - %s | %s | %s\n", contador, customer.getName(), customer.getAdress(),
                     customer.getCelNumber());
@@ -81,7 +81,7 @@ public class Print {
     public static void productsInStock() {
         int contador = 1;
 
-        Print.tituloAndDescription("Mostrar Produtos em Estoque", "Nome | Valor (R$) | Quatidade em Estoque");
+        Print.titleAndDescription("Mostrar Produtos em Estoque", "Nome | Valor (R$) | Quatidade em Estoque");
 
         for (Product product : Data.getProducts()) {
             System.out.printf(".%d - %s | R$ %.2f | %d un.\n", contador, product.getName(), product.getValue(),

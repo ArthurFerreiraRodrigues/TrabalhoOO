@@ -83,7 +83,7 @@ public class Product {
      * @see appmain.Search
      */
     public void updateProductInfo() {
-        Print.titulo("Alterar Dados do Produto");
+        Print.title("Alterar Dados do Produto");
         System.out.printf("Novo Nome :");
         name = Read.Line();
         System.out.printf("Nova Descrição :");
