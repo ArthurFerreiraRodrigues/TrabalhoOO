@@ -50,17 +50,40 @@ public abstract class Data {
         return sales;
     }
 
+    /*----------------------------------------------------------------------*/
+
     /**
-     * @return Tamanho da Lista Clientes
+     * @return Tamanho da Lista de Gerentes
+     */
+    public static int getSizeOfManagers() {
+        return managers.size();
+    }
+
+    /**
+     * @return Tamanho da Lista de Vendedores
+     */
+    public static int getSizeOfSellers() {
+        return sellers.size();
+    }
+
+    /**
+     * @return Tamanho da Lista de Produtos
+     */
+    public static int getSizeOfProducts() {
+        return products.size();
+    }
+
+    /**
+     * @return Tamanho da Lista de Clientes
      */
     public static int getSizeOfCustomers() {
         return customers.size();
     }
 
     /**
-     * @return Tamanho da Lista Produtos
+     * @return Tamanho da Lista de Vendas
      */
-    public static int getSizeOfProducts() {
-        return products.size();
+    public static int getSizeOfSales() {
+        return sales.size();
     }
 }
