@@ -1,29 +1,22 @@
 package model;
 
-import util.Print;
-import util.Read;
+@SuppressWarnings("unused")
 
-public class Product {
-    private String name;
-    private String description;
-    private double value;
-    private double profitPercentage;
+public abstract class Product {
+    private int id;
+    private double price;
     private int inStockQuant;
 
     /**
      * Gera o profile do produto
      * 
-     * @param name             : nome do produto
-     * @param description      : descricao do produto
-     * @param value            : valor do produto
-     * @param profitPercentage : porcentagem de lucro
-     * @param inStockQuant     : quantidade em estoque
+     * @param id           : identification product code
+     * @param price        : valor do produto
+     * @param inStockQuant : quantidade em estoque
      */
-    public Product(String name, String description, double value, double profitPercentage, int inStockQuant) {
-        this.name = name;
-        this.description = description;
-        this.value = value;
-        this.profitPercentage = profitPercentage;
+    public Product(int id, double price, int inStockQuant) {
+        this.id = id;
+        this.price = price;
         this.inStockQuant = inStockQuant;
     }
 
@@ -32,37 +25,17 @@ public class Product {
     /**
      * @return Nome do Produto
      */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @return Descrição do Produto
-     */
-    public String getDescription() {
-        return description;
-    }
+    public abstract int getId();
 
     /**
      * @return Valor do Produto
      */
-    public double getValue() {
-        return value;
-    }
-
-    /**
-     * @return Porcentagem de Lucro do Produto
-     */
-    public double getProfitPercentage() {
-        return profitPercentage;
-    }
+    public abstract double getPrice();
 
     /**
      * @return Quantidade de Unidades do Produto em Estoque
      */
-    public int getInStockQuant() {
-        return inStockQuant;
-    }
+    public abstract int getInStockQuant();
 
     // Setters
 
@@ -72,27 +45,5 @@ public class Product {
      * @param quantSold
      * @see appmain.Register Register.sales()
      */
-    public void uptateStockQuant(int quantSold) {
-        inStockQuant = inStockQuant - quantSold;
-
-    }
-
-    /**
-     * Atualiza Cadastro do Produto.
-     * 
-     * @see appmain.Search
-     */
-    public void updateProductInfo() {
-        Print.title("Alterar Dados do Produto");
-        System.out.printf("Novo Nome :");
-        name = Read.Line();
-        System.out.printf("Nova Descrição :");
-        description = Read.Line();
-        System.out.printf("Novo Valor : R$ ");
-        value = Read.Double();
-        System.out.printf("Nova Procentagem de Lucro (0-100 %) : ");
-        value = Read.Double();
-        System.out.printf("Nova Quantidade em Estoque : ");
-        inStockQuant = Read.Int();
-    }
+    public abstract void uptateStockQuant(int quantSold);
 }
