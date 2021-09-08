@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Seller {
     int id;
@@ -43,7 +44,7 @@ public class Seller {
     /**
      * @return One ArrayList of sales that a Seller made
      */
-    public ArrayList<Sale> getSalesMade() {
+    public List<Sale> getSalesMade() {
         return salesMade;
     }
 
