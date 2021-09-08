@@ -70,4 +70,9 @@ public class Customer {
         System.out.printf("Novo Telefone :");
         celNumber = Read.Line();
     }
+
+    // Lister
+    public void list() {
+
+    }
 }
