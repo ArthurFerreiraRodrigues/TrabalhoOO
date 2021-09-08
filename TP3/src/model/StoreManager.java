@@ -48,9 +48,16 @@ public class StoreManager {
 
     /*----------------------------------------------------------------------*/
 
+    /**
+     * Checks if there is a Store Manager corresponding to the input credentials.
+     * 
+     * @param inputUser
+     * @param inputPass
+     * @return Store Manager correspondent
+     */
     private static StoreManager verifyLogin(String inputUser, String inputPass) {
 
-        for (StoreManager manager : Data.getManagers()) {
+        for (StoreManager manager : Data.getStoreManagers()) {
             if (manager.getUsername().equals(inputUser)) {
                 if (manager.getPassword().equals(inputPass)) {
                     return manager;
@@ -60,6 +67,9 @@ public class StoreManager {
         return null;
     }
 
+    /**
+     * Login Process
+     */
     public void login() {
         String inputUser, inputPass;
         StoreManager loginModel;
