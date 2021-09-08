@@ -1,7 +1,5 @@
 package model;
 
-@SuppressWarnings("unused")
-
 public abstract class Product {
     private int id;
     private double price;
@@ -25,17 +23,23 @@ public abstract class Product {
     /**
      * @return Product identification code
      */
-    public abstract int getId();
+    public int getId() {
+        return id;
+    }
 
     /**
      * @return Product price
      */
-    public abstract double getPrice();
+    public double getPrice() {
+        return price;
+    }
 
     /**
      * @return Product quantities in stock
      */
-    public abstract int getInStockQuant();
+    public int getInStockQuant() {
+        return inStockQuant;
+    }
 
     // Setters
 
@@ -45,11 +49,27 @@ public abstract class Product {
      * @param quantSold
      * @see appmain.Register Register.sales()
      */
-    public abstract void uptateStockQuant(int quantSold);
+    public void uptateStockQuant(int quantSold) {
+        inStockQuant = inStockQuant - quantSold;
+    }
 
     // Lister
     public abstract void list();
 
     // Search by ID
-    public abstract void searchByID();
+
+    /**
+     * Returns the Product matched by it's identification code
+     * 
+     * @param searchId
+     * @return Matched identification code
+     */
+    public Product searchById(int searchId) {
+        for (Product product : Data.getProducts()) {
+            if (product.getId() == searchId) {
+                return product;
+            }
+        }
+        return null;
+    }
 }
