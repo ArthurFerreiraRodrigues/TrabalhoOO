@@ -62,7 +62,7 @@ public abstract class Product {
      * Returns the Product matched by it's identification code
      * 
      * @param searchId
-     * @return Matched identification code
+     * @return Matched Product
      */
     public Product searchById(int searchId) {
         for (Product product : Data.getProducts()) {
