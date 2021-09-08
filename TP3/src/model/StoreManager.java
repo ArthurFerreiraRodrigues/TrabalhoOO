@@ -3,32 +3,41 @@ package model;
 import util.Print;
 import util.Read;
 
-public class Manager {
+public class StoreManager {
     private String name, username, password;
     private boolean loginStatus;
 
     /**
      * Gera o profile do Gerente
      * 
-     * @param name     : nome do Gerente
-     * @param username : usuario de login
-     * @param password : senha de login
+     * @param name     : Store Manager name
+     * @param username : Store Manager login username
+     * @param password : Store Manager login password
      */
-    public Manager(String name, String username, String password) {
+    public StoreManager(String name, String username, String password) {
         this.name = name;
         this.username = username;
         this.password = password;
 
     }
 
+    /**
+     * @return Store Manager name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return Store Manager Username
+     */
     private String getUsername() {
         return username;
     }
 
+    /**
+     * @return Store Manager password
+     */
     private String getPassword() {
         return password;
     }
@@ -39,9 +48,9 @@ public class Manager {
 
     /*----------------------------------------------------------------------*/
 
-    private static Manager verifyLogin(String inputUser, String inputPass) {
+    private static StoreManager verifyLogin(String inputUser, String inputPass) {
 
-        for (Manager manager : Data.getManagers()) {
+        for (StoreManager manager : Data.getManagers()) {
             if (manager.getUsername().equals(inputUser)) {
                 if (manager.getPassword().equals(inputPass)) {
                     return manager;
@@ -53,7 +62,7 @@ public class Manager {
 
     public void login() {
         String inputUser, inputPass;
-        Manager loginModel;
+        StoreManager loginModel;
 
         Print.titleAndDescription("Login de Gerente", "Usuario e Senha padrao : Gerente");
         do {
