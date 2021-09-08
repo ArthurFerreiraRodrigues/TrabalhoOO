@@ -22,19 +22,19 @@ public class Manager {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     private String getUsername() {
-        return this.username;
+        return username;
     }
 
     private String getPassword() {
-        return this.password;
+        return password;
     }
 
     public boolean getLoginStatus() {
-        return this.loginStatus;
+        return loginStatus;
     }
 
     /*----------------------------------------------------------------------*/
