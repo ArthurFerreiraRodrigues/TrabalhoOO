@@ -16,35 +16,7 @@ public class Book extends Product {
     }
 
     @Override
-    public int getId() {
-
-        return 0;
-    }
-
-    @Override
-    public double getPrice() {
-
-        return 0;
-    }
-
-    @Override
-    public int getInStockQuant() {
-
-        return 0;
-    }
-
-    @Override
-    public void uptateStockQuant(int quantSold) {
-
-    }
-
-    @Override
     public void list() {
-
-    }
-
-    @Override
-    public void searchByID() {
 
     }
 
