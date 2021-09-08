@@ -7,7 +7,7 @@ import java.util.List;
  * Classe para armazenar dados
  */
 public abstract class Data {
-    private static final ArrayList<Manager> managers = new ArrayList<>();
+    private static final ArrayList<StoreManager> managers = new ArrayList<>();
     private static final ArrayList<Seller> sellers = new ArrayList<>();
     private static final ArrayList<Customer> customers = new ArrayList<>();
     private static final ArrayList<Product> products = new ArrayList<>();
@@ -18,7 +18,7 @@ public abstract class Data {
     /**
      * @return Lista de Gerentes
      */
-    public static List<Manager> getManagers() {
+    public static List<StoreManager> getManagers() {
         return managers;
     }
 
