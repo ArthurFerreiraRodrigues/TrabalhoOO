@@ -10,9 +10,9 @@ public abstract class Product {
     /**
      * Gera o profile do produto
      * 
-     * @param id           : identification product code
-     * @param price        : valor do produto
-     * @param inStockQuant : quantidade em estoque
+     * @param id           : Product identification code
+     * @param price        : Product price
+     * @param inStockQuant : Product quantities in stock
      */
     public Product(int id, double price, int inStockQuant) {
         this.id = id;
@@ -23,24 +23,24 @@ public abstract class Product {
     // Getters
 
     /**
-     * @return Nome do Produto
+     * @return Product identification code
      */
     public abstract int getId();
 
     /**
-     * @return Valor do Produto
+     * @return Product price
      */
     public abstract double getPrice();
 
     /**
-     * @return Quantidade de Unidades do Produto em Estoque
+     * @return Product quantities in stock
      */
     public abstract int getInStockQuant();
 
     // Setters
 
     /**
-     * Atualiza quantidade de unidades em estoque.
+     * Updates quantities of Product in stock.
      * 
      * @param quantSold
      * @see appmain.Register Register.sales()
