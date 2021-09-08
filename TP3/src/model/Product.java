@@ -46,4 +46,10 @@ public abstract class Product {
      * @see appmain.Register Register.sales()
      */
     public abstract void uptateStockQuant(int quantSold);
+
+    // Lister
+    public abstract void list();
+
+    // Search by ID
+    public abstract void searchByID();
 }
