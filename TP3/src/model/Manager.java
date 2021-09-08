@@ -5,7 +5,7 @@ import util.Read;
 
 public class Manager {
     private String name, username, password;
-    boolean loginStatus;
+    private boolean loginStatus;
 
     /**
      * Gera o profile do Gerente
