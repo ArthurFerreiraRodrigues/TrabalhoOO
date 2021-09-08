@@ -12,10 +12,10 @@ public class Customer {
     /**
      * Gera o profile do cliente
      * 
-     * @param name         : nome do cliente
-     * @param adress       : endereco do cliente
-     * @param celNumber    : numero de telefone do cliente
-     * @param timesInStore : Number of times a customer has visited the store
+     * @param name         : Customer name
+     * @param adress       : Customer adress
+     * @param celNumber    : Customer cellphone number
+     * @param timesInStore : Number of times a Customer has visited the store
      */
     public Customer(String name, String adress, String celNumber, String timesInStore) {
         this.name = name;
@@ -27,21 +27,21 @@ public class Customer {
     // Getters
 
     /**
-     * @return Nome do Cliente
+     * @return Customer name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @return Endereço do Cliente
+     * @return Customer adress
      */
     public String getAdress() {
         return adress;
     }
 
     /**
-     * @return Telefone do Cliente
+     * @return Costumer cellphone number
      */
     public String getCelNumber() {
         return celNumber;
@@ -57,7 +57,7 @@ public class Customer {
     // Setters
 
     /**
-     * Atualiza Cadastro do Cliente.
+     * Updates Customer Info.
      * 
      * @see appmain.Search
      */
