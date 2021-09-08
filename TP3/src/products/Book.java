@@ -32,4 +32,22 @@ public class Book extends Product {
 
     }
 
+    @Override
+    public void list() {
+
+    }
+
+    @Override
+    public void searchByID() {
+
+    }
+
+    private void searchByAuthor() {
+
+    }
+
+    private void searchByTitle() {
+
+    }
+
 }

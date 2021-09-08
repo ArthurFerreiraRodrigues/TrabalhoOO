@@ -32,4 +32,21 @@ public class Miscellaneous extends Product {
 
     }
 
+    @Override
+    public void list() {
+
+    }
+
+    @Override
+    public void searchByID() {
+
+    }
+
+    private void searchByName() {
+
+    }
+
+    private void searchByBrand() {
+
+    }
 }
