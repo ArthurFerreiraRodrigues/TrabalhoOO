@@ -4,47 +4,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe para armazenar dados
+ * Dataa Storage Class
  */
 public abstract class Data {
-    private static final ArrayList<StoreManager> managers = new ArrayList<>();
+    private static final ArrayList<StoreManager> storeManagers = new ArrayList<>();
     private static final ArrayList<Seller> sellers = new ArrayList<>();
     private static final ArrayList<Customer> customers = new ArrayList<>();
     private static final ArrayList<Product> products = new ArrayList<>();
     private static final ArrayList<Sale> sales = new ArrayList<>();
 
+    /**
+     * Private constructor to protect all information
+     */
+    private Data() {
+    }
+
     /*----------------------------------------------------------------------*/
 
     /**
-     * @return Lista de Gerentes
+     * @return List of Store Managers
      */
-    public static List<StoreManager> getManagers() {
-        return managers;
+    public static List<StoreManager> getStoreManagers() {
+        return storeManagers;
     }
 
     /**
-     * @return Lista de Vendedores
+     * @return List of Sellers
      */
     public static List<Seller> getSellers() {
         return sellers;
     }
 
     /**
-     * @return Lista de Produtos
+     * @return List of Products
      */
     public static List<Product> getProducts() {
         return products;
     }
 
     /**
-     * @return Lista de Clientes
+     * @return List of Customers
      */
     public static List<Customer> getCustomers() {
         return customers;
     }
 
     /**
-     * @return Lista de Vendas
+     * @return List of Sales
      */
     public static List<Sale> getSales() {
         return sales;
@@ -53,10 +59,10 @@ public abstract class Data {
     /*----------------------------------------------------------------------*/
 
     /**
-     * @return Tamanho da Lista de Gerentes
+     * @return Size of Store Managers list
      */
-    public static int getSizeOfManagers() {
-        return managers.size();
+    public static int getSizeOfStoreManagers() {
+        return storeManagers.size();
     }
 
     /**
