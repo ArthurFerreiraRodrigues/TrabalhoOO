@@ -75,4 +75,16 @@ public class Customer {
     public void list() {
 
     }
+
+    // Search
+
+    public static Customer searchByName(String name) {
+
+        for (Customer customer : Data.getCustomers()) {
+            if (customer.getName().equals(name)) {
+                return customer;
+            }
+        }
+        return null;
+    }
 }
