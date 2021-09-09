@@ -561,9 +561,9 @@ public class StoreManager {
         Customer match;
         int confirmEdit;
 
-        Print.titleAndDescription("Deletar Dados de Cliente", "ID | Nome");
+        Print.titleAndDescription("Deletar Dados de Cliente", "Nome | Telefone");
 
-        System.out.printf("Buscar Cliente (ID) : ");
+        System.out.printf("Buscar Cliente (Nome Completo) : ");
         searchId = Read.Line();
         match = Customer.searchByName(searchId);
 
