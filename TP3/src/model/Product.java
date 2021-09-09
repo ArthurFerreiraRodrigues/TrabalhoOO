@@ -1,9 +1,9 @@
 package model;
 
 public abstract class Product {
-    private int id;
-    private double price;
-    private int inStockQuant;
+    protected int id;
+    protected double price;
+    protected int inStockQuant;
 
     /**
      * Gera o profile do produto
