@@ -164,7 +164,7 @@ public class StoreManager {
         }
     }
 
-    public Book inputProfileBook() {
+    private Book inputProfileBook() {
         System.out.printf("\nProduto %d - Livro\n", Data.getSizeOfProducts() + 1);
 
         System.out.print("\tCódigo de identificação : ");
@@ -188,7 +188,7 @@ public class StoreManager {
         return new Book(id, price, inStockQuant, author, title, type, genre);
     }
 
-    public Miscellaneous inputProfileMiscellaneous() {
+    private Miscellaneous inputProfileMiscellaneous() {
         System.out.printf("\nProduto %d - Outros\n", Data.getSizeOfProducts() + 1);
 
         System.out.print("\tCódigo de identificação : ");
@@ -206,5 +206,37 @@ public class StoreManager {
         int inStockQuant = Read.Int();
 
         return new Miscellaneous(id, price, inStockQuant, name, brand);
+    }
+
+    /**
+     * Create new Seller profile and adds it to an ArrayList in data.
+     * 
+     * @see model.Seller
+     * @see model.Data
+     */
+    public void registerSeller() {
+        Print.title("Cadastro de Novo Vendedor");
+
+        System.out.print("Quantidade de vendedores a serem cadastrados : ");
+        int quantCustomers = Read.Int();
+        for (int i = 0; i < quantCustomers; i++) {
+            Seller profile = inputProfileSeller();
+            addProfileToDataSeller(profile);
+        }
+    }
+
+    private Seller inputProfileSeller() {
+        System.out.printf("\nVendedor %d\n", Data.getSizeOfProducts() + 1);
+
+        System.out.print("\tCódigo de identificação : ");
+        int id = Read.Int();
+
+        System.out.print("\tNome : ");
+        String name = Read.Line();
+
+        double cashFlow = 0;
+        int productsSold = 0;
+
+        return new Seller(id, name, cashFlow, productsSold);
     }
 }
