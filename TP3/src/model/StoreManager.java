@@ -20,7 +20,6 @@ public class StoreManager {
         this.name = name;
         this.username = username;
         this.password = password;
-
     }
 
     /**
@@ -239,4 +238,37 @@ public class StoreManager {
 
         return new Seller(id, name, cashFlow, productsSold);
     }
+
+    /**
+     * Create new StoreManager profile and adds it to an ArrayList in data.
+     * 
+     * @see model.StoreManager
+     * @see model.Data
+     */
+    public void registerStoreManager() {
+        Print.title("Cadastro de Novo Gerente de Loja");
+
+        System.out.print("Quantidade de gerentes a serem cadastrados : ");
+        int quantCustomers = Read.Int();
+        for (int i = 0; i < quantCustomers; i++) {
+            StoreManager profile = inputProfileStoreManager();
+            addProfileToDataStoreManager(profile);
+        }
+    }
+
+    private StoreManager inputProfileStoreManager() {
+        System.out.printf("\nGerente de Loja %d\n", Data.getSizeOfProducts() + 1);
+
+        System.out.print("\tNome : ");
+        String name = Read.Line();
+
+        System.out.print("\tNome de Usuário : ");
+        String username = Read.Line();
+
+        System.out.print("\tSenha : ");
+        String password = Read.Line();
+
+        return new StoreManager(name, username, password);
+    }
+
 }
