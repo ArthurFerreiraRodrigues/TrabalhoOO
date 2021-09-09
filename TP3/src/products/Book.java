@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import model.Data;
 import model.Product;
+import util.Print;
+import util.Read;
 
 public class Book extends Product {
     private String author, title, type, genre;
@@ -36,10 +38,34 @@ public class Book extends Product {
         return genre;
     }
 
+    // Lister
+
     @Override
     public void list() {
 
     }
+
+    // Setter
+
+    public void updateInfo() {
+        Print.title("Alterar Dados de Livro");
+        System.out.printf("Novo Código de Identificação :");
+        id = Read.Int();
+        System.out.printf("Novo Autor :");
+        author = Read.Line();
+        System.out.printf("Novo Título :");
+        title = Read.Line();
+        System.out.printf("Novo Tipo :");
+        type = Read.Line();
+        System.out.printf("Novo Gênero :");
+        genre = Read.Line();
+        System.out.printf("Novo Preço :");
+        price = Read.Double();
+        System.out.printf("Nova Quantidade em Estoque :");
+        inStockQuant = Read.Int();
+    }
+
+    // Searches
 
     public ArrayList<Book> searchByAuthor(String searchInput) {
         ArrayList<Book> matches = new ArrayList<>();

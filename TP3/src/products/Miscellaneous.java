@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import model.Data;
 import model.Product;
+import util.Print;
+import util.Read;
 
 public class Miscellaneous extends Product {
     private String name, brand;
@@ -26,10 +28,30 @@ public class Miscellaneous extends Product {
         return brand;
     }
 
+    // Lister
+
     @Override
     public void list() {
 
     }
+
+    // Setter
+
+    public void updateInfo() {
+        Print.title("Alterar Dados de Outros");
+        System.out.printf("Novo Código de Identificação :");
+        id = Read.Int();
+        System.out.printf("Novo Nome :");
+        name = Read.Line();
+        System.out.printf("Nova Marca :");
+        brand = Read.Line();
+        System.out.printf("Novo Preço :");
+        price = Read.Double();
+        System.out.printf("Nova Quantidade em Estoque :");
+        inStockQuant = Read.Int();
+    }
+
+    // Searches
 
     public ArrayList<Miscellaneous> searchByName(String searchInput) {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
