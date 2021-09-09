@@ -64,7 +64,7 @@ public abstract class Product {
      * @param searchId
      * @return Matched Product
      */
-    public Product searchById(int searchId) {
+    public static Product searchById(int searchId) {
         for (Product product : Data.getProducts()) {
             if (product.getId() == searchId) {
                 return product;
