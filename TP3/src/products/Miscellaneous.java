@@ -1,5 +1,8 @@
 package products;
 
+import java.util.ArrayList;
+
+import model.Data;
 import model.Product;
 
 public class Miscellaneous extends Product {
@@ -13,16 +16,56 @@ public class Miscellaneous extends Product {
         this.brand = brand;
     }
 
+    // Getters
+
+    public String getName() {
+        return name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
     @Override
     public void list() {
 
     }
 
-    public void searchByName() {
+    public ArrayList<Miscellaneous> searchByName(String searchInput) {
+        ArrayList<Miscellaneous> matches = new ArrayList<>();
+        boolean hasMatches = false;
+
+        for (Miscellaneous miscellaneous : Data.getProducts()) {
+            if (miscellaneous.getName() == searchInput) {
+                matches.add(miscellaneous);
+                hasMatches = true;
+            }
+        }
+
+        if (hasMatches) {
+            return matches;
+        } else {
+            return null;
+        }
 
     }
 
-    public void searchByBrand() {
+    public ArrayList<Miscellaneous> searchByBrand(String searchInput) {
+        ArrayList<Miscellaneous> matches = new ArrayList<>();
+        boolean hasMatches = false;
+
+        for (Miscellaneous miscellaneous : Data.getProducts()) {
+            if (miscellaneous.getBrand() == searchInput) {
+                matches.add(miscellaneous);
+                hasMatches = true;
+            }
+        }
+
+        if (hasMatches) {
+            return matches;
+        } else {
+            return null;
+        }
 
     }
 }

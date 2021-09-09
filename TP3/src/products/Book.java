@@ -1,5 +1,8 @@
 package products;
 
+import java.util.ArrayList;
+
+import model.Data;
 import model.Product;
 
 public class Book extends Product {
@@ -15,17 +18,63 @@ public class Book extends Product {
         this.genre = genre;
     }
 
+    // Getters
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
     @Override
     public void list() {
 
     }
 
-    public void searchByAuthor() {
+    public ArrayList<Book> searchByAuthor(String searchInput) {
+        ArrayList<Book> matches = new ArrayList<>();
+        boolean hasMatches = false;
 
+        for (Book book : Data.getProducts()) {
+            if (book.getAuthor() == searchInput) {
+                matches.add(book);
+                hasMatches = true;
+            }
+        }
+
+        if (hasMatches) {
+            return matches;
+        } else {
+            return null;
+        }
     }
 
-    public void searchByTitle() {
+    public ArrayList<Book> searchByTitle(String searchInput) {
+        ArrayList<Book> matches = new ArrayList<>();
+        boolean hasMatches = false;
 
+        for (Book book : Data.getProducts()) {
+            if (book.getTitle() == searchInput) {
+                matches.add(book);
+                hasMatches = true;
+            }
+        }
+
+        if (hasMatches) {
+            return matches;
+        } else {
+            return null;
+        }
     }
 
 }
