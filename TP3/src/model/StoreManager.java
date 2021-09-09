@@ -291,7 +291,7 @@ public class StoreManager {
         Product match;
         int confirmEdit;
 
-        Print.titleAndDescription("Busca por Produto", "Tipo | Autor/Marca | Título/Nome");
+        Print.titleAndDescription("Alterar Dados de Produto", "Tipo | Autor/Marca | Título/Nome");
 
         System.out.printf("Buscar Produto (ID) : ");
         searchId = Read.Int();
@@ -326,4 +326,43 @@ public class StoreManager {
         }
     }
 
+    /*----------------------------------------------------------------------*/
+    /**
+     * Updates Seller.
+     */
+    public void updateSeller() {
+        int searchId;
+        Seller match;
+        int confirmEdit;
+
+        Print.titleAndDescription("Alterar Dados de Vendedor", "ID | Nome");
+
+        System.out.printf("Buscar Vendedor (ID) : ");
+        searchId = Read.Int();
+        match = Seller.searchById(searchId);
+
+        if (match == null) {
+            System.out.printf("\nVendedor não encontrado!");
+        } else {
+
+            do {
+                System.out.printf("\nAlterar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
+                        match.id);
+                System.out.printf("\n\nEscolha : ");
+                confirmEdit = Read.Int();
+                switch (confirmEdit) {
+                    case 1:
+                        match.updateInfo();
+                        break;
+                    case 2:
+                        System.out.println("Voltando ao menu.");
+                        break;
+                    default:
+                        System.out.printf("\nDigite uma opção válida.");
+                        break;
+                }
+            } while (confirmEdit != 1 && confirmEdit != 2);
+
+        }
+    }
 }
