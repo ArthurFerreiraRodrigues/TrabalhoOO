@@ -72,23 +72,4 @@ public class Print {
         }
     }
 
-    /**
-     * Imprime todos os produtos cadastrados e seu respectivo valor e quantidade em
-     * estoque.
-     * 
-     * @see model.Product
-     */
-    public static void productsInStock() {
-        int contador = 1;
-
-        Print.titleAndDescription("Mostrar Produtos em Estoque", "Nome | Valor (R$) | Quatidade em Estoque");
-
-        for (Product product : Data.getProducts()) {
-            System.out.printf(".%d - %s | R$ %.2f | %d un.\n", contador, product.getName(), product.getValue(),
-                    product.getInStockQuant());
-
-            contador++;
-        }
-
-    }
 }
