@@ -315,7 +315,7 @@ public class StoreManager {
 
             do {
                 System.out.printf("\nAlterar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.id);
+                        match.getId());
                 System.out.printf("\n\nEscolha : ");
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
@@ -359,7 +359,7 @@ public class StoreManager {
 
             do {
                 System.out.printf("\nAlterar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.id);
+                        match.getId());
                 System.out.printf("\n\nEscolha : ");
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
@@ -400,7 +400,7 @@ public class StoreManager {
             do {
                 System.out.printf(
                         "\nAlterar Dados do Gerente de Loja Username : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.username);
+                        match.getUsername());
                 System.out.printf("\n\nEscolha : ");
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
@@ -452,7 +452,7 @@ public class StoreManager {
 
             do {
                 System.out.printf("\nDeletar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.id);
+                        match.getId());
                 System.out.printf("\n\nEscolha : ");
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
@@ -487,12 +487,12 @@ public class StoreManager {
         match = Seller.searchById(searchId);
 
         if (match == null) {
-            System.out.printf("\nDeletar não encontrado!");
+            System.out.printf("\nVendedor não encontrado!");
         } else {
 
             do {
                 System.out.printf("\nDeletar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.id);
+                        match.getId());
                 System.out.printf("\n\nEscolha : ");
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
@@ -533,12 +533,52 @@ public class StoreManager {
             do {
                 System.out.printf(
                         "\nDeletar Dados do Gerente de Loja Username : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.username);
+                        match.getUsername());
                 System.out.printf("\n\nEscolha : ");
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
                     case 1:
                         Data.getStoreManagers().remove(match);
+                        break;
+                    case 2:
+                        System.out.println("Voltando ao menu.");
+                        break;
+                    default:
+                        System.out.printf("\nDigite uma opção válida.");
+                        break;
+                }
+            } while (confirmEdit != 1 && confirmEdit != 2);
+
+        }
+    }
+
+    /*----------------------------------------------------------------------*/
+    /**
+     * Deletes Costumer.
+     */
+    public void deleteCustomer() {
+        String searchId;
+        Customer match;
+        int confirmEdit;
+
+        Print.titleAndDescription("Deletar Dados de Cliente", "ID | Nome");
+
+        System.out.printf("Buscar Cliente (ID) : ");
+        searchId = Read.Line();
+        match = Customer.searchByName(searchId);
+
+        if (match == null) {
+            System.out.printf("\nCliente não encontrado!");
+        } else {
+
+            do {
+                System.out.printf("\nDeletar Dados do Cliente : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
+                        match.getName());
+                System.out.printf("\n\nEscolha : ");
+                confirmEdit = Read.Int();
+                switch (confirmEdit) {
+                    case 1:
+                        Data.getCustomers().remove(match);
                         break;
                     case 2:
                         System.out.println("Voltando ao menu.");
