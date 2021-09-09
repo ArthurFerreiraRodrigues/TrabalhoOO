@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import util.Print;
+import util.Read;
+
 public class Seller {
     int id;
     String name;
@@ -84,7 +87,17 @@ public class Seller {
 
     }
 
-    // Search
+    // Updater
+
+    public void updateInfo() {
+        Print.title("Alterar Dados do Vendedor");
+        System.out.printf("Novo ID :");
+        id = Read.Int();
+        System.out.printf("Novo Nome :");
+        name = Read.Line();
+    }
+
+    // Searches
 
     /**
      * Returns the Seller matched by it's identification code
@@ -92,7 +105,7 @@ public class Seller {
      * @param searchId
      * @return Matched Seller
      */
-    public Seller searchById(int searchId) {
+    public static Seller searchById(int searchId) {
         for (Seller seller : Data.getSellers()) {
             if (seller.getId() == searchId) {
                 return seller;
