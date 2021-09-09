@@ -43,8 +43,8 @@ public abstract class Product {
         return inStockQuant;
     }
 
-    public int getProductType() {
-        return inStockQuant;
+    public String getProductType() {
+        return productType;
     }
 
     // Setters
