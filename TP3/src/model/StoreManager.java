@@ -1,5 +1,7 @@
 package model;
 
+import products.Book;
+import products.Miscellaneous;
 import util.Print;
 import util.Read;
 
@@ -90,5 +92,119 @@ public class StoreManager {
         loginModel.loginStatus = true;
 
         System.out.printf("Login realizado com sucesso !");
+    }
+
+    public StoreManager isLogged() {
+        for (StoreManager manager : Data.getStoreManagers()) {
+            if (manager.loginStatus == true) {
+                return manager;
+            }
+        }
+        return null;
+    }
+
+    // Adders
+
+    /**
+     * Add a model profile to an ArrayList in Data.
+     * 
+     * @param profile
+     * @see model.Data
+     */
+    private static void addProfileToDataProduct(Product profile) {
+        Data.getProducts().add(profile);
+    }
+
+    /**
+     * Add a model profile to an ArrayList in Data.
+     * 
+     * @param profile
+     * @see model.Data
+     */
+    private static void addProfileToDataSeller(Seller profile) {
+        Data.getSellers().add(profile);
+    }
+
+    /**
+     * Add a model profile to an ArrayList in Data.
+     * 
+     * @param profile
+     * @see model.Data
+     */
+    private static void addProfileToDataStoreManager(StoreManager profile) {
+        Data.getStoreManagers().add(profile);
+    }
+
+    // Registers
+
+    public void registerProduct() {
+        int choice;
+
+        Print.title("Cadastro de Novo Produto");
+
+        System.out.printf("Quantidade de produtos a serem cadastrados : ");
+        int quantProducts = Read.Int();
+        for (int i = 0; i < quantProducts; i++) {
+            do {
+                System.out.printf("Deseja cadastrar :\n\t1-Livro\t2-Outros\n");
+                choice = Read.Int();
+                switch (choice) {
+                    case 1: // Book
+                        Book profileBook = inputProfileBook();
+                        addProfileToDataProduct(profileBook);
+                        break;
+                    case 2: // Miscellaneous
+                        Miscellaneous profileMiscellaneous = inputProfileMiscellaneous();
+                        addProfileToDataProduct(profileMiscellaneous);
+                        break;
+                    default:
+                        System.out.printf("Digite uma alternativa válida.\n");
+                }
+            } while (choice != 1 && choice != 2);
+        }
+    }
+
+    public Book inputProfileBook() {
+        System.out.printf("\nProduto %d - Livro\n", Data.getSizeOfProducts() + 1);
+
+        System.out.print("\tCódigo de identificação : ");
+        int id = Read.Int();
+
+        System.out.print("\tPreço : ");
+        double price = Read.Double();
+
+        System.out.print("\tAutor : ");
+        String author = Read.Line();
+        System.out.print("\tTítulo : ");
+        String title = Read.Line();
+        System.out.print("\tTipo : ");
+        String type = Read.Line();
+        System.out.print("\tGênero : ");
+        String genre = Read.Line();
+
+        System.out.print("\tQuantidade em Estoque : ");
+        int inStockQuant = Read.Int();
+
+        return new Book(id, price, inStockQuant, author, title, type, genre);
+    }
+
+    public Miscellaneous inputProfileMiscellaneous() {
+        System.out.printf("\nProduto %d - Outros\n", Data.getSizeOfProducts() + 1);
+
+        System.out.print("\tCódigo de identificação : ");
+        int id = Read.Int();
+
+        System.out.print("\tPreço : ");
+        double price = Read.Double();
+
+        System.out.print("\tNome : ");
+        String name = Read.Line();
+        System.out.print("\tMarca : ");
+        String brand = Read.Line();
+
+        System.out.print("\tQuantidade em Estoque : ");
+        int inStockQuant = Read.Int();
+
+        return new Miscellaneous(id, price, inStockQuant, name, brand);
     }
 }
