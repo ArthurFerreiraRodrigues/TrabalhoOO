@@ -280,4 +280,50 @@ public class StoreManager {
         return new StoreManager(name, username, password);
     }
 
+    // Updaters
+
+    /*----------------------------------------------------------------------*/
+    /**
+     * Updates Product.
+     */
+    public void updateProduct() {
+        int searchId;
+        Product match;
+        int confirmEdit;
+
+        Print.titleAndDescription("Busca por Produto", "Tipo | Autor/Marca | Título/Nome");
+
+        System.out.printf("Buscar Produto (ID) : ");
+        searchId = Read.Int();
+        match = Product.searchById(searchId);
+
+        if (match == null) {
+            System.out.printf("\nProduto não encontrado!");
+        } else {
+
+            do {
+                System.out.printf("\nAlterar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
+                        match.id);
+                System.out.printf("\n\nEscolha : ");
+                confirmEdit = Read.Int();
+                switch (confirmEdit) {
+                    case 1:
+                        if (match.getProductType().equals("Book")) {
+                            ((Book) match).updateInfo();
+                        } else {
+                            ((Miscellaneous) match).updateInfo();
+                        }
+                        break;
+                    case 2:
+                        System.out.println("Voltando ao menu.");
+                        break;
+                    default:
+                        System.out.printf("\nDigite uma opção válida.");
+                        break;
+                }
+            } while (confirmEdit != 1 && confirmEdit != 2);
+
+        }
+    }
+
 }
