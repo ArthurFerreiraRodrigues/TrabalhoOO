@@ -47,6 +47,18 @@ public class StoreManager {
         return loginStatus;
     }
 
+    // Info Updater
+
+    public void updateInfo() {
+        Print.title("Alterar Dados do Gerente");
+        System.out.printf("Novo Nome :");
+        name = Read.Line();
+        System.out.printf("Novo Nome de Usuário :");
+        username = Read.Line();
+        System.out.printf("Nova Senha :");
+        password = Read.Line();
+    }
+
     /*----------------------------------------------------------------------*/
 
     /**
@@ -233,7 +245,7 @@ public class StoreManager {
     }
 
     private Seller inputProfileSeller() {
-        System.out.printf("\nVendedor %d\n", Data.getSizeOfProducts() + 1);
+        System.out.printf("\nVendedor %d\n", Data.getSizeOfSellers() + 1);
 
         System.out.print("\tCódigo de identificação : ");
         int id = Read.Int();
@@ -266,7 +278,7 @@ public class StoreManager {
     }
 
     private StoreManager inputProfileStoreManager() {
-        System.out.printf("\nGerente de Loja %d\n", Data.getSizeOfProducts() + 1);
+        System.out.printf("\nGerente de Loja %d\n", Data.getSizeOfStoreManagers() + 1);
 
         System.out.print("\tNome : ");
         String name = Read.Line();
@@ -364,5 +376,56 @@ public class StoreManager {
             } while (confirmEdit != 1 && confirmEdit != 2);
 
         }
+    }
+
+    /*----------------------------------------------------------------------*/
+    /**
+     * Updates StoreManager.
+     */
+    public void updateStoreManager() {
+        String searchUsername;
+        StoreManager match;
+        int confirmEdit;
+
+        Print.titleAndDescription("Alterar Dados de Gerente de Loja", "ID | Nome");
+
+        System.out.printf("Buscar Gerente de Loja (Username) : ");
+        searchUsername = Read.Line();
+        match = StoreManager.searchByUsername(searchUsername);
+
+        if (match == null) {
+            System.out.printf("\nGerente de Loja não encontrado!");
+        } else {
+
+            do {
+                System.out.printf(
+                        "\nAlterar Dados do Gerente de Loja Username : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
+                        match.username);
+                System.out.printf("\n\nEscolha : ");
+                confirmEdit = Read.Int();
+                switch (confirmEdit) {
+                    case 1:
+                        match.updateInfo();
+                        break;
+                    case 2:
+                        System.out.println("Voltando ao menu.");
+                        break;
+                    default:
+                        System.out.printf("\nDigite uma opção válida.");
+                        break;
+                }
+            } while (confirmEdit != 1 && confirmEdit != 2);
+
+        }
+    }
+
+    private static StoreManager searchByUsername(String searchInput) {
+
+        for (StoreManager manager : Data.getStoreManagers()) {
+            if (manager.getUsername().equals(searchInput)) {
+                return manager;
+            }
+        }
+        return null;
     }
 }
