@@ -136,6 +136,13 @@ public class StoreManager {
 
     // Registers
 
+    /*----------------------------------------------------------------------*/
+    /**
+     * Create new Product profile and adds it to an ArrayList in data.
+     * 
+     * @see model.Product
+     * @see model.Data
+     */
     public void registerProduct() {
         int choice;
 
@@ -207,6 +214,7 @@ public class StoreManager {
         return new Miscellaneous(id, price, inStockQuant, name, brand);
     }
 
+    /*----------------------------------------------------------------------*/
     /**
      * Create new Seller profile and adds it to an ArrayList in data.
      * 
@@ -239,6 +247,7 @@ public class StoreManager {
         return new Seller(id, name, cashFlow, productsSold);
     }
 
+    /*----------------------------------------------------------------------*/
     /**
      * Create new StoreManager profile and adds it to an ArrayList in data.
      * 
