@@ -20,11 +20,11 @@ public class Book extends Product {
 
     }
 
-    private void searchByAuthor() {
+    public void searchByAuthor() {
 
     }
 
-    private void searchByTitle() {
+    public void searchByTitle() {
 
     }
 

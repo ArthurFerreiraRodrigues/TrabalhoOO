@@ -18,11 +18,11 @@ public class Miscellaneous extends Product {
 
     }
 
-    private void searchByName() {
+    public void searchByName() {
 
     }
 
-    private void searchByBrand() {
+    public void searchByBrand() {
 
     }
 }
