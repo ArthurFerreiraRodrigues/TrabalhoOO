@@ -13,7 +13,7 @@ public class Book extends Product {
     // Costructor
 
     public Book(int id, double price, int inStockQuant, String author, String title, String type, String genre) {
-        super(id, price, inStockQuant);
+        super(id, price, inStockQuant, "Book");
         this.author = author;
         this.title = title;
         this.type = type;
