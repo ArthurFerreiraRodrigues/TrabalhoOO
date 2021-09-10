@@ -80,7 +80,7 @@ public class Miscellaneous extends Product {
 
         for (Product product : Data.getProducts()) {
             if (product instanceof Miscellaneous) {
-                if (((Miscellaneous) product).getName() == searchInput) {
+                if (((Miscellaneous) product).getBrand() == searchInput) {
                     matches.add(((Miscellaneous) product));
                     hasMatches = true;
                 }
