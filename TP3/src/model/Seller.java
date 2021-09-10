@@ -191,12 +191,16 @@ public class Seller {
         Data.getSales().add(profile);
     }
 
+    private static void addProfileToDataCustumers(Customer profile) {
+        Data.getCustomers().add(profile);
+    }
+
     // Register
 
     public void registerSale() {
         Customer buyer;
         Print.title("Cadastro de Nova Venda");
-        System.out.printf("Vendedor %d : %s", this.id, this.name);
+        System.out.printf("Vendedor %d : %s\n", this.id, this.name);
         do {
             System.out.printf("Digite o Nome Completo do Cliente : ");
             String searchName = Read.Line();
@@ -256,7 +260,26 @@ public class Seller {
         return new Sale(seller, buyer, productsSold, unitsSold, subTotal);
     }
 
-    public void registerCostumer() {
+    public void registerCustomer() {
+        Print.title("Cadastro de Nova Cliente");
+        System.out.printf("Vendedor %d : %s\n", this.id, this.name);
 
+        Customer customer = inputProfileCustomer();
+        addProfileToDataCustumers(customer);
     }
+
+    private Customer inputProfileCustomer() {
+        System.out.printf("\nCliente %d\n", Data.getSizeOfCustomers() + 1);
+
+        System.out.print("\tNome : ");
+        String name = Read.Line();
+        System.out.print("\tEndereço : ");
+        String adress = Read.Line();
+        System.out.print("\tTelefone : ");
+        String celNumber = Read.Line();
+
+        int timesInStore = 0;
+        return new Customer(name, adress, celNumber, timesInStore);
+    }
+
 }
