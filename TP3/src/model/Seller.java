@@ -53,7 +53,6 @@ public class Seller {
     }
 
     /**
-     * 333333
      * 
      * @return How much money the seller made from all sales
      */
@@ -283,9 +282,20 @@ public class Seller {
         return new Customer(name, adress, celNumber, timesInStore);
     }
 
-    public void updateCustomer(){
+    public void updateCustomer() {
+        Customer customer;
+
         Print.title("Atualizar Cliente");
         Customer.list();
-        Customer.searchByName(searchName)
+        do {
+            System.out.printf("Digite o Nome do Cliente : ");
+            String searchName = Read.Line();
+            customer = Customer.searchByName(searchName);
+            if (customer == null) {
+                System.out.printf("\nNenhum Cliente Encontrado com o Nome '%s'.\n", searchName);
+            }
+        } while (customer == null);
+        Screen.clear();
+        customer.updateCustomerInfo();
     }
 }
