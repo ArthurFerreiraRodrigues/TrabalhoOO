@@ -32,9 +32,11 @@ public class Miscellaneous extends Product {
 
     public void list() {
         Print.titleAndDescription("Lista de Produtos Variados", "ID | Tipo | Preço | Estoque | Marca | Nome");
+        int i = 1;
         for (Product product : Data.getProducts()) {
             if (product instanceof Miscellaneous) {
-                System.out.printf(((Miscellaneous) product).toString() + "\n");
+                System.out.printf("%d. ", i, ((Miscellaneous) product).toString() + "\n");
+                i++;
             }
         }
         Print.split();
