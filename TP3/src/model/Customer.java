@@ -17,7 +17,7 @@ public class Customer {
      * @param celNumber    : Customer cellphone number
      * @param timesInStore : Number of times a Customer has visited the store
      */
-    public Customer(String name, String adress, String celNumber, String timesInStore) {
+    public Customer(String name, String adress, String celNumber, int timesInStore) {
         this.name = name;
         this.adress = adress;
         this.celNumber = celNumber;
