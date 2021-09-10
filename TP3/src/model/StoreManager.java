@@ -141,10 +141,10 @@ public class StoreManager {
      * 
      * @param profile
      * @see model.Data
+     * 
+     *      private static void addProfileToDataStoreManager(StoreManager profile) {
+     *      Data.getStoreManagers().add(profile); }
      */
-    private static void addProfileToDataStoreManager(StoreManager profile) {
-        Data.getStoreManagers().add(profile);
-    }
 
     // Registers
 
@@ -257,39 +257,6 @@ public class StoreManager {
         int productsSold = 0;
 
         return new Seller(id, name, cashFlow, productsSold);
-    }
-
-    /*----------------------------------------------------------------------*/
-    /**
-     * Create new StoreManager profile and adds it to an ArrayList in data.
-     * 
-     * @see model.StoreManager
-     * @see model.Data
-     */
-    public void registerStoreManager() {
-        Print.title("Cadastro de Novo Gerente de Loja");
-
-        System.out.print("Quantidade de gerentes a serem cadastrados : ");
-        int quantCustomers = Read.Int();
-        for (int i = 0; i < quantCustomers; i++) {
-            StoreManager profile = inputProfileStoreManager();
-            addProfileToDataStoreManager(profile);
-        }
-    }
-
-    private StoreManager inputProfileStoreManager() {
-        System.out.printf("\nGerente de Loja %d\n", Data.getSizeOfStoreManagers() + 1);
-
-        System.out.print("\tNome : ");
-        String name = Read.Line();
-
-        System.out.print("\tNome de Usuário : ");
-        String username = Read.Line();
-
-        System.out.print("\tSenha : ");
-        String password = Read.Line();
-
-        return new StoreManager(name, username, password);
     }
 
     // Updaters
@@ -498,47 +465,6 @@ public class StoreManager {
                 switch (confirmEdit) {
                     case 1:
                         Data.getSellers().remove(match);
-                        break;
-                    case 2:
-                        System.out.println("Voltando ao menu.");
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.");
-                        break;
-                }
-            } while (confirmEdit != 1 && confirmEdit != 2);
-
-        }
-    }
-
-    /*----------------------------------------------------------------------*/
-    /**
-     * Deletes StoreManager.
-     */
-    public void deleteStoreManager() {
-        String searchUsername;
-        StoreManager match;
-        int confirmEdit;
-
-        Print.title("Deletar Dados de Gerente de Loja");
-
-        System.out.printf("Buscar Gerente de Loja (Username) : ");
-        searchUsername = Read.Line();
-        match = StoreManager.searchByUsername(searchUsername);
-
-        if (match == null) {
-            System.out.printf("\nGerente de Loja não encontrado!");
-        } else {
-
-            do {
-                System.out.printf(
-                        "\nDeletar Dados do Gerente de Loja Username : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getUsername());
-                System.out.printf("\n\nEscolha : ");
-                confirmEdit = Read.Int();
-                switch (confirmEdit) {
-                    case 1:
-                        Data.getStoreManagers().remove(match);
                         break;
                     case 2:
                         System.out.println("Voltando ao menu.");
