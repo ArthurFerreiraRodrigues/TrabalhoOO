@@ -40,9 +40,14 @@ public class Book extends Product {
 
     // Lister
 
-    @Override
     public void list() {
 
+    }
+
+    @Override
+    public String toString() {
+        return this.getId() + " | Livro | R$ " + this.getPrice() + " | " + this.getInStockQuant() + " | "
+                + this.getAuthor() + " | " + this.getTitle();
     }
 
     // Setter

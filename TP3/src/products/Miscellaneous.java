@@ -30,11 +30,15 @@ public class Miscellaneous extends Product {
 
     // Lister
 
-    @Override
     public void list() {
 
     }
 
+    @Override
+    public String toString() {
+        return this.getId() + " | Outros | R$ " + this.getPrice() + " | " + this.getInStockQuant() + " | "
+                + this.getBrand() + " | " + this.getName() + "\n";
+    }
     // Setter
 
     public void updateInfo() {
