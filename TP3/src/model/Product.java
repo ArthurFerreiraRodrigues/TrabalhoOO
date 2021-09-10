@@ -47,18 +47,6 @@ public abstract class Product {
 
     // Setters
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setInStockQuant(int inStockQuant) {
-        this.inStockQuant = inStockQuant;
-    }
-
     /**
      * Updates quantities of Product in stock.
      * 
