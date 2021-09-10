@@ -18,15 +18,15 @@ public class Seller {
     /**
      * How many items did the seller sold
      */
-    int productsSold;
+    int unitsSold;
 
     // Constructor
 
-    public Seller(int id, String name, double cashFlow, int productsSold) {
+    public Seller(int id, String name, double cashFlow, int unitsSold) {
         this.id = id;
         this.name = name;
         this.cashFlow = cashFlow;
-        this.productsSold = productsSold;
+        this.unitsSold = unitsSold;
     }
 
     // Getters
@@ -64,14 +64,23 @@ public class Seller {
     /**
      * @return How many items did the seller sold
      */
-    public int getProductsSold() {
-        return productsSold;
+    public int getUnitsSold() {
+        return unitsSold;
     }
 
     // Listers
 
     public void list() {
+        Print.titleAndDescription("Listar Vendedores", "ID Vendedor | Nome Vendedor | Fluxo de Caixa | Qtd.Unidades");
 
+        int i = 1;
+
+        for (Seller seller : Data.getSellers()) {
+            System.out.printf("%d. %d | %s | %.2f | %d ", i, seller.getId(), seller.getName(), seller.getCashFlow(),
+                    seller.getUnitsSold());
+            i++;
+        }
+        Print.split();
     }
 
     public void listSalesMadeById() {
@@ -89,12 +98,18 @@ public class Seller {
                 System.out.printf("\nNenhum vendedor encontrado com essa ID. Tente novamente.\n");
             }
         } while (target == null);
+
+        Screen.clear();
+        Print.titleAndDescription("Listar Vendas Feitas por Vendedor (ID)",
+                "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         for (Sale sale : Data.getSales()) {
             if (sale.getseller().getId() == inputId) {
                 System.out.printf("%d. ", i, sale.toString());
             }
             i++;
         }
+
+        Print.split();
     }
 
     public void listSalesMadeByName() {
@@ -102,7 +117,7 @@ public class Seller {
         String searchName;
         int i = 1;
 
-        Print.titleAndDescription("Listar Vendas Feitas por Vendedor (ID)",
+        Print.titleAndDescription("Listar Vendas Feitas por Vendedor (Nome)",
                 "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         do {
             System.out.println("Digite o Nome do Vendedor : ");
@@ -112,6 +127,10 @@ public class Seller {
                 System.out.printf("\nNenhum vendedor encontrado com essa ID. Tente novamente.\n");
             }
         } while (target == null);
+
+        Screen.clear();
+        Print.titleAndDescription("Listar Vendas Feitas por Vendedor (Nome)",
+                "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         for (Seller seller : target) {
             for (Sale sale : seller.getSalesMade()) {
                 System.out.printf("%d. ", i, sale.toString());
@@ -174,10 +193,10 @@ public class Seller {
 
     // Register
 
-    public void registerSale(Seller selected) {
+    public void registerSale() {
         Customer buyer;
         Print.title("Cadastro de Nova Venda");
-
+        System.out.printf("Vendedor %d : %s", this.id, this.name);
         do {
             System.out.printf("Digite o Nome Completo do Cliente : ");
             String searchName = Read.Line();
@@ -187,15 +206,14 @@ public class Seller {
             }
         } while (buyer == null);
 
-        Sale sale = inputProfileSale(selected, buyer);
-        selected.updateCashFlow(sale);
+        Sale sale = inputProfileSale(this, buyer);
+        this.updateCashFlow(sale);
         addProfileToDataSales(sale);
     }
 
-    private Sale inputProfileSale(Seller selected, Customer buyer) {
+    private Sale inputProfileSale(Seller seller, Customer buyer) {
         ArrayList<ProductsSoldInSale> productsSold = new ArrayList<>();
         double subTotal = 0;
-        Seller seller = selected;
         Product product;
         int searchId, units, unitsSold = 0, i = 1;
 
@@ -226,7 +244,7 @@ public class Seller {
                     System.out.printf("\t\t\nQuantidade vendida deve ser maior que 0.\n");
                 }
             } while (units > product.inStockQuant || units <= 0);
-
+            seller.unitsSold += units;
             unitsSold += units;
             subTotal += units * product.getPrice();
             product.uptateStockQuant(units);
