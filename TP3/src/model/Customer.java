@@ -80,7 +80,16 @@ public class Customer {
 
     // Lister
     public void list() {
+        Print.titleAndDescription("Lista de Clientes", "Nome | Endereço | Telefone | Qtd.Visitas");
+        int i = 1;
+        for (Customer customer : Data.getCustomers()) {
 
+            System.out.printf("%d. %s | %s | %s | %d", i, customer.getName(), customer.getAdress(),
+                    customer.getCelNumber(), customer.getTimesInStore());
+
+            i++;
+        }
+        Print.split();
     }
 
     // Search
