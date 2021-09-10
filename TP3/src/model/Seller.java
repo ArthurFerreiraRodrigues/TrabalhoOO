@@ -137,6 +137,7 @@ public class Seller {
                 i++;
             }
         }
+        Print.split();
     }
 
     // Updater

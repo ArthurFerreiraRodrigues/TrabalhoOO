@@ -62,5 +62,6 @@ public class Sale {
             System.out.printf("%d. ", i, sale.toString());
             i++;
         }
+        Print.split();
     }
 }
