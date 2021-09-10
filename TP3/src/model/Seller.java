@@ -167,7 +167,7 @@ public class Seller {
 
         Screen.clear();
         Print.title("Cadastro de Nova Venda");
-        Product.list();
+        Product.listInStock();
         System.out.printf("Comprador : %s\n", buyer.getName());
         System.out.printf("Digite 0 para encerrar Registro de Venda");
         do {
