@@ -4,7 +4,6 @@ public abstract class Product {
     protected int id;
     protected double price;
     protected int inStockQuant;
-    protected String productType;
 
     /**
      * Gera o profile do produto
@@ -13,11 +12,10 @@ public abstract class Product {
      * @param price        : Product price
      * @param inStockQuant : Product quantities in stock
      */
-    public Product(int id, double price, int inStockQuant, String productType) {
+    public Product(int id, double price, int inStockQuant) {
         this.id = id;
         this.price = price;
         this.inStockQuant = inStockQuant;
-        this.productType = productType;
     }
 
     // Getters
@@ -41,10 +39,6 @@ public abstract class Product {
      */
     public int getInStockQuant() {
         return inStockQuant;
-    }
-
-    public String getProductType() {
-        return productType;
     }
 
     // Setters

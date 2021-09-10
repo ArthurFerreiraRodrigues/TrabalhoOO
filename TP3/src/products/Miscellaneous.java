@@ -13,7 +13,7 @@ public class Miscellaneous extends Product {
     // Constructor
 
     public Miscellaneous(int id, double price, int inStockQuant, String name, String brand) {
-        super(id, price, inStockQuant, "Miscellaneous");
+        super(id, price, inStockQuant);
         this.name = name;
         this.brand = brand;
     }
