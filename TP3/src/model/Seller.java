@@ -53,6 +53,8 @@ public class Seller {
     }
 
     /**
+     * 333333
+     * 
      * @return How much money the seller made from all sales
      */
     public double getCashFlow() {
@@ -72,18 +74,50 @@ public class Seller {
 
     }
 
-    public void listSalesMadeById(int inputId) {
-        Seller target = searchById(inputId);
+    public void listSalesMadeById() {
+        Seller target;
+        int inputId;
+        int i = 1;
 
-        if (target == null) {
-            System.out.printf("Nenhum vendedor encontrado com essa ID.");
-        } else {
-            System.out.printf(target.name); // Completar
+        Print.titleAndDescription("Listar Vendas Feitas por Vendedor (ID)",
+                "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
+        do {
+            System.out.println("Digite a ID do Vendedor : ");
+            inputId = Read.Int();
+            target = searchById(inputId);
+            if (target == null) {
+                System.out.printf("\nNenhum vendedor encontrado com essa ID. Tente novamente.\n");
+            }
+        } while (target == null);
+        for (Sale sale : Data.getSales()) {
+            if (sale.getseller().getId() == inputId) {
+                System.out.printf("%d. ", i, sale.toString());
+            }
+            i++;
         }
     }
 
     public void listSalesMadeByName() {
+        ArrayList<Seller> target = new ArrayList<>();
+        String searchName;
+        int i = 1;
 
+        Print.titleAndDescription("Listar Vendas Feitas por Vendedor (ID)",
+                "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
+        do {
+            System.out.println("Digite o Nome do Vendedor : ");
+            searchName = Read.Line();
+            target = searchByName(searchName);
+            if (target == null) {
+                System.out.printf("\nNenhum vendedor encontrado com essa ID. Tente novamente.\n");
+            }
+        } while (target == null);
+        for (Seller seller : target) {
+            for (Sale sale : seller.getSalesMade()) {
+                System.out.printf("%d. ", i, sale.toString());
+                i++;
+            }
+        }
     }
 
     // Updater
