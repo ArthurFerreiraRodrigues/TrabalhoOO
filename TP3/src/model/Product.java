@@ -73,6 +73,21 @@ public abstract class Product {
         Print.split();
     }
 
+    public static void listAll() {
+        Print.titleAndDescription("Lista de Todos os Produtos",
+                "ID | Tipo | Preço | Estoque | Autor/Marca | Título/Nome");
+        for (Product product : Data.getProducts()) {
+
+            if (product instanceof Book) {
+                System.out.printf(((Book) product).toString() + "\n");
+            } else {
+                System.out.printf(((Miscellaneous) product).toString() + "\n");
+            }
+
+        }
+        Print.split();
+    }
+
     // Search by ID
 
     /**
