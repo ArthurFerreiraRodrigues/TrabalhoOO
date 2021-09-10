@@ -66,7 +66,7 @@ public class Miscellaneous extends Product {
 
     // Searches
 
-    public ArrayList<Miscellaneous> searchByName(String searchInput) {
+    public static ArrayList<Miscellaneous> searchByName(String searchInput) {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
         boolean hasMatches = false;
 
@@ -87,7 +87,7 @@ public class Miscellaneous extends Product {
 
     }
 
-    public ArrayList<Miscellaneous> searchByBrand(String searchInput) {
+    public static ArrayList<Miscellaneous> searchByBrand(String searchInput) {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
         boolean hasMatches = false;
 

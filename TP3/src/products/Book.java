@@ -81,7 +81,7 @@ public class Book extends Product {
 
     // Searches
 
-    public ArrayList<Book> searchByAuthor(String searchInput) {
+    public static ArrayList<Book> searchByAuthor(String searchInput) {
         ArrayList<Book> matches = new ArrayList<>();
         boolean hasMatches = false;
 
@@ -102,7 +102,7 @@ public class Book extends Product {
         }
     }
 
-    public ArrayList<Book> searchByTitle(String searchInput) {
+    public static ArrayList<Book> searchByTitle(String searchInput) {
         ArrayList<Book> matches = new ArrayList<>();
         boolean hasMatches = false;
 
