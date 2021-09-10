@@ -213,6 +213,10 @@ public class Seller {
         Sale sale = inputProfileSale(this, buyer);
         this.updateCashFlow(sale);
         addProfileToDataSales(sale);
+
+        Screen.clear();
+        System.out.printf("Venda Realiza com Sucesso.");
+        Screen.pressEnterCont();
     }
 
     private Sale inputProfileSale(Seller seller, Customer buyer) {
@@ -266,6 +270,9 @@ public class Seller {
 
         Customer customer = inputProfileCustomer();
         addProfileToDataCustumers(customer);
+        Screen.clear();
+        System.out.printf("Registro de Cliente Realizado com Sucesso.");
+        Screen.pressEnterCont();
     }
 
     private Customer inputProfileCustomer() {
@@ -295,7 +302,10 @@ public class Seller {
                 System.out.printf("\nNenhum Cliente Encontrado com o Nome '%s'.\n", searchName);
             }
         } while (customer == null);
-        Screen.clear();
         customer.updateCustomerInfo();
+
+        Screen.clear();
+        System.out.printf("Atualização de Cliente Realizada com Sucesso.");
+        Screen.pressEnterCont();
     }
 }
