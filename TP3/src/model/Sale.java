@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class Sale {
     private Seller seller;
     private Customer buyer;
-    private ArrayList<Product> productsSold = new ArrayList<>();
+    private ArrayList<ProductsSoldInSale> productsSold = new ArrayList<>();
     private int unitsSold;
     private double subTotal;
 
     // Constructor
 
-    public Sale(Seller seller, Customer buyer, ArrayList<Product> productsSold, int unitsSold, double subTotal) {
+    public Sale(Seller seller, Customer buyer, ArrayList<ProductsSoldInSale> productsSold, int unitsSold,
+            double subTotal) {
         this.seller = seller;
         this.buyer = buyer;
         this.productsSold = productsSold;
@@ -29,7 +30,7 @@ public class Sale {
         return buyer;
     }
 
-    public ArrayList<Product> getproductsSold() {
+    public ArrayList<ProductsSoldInSale> getproductsSold() {
         return productsSold;
     }
 
