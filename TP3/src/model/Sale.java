@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import util.Print;
+
 public class Sale {
     private Seller seller;
     private Customer buyer;
@@ -42,9 +44,23 @@ public class Sale {
         return subTotal;
     }
 
+    // Overload
+    @Override
+    public String toString() {
+        return this.seller.getId() + " | " + this.seller.getName() + " | " + this.buyer + " | " + this.unitsSold
+                + " | R$ " + this.subTotal;
+    }
+
     // Lister
 
     public void list() {
+        Print.titleAndDescription("Listar Todas as Vendas",
+                "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
+        int i = 1;
 
+        for (Sale sale : Data.getSales()) {
+            System.out.printf("%d. ", i, sale.toString());
+            i++;
+        }
     }
 }
