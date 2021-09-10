@@ -8,12 +8,12 @@ public class ReadMenu {
 
         Print.inicial();
         do {
-            System.out.printf("Escolha : ");
+            System.out.printf("\nEscolha : ");
             choice = Read.Int();
             if (choice > last || choice < 0) {
                 System.out.printf("\nDigite uma opção válida.\n");
             }
-        } while (choice > 9 || choice < 0);
+        } while (choice > last || choice < 0);
         return choice;
     }
 }
