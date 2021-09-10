@@ -38,7 +38,6 @@ public class Print {
         System.out.printf(".9  - Listar Vendedores         \n");
         System.out.printf(".10 - Listar Produtos           \n");
         System.out.printf(".11 - Listar Clientes           \n");
-        System.out.printf(".12 - Listar Vendedores         \n");
         System.out.printf(".0  - Voltar ao Menu Inicial    \n");
 
         util.Print.split();
@@ -68,8 +67,8 @@ public class Print {
         util.Print.title("Listar Vendas Realiazadas");
 
         System.out.printf(".1 - Listar Todas as Vendas                    \n");
-        System.out.printf(".2 - Listar Vendas feitas por ID de vendedor   \n");
-        System.out.printf(".3 - Listar Vendas feitas por Nome de vendedor \n");
+        System.out.printf(".2 - Listar Vendas Feitas por Vendedor (ID)    \n");
+        System.out.printf(".3 - Listar Vendas Feitas por vendedor (Nome)  \n");
         System.out.printf(".0 - Voltar ao Menu Inicial                    \n");
 
         util.Print.split();
