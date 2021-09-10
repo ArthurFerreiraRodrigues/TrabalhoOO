@@ -71,14 +71,16 @@ public abstract class Product {
 
     // Lister
     public static void list() {
-        Print.titleAndDescription("Lista de Produtos Cadastrados", "ID | Tipo | Preço | Autor/Marca | Título/Nome");
+        Print.titleAndDescription("Lista de Produtos Cadastrados",
+                "ID | Tipo | Preço | Estoque | Autor/Marca | Título/Nome");
         for (Product product : Data.getProducts()) {
             if (product instanceof Book) {
-                System.out.printf("%d | Livro | R$ %.2f | %s | %s\n", product.getId(), product.getPrice(),
-                        ((Book) product).getAuthor(), ((Book) product).getTitle());
+                System.out.printf("%d | Livro | R$ %.2f | %d | %s | %s\n", product.getId(), product.getPrice(),
+                        product.getInStockQuant(), ((Book) product).getAuthor(), ((Book) product).getTitle());
             } else {
                 System.out.printf("%d | Outros | R$ %.2f | %s | %s\n", product.getId(), product.getPrice(),
-                        ((Miscellaneous) product).getBrand(), ((Miscellaneous) product).getName());
+                        product.getInStockQuant(), ((Miscellaneous) product).getBrand(),
+                        ((Miscellaneous) product).getName());
             }
         }
         Print.split();
