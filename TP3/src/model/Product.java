@@ -1,5 +1,9 @@
 package model;
 
+import products.Book;
+import products.Miscellaneous;
+import util.Print;
+
 public abstract class Product {
     protected int id;
     protected double price;
@@ -66,7 +70,19 @@ public abstract class Product {
     }
 
     // Lister
-    public abstract void list();
+    public void list() {
+        Print.titleAndDescription("Lista de Produtos Cadastrados", "ID | Tipo | Preço | Autor/Marca | Título/Nome");
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Book) {
+                System.out.printf("%d | Livro | R$ %.2f | %s | %s\n", product.getId(), product.getPrice(),
+                        ((Book) product).getAuthor(), ((Book) product).getTitle());
+            } else {
+                System.out.printf("%d | Outros | R$ %.2f | %s | %s\n", product.getId(), product.getPrice(),
+                        ((Miscellaneous) product).getBrand(), ((Miscellaneous) product).getName());
+            }
+        }
+        Print.split();
+    }
 
     // Search by ID
 
