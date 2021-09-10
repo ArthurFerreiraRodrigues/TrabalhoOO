@@ -7,7 +7,7 @@ import java.util.List;
  * Dataa Storage Class
  */
 public abstract class Data {
-    private static final ArrayList<StoreManager> storeManagers = new ArrayList<>(1);
+    private static final ArrayList<StoreManager> storeManagers = new ArrayList<>();
     private static final ArrayList<Seller> sellers = new ArrayList<>();
     private static final ArrayList<Customer> customers = new ArrayList<>();
     private static final ArrayList<Product> products = new ArrayList<>();

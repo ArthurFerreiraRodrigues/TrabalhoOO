@@ -84,7 +84,7 @@ public class Customer {
         int i = 1;
         for (Customer customer : Data.getCustomers()) {
 
-            System.out.printf("%d. %s | %s | %s | %d", i, customer.getName(), customer.getAdress(),
+            System.out.printf("%d. %s | %s | %s | %d\n", i, customer.getName(), customer.getAdress(),
                     customer.getCelNumber(), customer.getTimesInStore());
 
             i++;

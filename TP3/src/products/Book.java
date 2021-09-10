@@ -45,7 +45,7 @@ public class Book extends Product {
         int i = 1;
         for (Product product : Data.getProducts()) {
             if (product instanceof Book) {
-                System.out.printf("%d. ", i, ((Book) product).toString(), " | %s | %s\n", ((Book) product).getGenre(),
+                System.out.printf("%d. " + ((Book) product).toString() + " | %s | %s\n", i, ((Book) product).getGenre(),
                         ((Book) product).getType());
                 i++;
             }
@@ -64,19 +64,19 @@ public class Book extends Product {
     public void updateInfo() {
         Print.title("Alterar Dados de Livro");
         System.out.printf("Novo Código de Identificação :");
-        id = Read.Int();
+        this.id = Read.Int();
         System.out.printf("Novo Autor :");
-        author = Read.Line();
+        this.author = Read.Line();
         System.out.printf("Novo Título :");
-        title = Read.Line();
+        this.title = Read.Line();
         System.out.printf("Novo Tipo :");
-        type = Read.Line();
+        this.type = Read.Line();
         System.out.printf("Novo Gênero :");
-        genre = Read.Line();
+        this.genre = Read.Line();
         System.out.printf("Novo Preço :");
-        price = Read.Double();
+        this.price = Read.Double();
         System.out.printf("Nova Quantidade em Estoque :");
-        inStockQuant = Read.Int();
+        this.inStockQuant = Read.Int();
     }
 
     // Searches

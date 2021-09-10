@@ -35,7 +35,7 @@ public class Miscellaneous extends Product {
         int i = 1;
         for (Product product : Data.getProducts()) {
             if (product instanceof Miscellaneous) {
-                System.out.printf("%d. ", i, ((Miscellaneous) product).toString() + "\n");
+                System.out.printf("%d. " + ((Miscellaneous) product).toString() + "\n", i);
                 i++;
             }
         }
@@ -53,15 +53,15 @@ public class Miscellaneous extends Product {
     public void updateInfo() {
         Print.title("Alterar Dados de Produtos Variados");
         System.out.printf("Novo Código de Identificação :");
-        id = Read.Int();
+        this.id = Read.Int();
         System.out.printf("Novo Nome :");
-        name = Read.Line();
+        this.name = Read.Line();
         System.out.printf("Nova Marca :");
-        brand = Read.Line();
+        this.brand = Read.Line();
         System.out.printf("Novo Preço :");
-        price = Read.Double();
+        this.price = Read.Double();
         System.out.printf("Nova Quantidade em Estoque :");
-        inStockQuant = Read.Int();
+        this.inStockQuant = Read.Int();
     }
 
     // Searches

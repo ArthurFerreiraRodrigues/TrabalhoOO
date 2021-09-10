@@ -75,7 +75,7 @@ public class Seller {
         int i = 1;
 
         for (Seller seller : Data.getSellers()) {
-            System.out.printf("%d. %d | %s | %.2f | %d ", i, seller.getId(), seller.getName(), seller.getCashFlow(),
+            System.out.printf("%d. %d | %s | %.2f | %d \n", i, seller.getId(), seller.getName(), seller.getCashFlow(),
                     seller.getUnitsSold());
             i++;
         }
@@ -103,7 +103,7 @@ public class Seller {
                 "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         for (Sale sale : Data.getSales()) {
             if (sale.getseller().getId() == inputId) {
-                System.out.printf("%d. ", i, sale.toString());
+                System.out.printf("%d. " + sale.toString(), i);
             }
             i++;
         }
@@ -132,7 +132,7 @@ public class Seller {
                 "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         for (Seller seller : target) {
             for (Sale sale : seller.getSalesMade()) {
-                System.out.printf("%d. ", i, sale.toString());
+                System.out.printf("%d. " + sale.toString(), i);
                 i++;
             }
         }
@@ -144,9 +144,9 @@ public class Seller {
     public void updateInfo() {
         Print.title("Alterar Dados do Vendedor");
         System.out.printf("Novo ID :");
-        id = Read.Int();
+        this.id = Read.Int();
         System.out.printf("Novo Nome :");
-        name = Read.Line();
+        this.name = Read.Line();
     }
 
     private void updateCashFlow(Sale sale) {

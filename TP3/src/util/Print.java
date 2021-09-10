@@ -1,9 +1,5 @@
 package util;
 
-import model.Customer;
-import model.Data;
-import model.Product;
-
 public class Print {
 
     /**
@@ -54,22 +50,6 @@ public class Print {
         Print.spaces(description.length(), 60);
         System.out.print(description);
         Print.split();
-    }
-
-    /**
-     * Imprime todos os clientes cadastrados e seus informações.
-     * 
-     * @see appmain.Register Register.sales()
-     */
-    public static void customers() {
-        int contador = 1;
-        Print.titleAndDescription("Clientes Cadastrados", "Nome | Endereço | Telefone");
-        for (Customer customer : Data.getCustomers()) {
-            System.out.printf(".%d - %s | %s | %s\n", contador, customer.getName(), customer.getAdress(),
-                    customer.getCelNumber());
-
-            contador++;
-        }
     }
 
 }

@@ -59,7 +59,7 @@ public class Sale {
         int i = 1;
 
         for (Sale sale : Data.getSales()) {
-            System.out.printf("%d. ", i, sale.toString());
+            System.out.printf("%d. " + sale.toString() + "\n", i);
             i++;
         }
         Print.split();

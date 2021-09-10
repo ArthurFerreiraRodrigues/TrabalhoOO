@@ -1,12 +1,9 @@
 package util;
 
-import main.menu.Print;
-
 public class ReadMenu {
     public static int choice(int last) {
         int choice;
 
-        Print.inicial();
         do {
             System.out.printf("\nEscolha : ");
             choice = Read.Int();
