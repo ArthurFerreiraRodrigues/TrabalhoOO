@@ -70,14 +70,16 @@ public abstract class Product {
     }
 
     // Lister
-    public static void list() {
-        Print.titleAndDescription("Lista de Produtos Cadastrados",
+    public static void listInStock() {
+        Print.titleAndDescription("Lista de Produtos em Estoque",
                 "ID | Tipo | Preço | Estoque | Autor/Marca | Título/Nome");
         for (Product product : Data.getProducts()) {
-            if (product instanceof Book) {
-                System.out.printf(((Book) product).toString() + "\n");
-            } else {
-                System.out.printf(((Miscellaneous) product).toString() + "\n");
+            if (product.getInStockQuant() > 0) {
+                if (product instanceof Book) {
+                    System.out.printf(((Book) product).toString() + "\n");
+                } else {
+                    System.out.printf(((Miscellaneous) product).toString() + "\n");
+                }
             }
         }
         Print.split();
