@@ -70,7 +70,7 @@ public abstract class Product {
     }
 
     // Lister
-    public void list() {
+    public static void list() {
         Print.titleAndDescription("Lista de Produtos Cadastrados", "ID | Tipo | Preço | Autor/Marca | Título/Nome");
         for (Product product : Data.getProducts()) {
             if (product instanceof Book) {
