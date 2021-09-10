@@ -320,9 +320,9 @@ public class StoreManager {
                 confirmEdit = Read.Int();
                 switch (confirmEdit) {
                     case 1:
-                        if (match.getProductType().equals("Book")) {
+                        if (match instanceof Book) {
                             ((Book) match).updateInfo();
-                        } else {
+                        } else { // if (match instanceof Miscellaneous)
                             ((Miscellaneous) match).updateInfo();
                         }
                         break;

@@ -57,10 +57,12 @@ public class Miscellaneous extends Product {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
         boolean hasMatches = false;
 
-        for (Miscellaneous miscellaneous : Data.getProducts()) {
-            if (miscellaneous.getName() == searchInput) {
-                matches.add(miscellaneous);
-                hasMatches = true;
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Miscellaneous) {
+                if (((Miscellaneous) product).getName() == searchInput) {
+                    matches.add(((Miscellaneous) product));
+                    hasMatches = true;
+                }
             }
         }
 
@@ -76,10 +78,12 @@ public class Miscellaneous extends Product {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
         boolean hasMatches = false;
 
-        for (Miscellaneous miscellaneous : Data.getProducts()) {
-            if (miscellaneous.getBrand() == searchInput) {
-                matches.add(miscellaneous);
-                hasMatches = true;
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Miscellaneous) {
+                if (((Miscellaneous) product).getName() == searchInput) {
+                    matches.add(((Miscellaneous) product));
+                    hasMatches = true;
+                }
             }
         }
 

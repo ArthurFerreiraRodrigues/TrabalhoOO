@@ -71,10 +71,13 @@ public class Book extends Product {
         ArrayList<Book> matches = new ArrayList<>();
         boolean hasMatches = false;
 
-        for (Book book : Data.getProducts()) {
-            if (book.getAuthor() == searchInput) {
-                matches.add(book);
-                hasMatches = true;
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Book) {
+                if (((Book) product).getAuthor() == searchInput) {
+                    matches.add(((Book) product));
+                    hasMatches = true;
+                }
+
             }
         }
 
@@ -89,10 +92,12 @@ public class Book extends Product {
         ArrayList<Book> matches = new ArrayList<>();
         boolean hasMatches = false;
 
-        for (Book book : Data.getProducts()) {
-            if (book.getTitle() == searchInput) {
-                matches.add(book);
-                hasMatches = true;
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Book) {
+                if (((Book) product).getTitle() == searchInput) {
+                    matches.add(((Book) product));
+                    hasMatches = true;
+                }
             }
         }
 
