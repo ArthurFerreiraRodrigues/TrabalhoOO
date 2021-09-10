@@ -57,6 +57,13 @@ public class Customer {
     // Setters
 
     /**
+     * Increments in ONE the number of times a customer has visited the store
+     */
+    public void setTimesInStore() {
+        this.timesInStore += 1;
+    }
+
+    /**
      * Updates Customer Info.
      * 
      * @see appmain.Search
