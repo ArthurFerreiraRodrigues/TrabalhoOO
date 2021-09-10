@@ -5,6 +5,7 @@ import java.util.List;
 
 import util.Print;
 import util.Read;
+import util.Screen;
 
 public class Seller {
     int id;
@@ -95,6 +96,9 @@ public class Seller {
         name = Read.Line();
     }
 
+    private void updateCashFlow(Sale sale) {
+        this.cashFlow += sale.getSubTotal();
+    }
     // Searches
 
     /**
@@ -129,4 +133,78 @@ public class Seller {
         }
     }
 
+    // Adders
+    private static void addProfileToDataSales(Sale profile) {
+        Data.getSales().add(profile);
+    }
+
+    // Register
+
+    public void registerSale(Seller selected) {
+        Customer buyer;
+        Print.title("Cadastro de Nova Venda");
+
+        do {
+            System.out.printf("Digite o Nome Completo do Cliente : ");
+            String searchName = Read.Line();
+            buyer = Customer.searchByName(searchName);
+            if (buyer == null) {
+                System.out.printf("\nCliente com nome '%s' não encontrado.\n", searchName);
+            }
+        } while (buyer == null);
+
+        Sale sale = inputProfileSale(selected, buyer);
+        selected.updateCashFlow(sale);
+        addProfileToDataSales(sale);
+    }
+
+    private Sale inputProfileSale(Seller selected, Customer buyer) {
+        ArrayList<ProductsSoldInSale> productsSold = new ArrayList<>();
+        double subTotal = 0;
+        Seller seller = selected;
+        Product product;
+        int searchId, units, unitsSold = 0, i = 1;
+
+        Screen.clear();
+        Print.title("Cadastro de Nova Venda");
+        Product.list();
+        System.out.printf("Comprador : %s\n", buyer.getName());
+        System.out.printf("Digite 0 para encerrar Registro de Venda");
+        do {
+            System.out.printf("\tProduto %d\n", i);
+
+            do {
+                System.out.printf("\t\tID : ");
+                searchId = Read.Int();
+                product = Product.searchById(searchId);
+                if (product == null) {
+                    System.out.printf("\t\t\nDigite uma ID válida.\n");
+                }
+            } while (product == null);
+
+            do {
+                System.out.printf("\t\tQuantidade : ");
+                units = Read.Int();
+                if (units > product.inStockQuant) {
+                    System.out.printf("\t\t\nQuantidade vendida ultrapassa estoque.\n");
+                }
+                if (units <= 0) {
+                    System.out.printf("\t\t\nQuantidade vendida deve ser maior que 0.\n");
+                }
+            } while (units > product.inStockQuant || units <= 0);
+
+            unitsSold += units;
+            subTotal += units * product.getPrice();
+            product.uptateStockQuant(units);
+            productsSold.add(new ProductsSoldInSale(product, units));
+            i++;
+        } while (searchId == 0);
+
+        buyer.setTimesInStore();
+        return new Sale(seller, buyer, productsSold, unitsSold, subTotal);
+    }
+
+    public void registerCostumer() {
+
+    }
 }
