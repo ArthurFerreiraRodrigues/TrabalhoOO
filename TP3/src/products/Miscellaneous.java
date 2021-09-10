@@ -31,18 +31,25 @@ public class Miscellaneous extends Product {
     // Lister
 
     public void list() {
-
+        Print.titleAndDescription("Lista de Produtos Variados", "ID | Tipo | Preço | Estoque | Marca | Nome");
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Miscellaneous) {
+                System.out.printf(((Miscellaneous) product).toString() + "\n");
+            }
+        }
+        Print.split();
     }
 
     @Override
     public String toString() {
-        return this.getId() + " | Outros | R$ " + this.getPrice() + " | " + this.getInStockQuant() + " | "
-                + this.getBrand() + " | " + this.getName() + "\n";
+        return this.getId() + " | Variados | R$ " + this.getPrice() + " | " + this.getInStockQuant() + " | "
+                + this.getBrand() + " | " + this.getName();
     }
+
     // Setter
 
     public void updateInfo() {
-        Print.title("Alterar Dados de Outros");
+        Print.title("Alterar Dados de Produtos Variados");
         System.out.printf("Novo Código de Identificação :");
         id = Read.Int();
         System.out.printf("Novo Nome :");
