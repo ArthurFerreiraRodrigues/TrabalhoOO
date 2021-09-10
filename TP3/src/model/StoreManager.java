@@ -148,7 +148,7 @@ public class StoreManager {
 
     // Setters
 
-    public void coreStoreManager(String name, String username, String password) {
+    public void setCoreStoreManager(String name, String username, String password) {
         addProfileToDataStoreManager(new StoreManager(name, username, password));
     }
 
