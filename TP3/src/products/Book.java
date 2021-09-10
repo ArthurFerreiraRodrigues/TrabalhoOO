@@ -41,7 +41,15 @@ public class Book extends Product {
     // Lister
 
     public void list() {
+        Print.titleAndDescription("Lista de Livros", "ID | Tipo | Preço | Estoque | Autor | Título | Gênero | Tipo");
 
+        for (Product product : Data.getProducts()) {
+            if (product instanceof Book) {
+                System.out.printf(((Book) product).toString(), " | %s | %s\n", ((Book) product).getGenre(),
+                        ((Book) product).getType());
+            }
+        }
+        Print.split();
     }
 
     @Override
