@@ -43,6 +43,18 @@ public abstract class Product {
 
     // Setters
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setInStockQuant(int inStockQuant) {
+        this.inStockQuant = inStockQuant;
+    }
+
     /**
      * Updates quantities of Product in stock.
      * 
@@ -50,7 +62,7 @@ public abstract class Product {
      * @see appmain.Register Register.sales()
      */
     public void uptateStockQuant(int quantSold) {
-        inStockQuant = inStockQuant - quantSold;
+        this.inStockQuant = inStockQuant - quantSold;
     }
 
     // Lister
