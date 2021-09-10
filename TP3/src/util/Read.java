@@ -1,5 +1,6 @@
 package util;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 @SuppressWarnings("resource")
@@ -15,7 +16,8 @@ public class Read {
     }
 
     public static double Double() {
-        Scanner sc = new Scanner(System.in);
+        // Use locale to read double with . as decimal separators
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
 
         return sc.nextDouble();
     }
