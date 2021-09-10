@@ -30,7 +30,7 @@ public class Miscellaneous extends Product {
 
     // Lister
 
-    public void list() {
+    public static void list() {
         Print.titleAndDescription("Lista de Produtos Variados", "ID | Tipo | Preço | Estoque | Marca | Nome");
         int i = 1;
         for (Product product : Data.getProducts()) {

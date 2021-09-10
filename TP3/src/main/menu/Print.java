@@ -4,7 +4,7 @@ import model.Seller;
 
 public class Print {
 
-    public void inicial() {
+    public static void inicial() {
         util.Print.title("Menu Inicial");
 
         System.out.printf(".1  - Área do Gerente de Loja   \n");
@@ -24,7 +24,7 @@ public class Print {
     /**
      * Option 1 from Incial Menu
      */
-    public void storeManagerActions() {
+    public static void storeManagerActions() {
         util.Print.title("Área do Gerente de Loja");
 
         System.out.printf(".1  - Registrar Produto         \n");
@@ -46,7 +46,7 @@ public class Print {
     /**
      * Option 2 from Incial Menu
      */
-    public void sellerActions(Seller selected) {
+    public static void sellerActions(Seller selected) {
         util.Print.title("Área do Vendedor");
         System.out.printf("Vendedor Selecionado\n");
         System.out.printf("ID : %d | Nome : %s\n\n", selected.getId(), selected.getName());
@@ -63,7 +63,7 @@ public class Print {
     /**
      * Option 3 from Incial Menu
      */
-    public void listSalesOptions() {
+    public static void listSalesOptions() {
         util.Print.title("Listar Vendas Realiazadas");
 
         System.out.printf(".1 - Listar Todas as Vendas                    \n");

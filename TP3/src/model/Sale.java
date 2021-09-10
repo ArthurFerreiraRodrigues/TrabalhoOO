@@ -53,7 +53,7 @@ public class Sale {
 
     // Lister
 
-    public void list() {
+    public static void list() {
         Print.titleAndDescription("Listar Todas as Vendas",
                 "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         int i = 1;

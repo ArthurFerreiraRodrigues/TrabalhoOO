@@ -70,7 +70,7 @@ public class Seller {
 
     // Listers
 
-    public void list() {
+    public static void list() {
         Print.titleAndDescription("Listar Vendedores", "ID Vendedor | Nome Vendedor | Fluxo de Caixa | Qtd.Unidades");
 
         int i = 1;
@@ -83,7 +83,7 @@ public class Seller {
         Print.split();
     }
 
-    public void listSalesMadeById() {
+    public static void listSalesMadeById() {
         Seller target;
         int inputId;
         int i = 1;
@@ -112,7 +112,7 @@ public class Seller {
         Print.split();
     }
 
-    public void listSalesMadeByName() {
+    public static void listSalesMadeByName() {
         ArrayList<Seller> target = new ArrayList<>();
         String searchName;
         int i = 1;
@@ -169,7 +169,7 @@ public class Seller {
         return null;
     }
 
-    public ArrayList<Seller> searchByName(String searchName) {
+    public static ArrayList<Seller> searchByName(String searchName) {
         ArrayList<Seller> matches = new ArrayList<>();
         boolean hasMatches = false;
 
@@ -199,7 +199,7 @@ public class Seller {
 
     public void registerSale() {
         Customer buyer;
-        Print.title("Cadastro de Nova Venda");
+        Print.title("Registrar Venda");
         System.out.printf("Vendedor %d : %s\n", this.id, this.name);
         do {
             System.out.printf("Digite o Nome Completo do Cliente : ");
@@ -222,7 +222,7 @@ public class Seller {
         int searchId, units, unitsSold = 0, i = 1;
 
         Screen.clear();
-        Print.title("Cadastro de Nova Venda");
+        Print.title("Registrar Venda");
         Product.listInStock();
         System.out.printf("Comprador : %s\n", buyer.getName());
         System.out.printf("Digite 0 para encerrar Registro de Venda");
@@ -261,7 +261,7 @@ public class Seller {
     }
 
     public void registerCustomer() {
-        Print.title("Cadastro de Nova Cliente");
+        Print.title("Registrar Cliente");
         System.out.printf("Vendedor %d : %s\n", this.id, this.name);
 
         Customer customer = inputProfileCustomer();
@@ -282,4 +282,9 @@ public class Seller {
         return new Customer(name, adress, celNumber, timesInStore);
     }
 
+    public void updateCustomer(){
+        Print.title("Atualizar Cliente");
+        Customer.list();
+        Customer.searchByName(searchName)
+    }
 }

@@ -69,7 +69,7 @@ public class Customer {
      * @see appmain.Search
      */
     public void updateCustomerInfo() {
-        Print.title("Alterar Dados do Cliente");
+        Print.title("Alterar Cliente");
         System.out.printf("Novo Nome :");
         name = Read.Line();
         System.out.printf("Novo Endereço :");
@@ -79,7 +79,7 @@ public class Customer {
     }
 
     // Lister
-    public void list() {
+    public static void list() {
         Print.titleAndDescription("Lista de Clientes", "Nome | Endereço | Telefone | Qtd.Visitas");
         int i = 1;
         for (Customer customer : Data.getCustomers()) {

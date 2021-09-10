@@ -40,7 +40,7 @@ public class Book extends Product {
 
     // Lister
 
-    public void list() {
+    public static void list() {
         Print.titleAndDescription("Lista de Livros", "ID | Tipo | Preço | Estoque | Autor | Título | Gênero | Tipo");
         int i = 1;
         for (Product product : Data.getProducts()) {
