@@ -65,8 +65,6 @@ public class Seller {
         return productsSold;
     }
 
-    // Setters
-
     // Listers
 
     public void list() {
@@ -114,8 +112,21 @@ public class Seller {
         return null;
     }
 
-    public void searchByName() {
+    public ArrayList<Seller> searchByName(String searchName) {
+        ArrayList<Seller> matches = new ArrayList<>();
+        boolean hasMatches = false;
 
+        for (Seller seller : Data.getSellers()) {
+            if (seller.getName() == searchName) {
+                matches.add(seller);
+                hasMatches = true;
+            }
+        }
+        if (hasMatches) {
+            return matches;
+        } else {
+            return null;
+        }
     }
 
 }
