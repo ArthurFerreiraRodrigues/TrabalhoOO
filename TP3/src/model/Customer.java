@@ -71,11 +71,11 @@ public class Customer {
     public void updateCustomerInfo() {
         Print.title("Alterar Cliente");
         System.out.printf("Novo Nome :");
-        name = Read.Line();
+        this.name = Read.Line();
         System.out.printf("Novo Endereço :");
-        adress = Read.Line();
+        this.adress = Read.Line();
         System.out.printf("Novo Telefone :");
-        celNumber = Read.Line();
+        this.celNumber = Read.Line();
     }
 
     // Lister
