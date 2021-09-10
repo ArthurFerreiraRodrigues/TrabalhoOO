@@ -141,10 +141,16 @@ public class StoreManager {
      * 
      * @param profile
      * @see model.Data
-     * 
-     *      private static void addProfileToDataStoreManager(StoreManager profile) {
-     *      Data.getStoreManagers().add(profile); }
      */
+    private static void addProfileToDataStoreManager(StoreManager profile) {
+        Data.getStoreManagers().set(0, profile);
+    }
+
+    // Setters
+
+    public void coreStoreManager(String name, String username, String password) {
+        addProfileToDataStoreManager(new StoreManager(name, username, password));
+    }
 
     // Registers
 
