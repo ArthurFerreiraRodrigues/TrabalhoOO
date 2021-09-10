@@ -7,16 +7,16 @@ public class Print {
     public void inicial() {
         util.Print.title("Menu Inicial");
 
-        System.out.printf(".1 - Área do Gerente de Loja   \n");
-        System.out.printf(".2 - Área do Vendedor          \n");
-        System.out.printf(".3 - Listar Vendas Realiazadas \n");
-        System.out.printf(".4 - Listar Produtos           \n");
-        System.out.printf(".5 - Listar Clientes           \n");
-        System.out.printf(".6 - Listar Vendedores         \n");
-        System.out.printf(".7 - Buscar Produtos           \n");
-        System.out.printf(".5 - Buscar Clientes           \n");
-        System.out.printf(".6 - Buscar Vendedores         \n");
-        System.out.printf(".0 - Sair                      \n");
+        System.out.printf(".1  - Área do Gerente de Loja   \n");
+        System.out.printf(".2  - Área do Vendedor          \n");
+        System.out.printf(".3  - Listar Vendas Realiazadas \n");
+        System.out.printf(".4  - Listar Produtos           \n");
+        System.out.printf(".5  - Listar Clientes           \n");
+        System.out.printf(".6  - Listar Vendedores         \n");
+        System.out.printf(".7  - Buscar Produtos           \n");
+        System.out.printf(".8  - Buscar Clientes           \n");
+        System.out.printf(".9  - Buscar Vendedores         \n");
+        System.out.printf(".0  - Sair                      \n");
 
         util.Print.split();
     }
