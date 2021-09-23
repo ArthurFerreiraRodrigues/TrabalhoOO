@@ -47,8 +47,8 @@ public class Sale {
     // Overload
     @Override
     public String toString() {
-        return this.seller.getId() + " | " + this.seller.getName() + " | " + this.buyer + " | " + this.unitsSold
-                + " | R$ " + this.subTotal;
+        return this.seller.getId() + " | " + this.seller.getName() + " | " + this.buyer.getName() + " | "
+                + this.unitsSold + " | R$ " + this.subTotal;
     }
 
     // Lister
