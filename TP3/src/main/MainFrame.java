@@ -1,0 +1,142 @@
+package main;
+
+import java.awt.Toolkit;
+import java.awt.CardLayout;
+import java.awt.Container;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+
+import vision.menu.*;
+
+import vision.listers.ListAllSales;
+import vision.listers.ListSalesById;
+import vision.listers.ListSalesByName;
+
+import util.Fill;
+
+public class MainFrame extends JFrame implements AncestorListener {
+
+    private JPanel contentPane;
+    private static Container cont;
+
+    private InicialMenu inicialMenu;
+    private StoreManagerMenu storeManagerMenu;
+    private SellerMenu sellerMenu;
+    private ListSalesMenu listSalesMenu;
+
+    private ListAllSales listAllSales;
+    private ListSalesById listSalesById;
+    private ListSalesByName listSalesByName;
+
+    private MainFrameControl controller;
+
+    public static void main(String[] args) throws Exception {
+        Fill.customer();
+        Fill.productList();
+        Fill.setStoreManager(); // Nome : Gerete | Username : Gerente | Senha : Gerente
+        Fill.seller();
+        Fill.sale();
+        // main.menu.Switch.inicial();
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
+    }
+
+    public MainFrame() {
+        controller = new MainFrameControl(this);
+
+        setTitle("T8.8 - Livraria");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(MainFrame.class.getResource("/vision/images/iconUnb.png")));
+        setResizable(false);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setBounds(0, 0, 850, 570);
+        setLocationRelativeTo(null);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(new CardLayout());
+
+        // Menus
+        inicialMenu = new InicialMenu();
+        inicialMenu.addAncestorListener(this);
+
+        storeManagerMenu = new StoreManagerMenu();
+        storeManagerMenu.addAncestorListener(this);
+
+        sellerMenu = new SellerMenu();
+        sellerMenu.addAncestorListener(this);
+
+        listSalesMenu = new ListSalesMenu();
+        listSalesMenu.addAncestorListener(this);
+
+        getContentPane().add(inicialMenu, "inicialMenu");
+        getContentPane().add(storeManagerMenu, "storeManagerMenu");
+        getContentPane().add(sellerMenu, "sellerMenu");
+        getContentPane().add(listSalesMenu, "listSalesMenu");
+
+        // ------------------------------------------------------------------------------//
+
+        // Options
+
+        listAllSales = new ListAllSales();
+        listAllSales.addAncestorListener(this);
+
+        listSalesById = new ListSalesById();
+        listSalesById.addAncestorListener(this);
+
+        listSalesByName = new ListSalesByName();
+        listSalesByName.addAncestorListener(this);
+
+        getContentPane().add(listAllSales, "listAllSales");
+        getContentPane().add(listSalesById, "listSalesById");
+        getContentPane().add(listSalesByName, "listSalesByName");
+
+        // ------------------------------------------------------------------------------//
+
+        // .addAncestorListener(this);
+
+        cont = getContentPane();
+
+    }
+
+    @Override
+    public void ancestorAdded(AncestorEvent event) {
+        controller.screenRefresh(event.getSource());
+    }
+
+    @Override
+    public void ancestorRemoved(AncestorEvent event) {
+        // Vazio
+    }
+
+    @Override
+    public void ancestorMoved(AncestorEvent event) {
+
+        // Vazio
+    }
+
+    public static Container getCont() {
+        return cont;
+    }
+
+    public InicialMenu getInicialMenu() {
+        return inicialMenu;
+    }
+
+    public StoreManagerMenu getStoreManagerMenu() {
+        return storeManagerMenu;
+    }
+
+    public SellerMenu getSellerMenu() {
+        return sellerMenu;
+    }
+
+    public ListSalesMenu getListSales() {
+        return listSalesMenu;
+    }
+
+}
