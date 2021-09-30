@@ -41,7 +41,7 @@ public class Customer {
     }
 
     /**
-     * @return Costumer cellphone number
+     * @return Customer cellphone number
      */
     public String getCelNumber() {
         return celNumber;

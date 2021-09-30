@@ -501,7 +501,7 @@ public class StoreManager {
 
     /*----------------------------------------------------------------------*/
     /**
-     * Deletes Costumer.
+     * Deletes Customer.
      */
     public static void deleteCustomer() {
         String searchId;
