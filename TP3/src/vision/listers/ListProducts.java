@@ -17,6 +17,8 @@ import model.Data;
 import vision.table.Products;
 
 /**
+ * Lister - ListProducts.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -32,6 +34,11 @@ public class ListProducts extends JPanel implements ActionListener {
 
     private final ListProductsControl controller;
 
+    /**
+     * Adds a Table and a button do go back to the main menu.
+     * 
+     * @see vision.table.Products
+     */
     public ListProducts() {
         int standartPos = 80, spacer = 50;
         controller = new ListProductsControl(this);
@@ -50,7 +57,6 @@ public class ListProducts extends JPanel implements ActionListener {
 
         String[] header = { "  ", "ID Produto", "Tipo do Produto", "Preço (R$)", "Estoque", " Autor/Marca",
                 "Título/Nome" };
-        // table.setSelectionMode(0);
         scroll = new JScrollPane();
         scroll.setViewportView(
                 new JTable(Products.genTable(Products.toArrayList(Data.getProducts().toArray()), header, false)));
@@ -66,6 +72,11 @@ public class ListProducts extends JPanel implements ActionListener {
         add(buttonHome);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

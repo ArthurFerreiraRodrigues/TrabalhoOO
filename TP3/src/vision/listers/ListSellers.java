@@ -17,6 +17,8 @@ import model.Data;
 import vision.table.Sellers;
 
 /**
+ * Lister - ListSellers.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  *
@@ -33,7 +35,9 @@ public class ListSellers extends JPanel implements ActionListener {
     private final ListSellersControl controller;
 
     /**
-     * Class Constructor
+     * Adds a Table and a button do go back to the main menu.
+     * 
+     * @see vision.table.Sellers
      */
     public ListSellers() {
         int standartPos = 80, spacer = 50;

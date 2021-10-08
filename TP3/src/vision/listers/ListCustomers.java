@@ -18,6 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
+ * Lister - ListCustomers.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -33,6 +35,11 @@ public class ListCustomers extends JPanel implements ActionListener {
 
     private final ListCustomersControl controller;
 
+    /**
+     * Adds a Table and a button do go back to the main menu.
+     * 
+     * @see vision.table.Customers
+     */
     public ListCustomers() {
         int standartPos = 80, spacer = 50;
         controller = new ListCustomersControl(this);
@@ -50,7 +57,6 @@ public class ListCustomers extends JPanel implements ActionListener {
         add(labelTitle);
 
         String[] header = { "  ", "Nome", "Endereço", "Telefone", "Qtd.Visitas" };
-        // table.setSelectionMode(0);
         scroll = new JScrollPane();
         scroll.setViewportView(
                 new JTable(Customers.genTable(Customers.toArrayList(Data.getCustomers().toArray()), header, false)));
@@ -66,6 +72,11 @@ public class ListCustomers extends JPanel implements ActionListener {
         add(buttonHome);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());
