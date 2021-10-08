@@ -12,13 +12,23 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
 import vision.menu.*;
+import vision.deleters.*;
 
 import vision.listers.ListAllSales;
+import vision.listers.ListCustomers;
+import vision.listers.ListProducts;
 import vision.listers.ListSalesById;
 import vision.listers.ListSalesByName;
-
+import vision.listers.ListSellers;
 import util.Fill;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see javax.swing.JFrame
+ * @see javax.swing.event.AncestorListener
+ */
 public class MainFrame extends JFrame implements AncestorListener {
 
     private JPanel contentPane;
@@ -29,12 +39,26 @@ public class MainFrame extends JFrame implements AncestorListener {
     private SellerMenu sellerMenu;
     private ListSalesMenu listSalesMenu;
 
+    private DeleteProduct deleteProduct;
+    private DeleteCustomer deleteCustomer;
+    private DeleteSeller deleteSeller;
+
     private ListAllSales listAllSales;
     private ListSalesById listSalesById;
     private ListSalesByName listSalesByName;
-
+    private ListProducts listProducts;
+    private ListSellers listSellers;
+    private ListCustomers listCustomers;
     private MainFrameControl controller;
 
+    /**
+     * Initialize the MainFrame and Fill the DataSet
+     * 
+     * @param args
+     * @throws Exception
+     * 
+     * @see util.Fill
+     */
     public static void main(String[] args) throws Exception {
         Fill.customer();
         Fill.productList();
@@ -46,6 +70,9 @@ public class MainFrame extends JFrame implements AncestorListener {
         frame.setVisible(true);
     }
 
+    /**
+     * Main Graphical Interface
+     */
     public MainFrame() {
         controller = new MainFrameControl(this);
 
@@ -80,7 +107,23 @@ public class MainFrame extends JFrame implements AncestorListener {
 
         // ------------------------------------------------------------------------------//
 
-        // Options
+        // StoreManagerMenu options
+
+        deleteCustomer = new DeleteCustomer();
+        deleteCustomer.addAncestorListener(this);
+
+        deleteSeller = new DeleteSeller();
+        deleteSeller.addAncestorListener(this);
+
+        deleteProduct = new DeleteProduct();
+        deleteProduct.addAncestorListener(this);
+
+        getContentPane().add(deleteCustomer, "deleteCustomer");
+        getContentPane().add(deleteSeller, "deleteSeller");
+        getContentPane().add(deleteProduct, "deleteProduct");
+        // ------------------------------------------------------------------------------//
+
+        // Listers
 
         listAllSales = new ListAllSales();
         listAllSales.addAncestorListener(this);
@@ -91,9 +134,21 @@ public class MainFrame extends JFrame implements AncestorListener {
         listSalesByName = new ListSalesByName();
         listSalesByName.addAncestorListener(this);
 
+        listSellers = new ListSellers();
+        listSellers.addAncestorListener(this);
+
+        listProducts = new ListProducts();
+        listProducts.addAncestorListener(this);
+
+        listCustomers = new ListCustomers();
+        listCustomers.addAncestorListener(this);
+
         getContentPane().add(listAllSales, "listAllSales");
         getContentPane().add(listSalesById, "listSalesById");
         getContentPane().add(listSalesByName, "listSalesByName");
+        getContentPane().add(listSellers, "listSellers");
+        getContentPane().add(listCustomers, "listCustomers");
+        getContentPane().add(listProducts, "listProducts");
 
         // ------------------------------------------------------------------------------//
 
@@ -103,6 +158,11 @@ public class MainFrame extends JFrame implements AncestorListener {
 
     }
 
+    /**
+     * Refreshes the screen
+     * 
+     * @param
+     */
     @Override
     public void ancestorAdded(AncestorEvent event) {
         controller.screenRefresh(event.getSource());
@@ -123,6 +183,10 @@ public class MainFrame extends JFrame implements AncestorListener {
         return cont;
     }
 
+    public MainFrameControl getController() {
+        return controller;
+    }
+
     public InicialMenu getInicialMenu() {
         return inicialMenu;
     }
@@ -135,8 +199,20 @@ public class MainFrame extends JFrame implements AncestorListener {
         return sellerMenu;
     }
 
-    public ListSalesMenu getListSales() {
+    public ListSalesMenu getListSalesMenu() {
         return listSalesMenu;
+    }
+
+    public ListAllSales getListAllSales() {
+        return listAllSales;
+    }
+
+    public ListSalesById getListSalesById() {
+        return listSalesById;
+    }
+
+    public ListSalesByName getListSalesByName() {
+        return listSalesByName;
     }
 
 }
