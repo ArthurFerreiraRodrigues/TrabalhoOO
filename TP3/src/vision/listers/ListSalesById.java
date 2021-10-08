@@ -1,25 +1,105 @@
 package vision.listers;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import control.InicialMenuControl;
-
-import java.awt.Font;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
+import control.ListSalesByIdControl;
+import model.Data;
+import vision.table.Sales;
+
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see javax.swing.JPanel
+ * @see java.awt.event.ActionListener
+ */
 public class ListSalesById extends JPanel implements ActionListener {
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+    private static final Font FONT = new Font("Default", Font.PLAIN, 16);
+    private static final String[] header = { "  ", "ID Vendedor", "Nome Vendedor", "Cliente", "Qtd.Unidades",
+            "Total (R$)" };
+
+    private Object[] arraySellers = Data.getSellersInfo(Data.getSellers(), 2);
+
+    private JComboBox<Object> selector = new JComboBox<>(arraySellers);
+    private JScrollPane scroll;
+
+    private final JButton buttonHome;
+
+    private final ListSalesByIdControl controller;
+
+    public ListSalesById() {
+        int standartPos = 80, spacer = 50;
+        controller = new ListSalesByIdControl(this);
+
+        JPanel panel = new JPanel();
+
+        panel.setBounds(100, 100, 830, 522);
+        panel.setLayout(null);
+
+        JLabel labelTitle = new JLabel("Listar Vendas por ID");
+        labelTitle.setVerticalAlignment(SwingConstants.TOP);
+        labelTitle.setForeground(Color.GRAY);
+        labelTitle.setFont(new Font("Default", Font.BOLD, 45));
+        labelTitle.setBounds(150, 5, 800, 800);
+        add(labelTitle);
+
+        // JComboBox
+        selector.addActionListener(this);
+        selector.setBackground(Color.LIGHT_GRAY);
+        selector.setForeground(Color.BLACK);
+        selector.setFont(FONT);
+        selector.setBounds(340, standartPos + spacer * 0, 120, 31);
+        add(selector);
+
+        scroll = new JScrollPane();
+        add(scroll);
+
+        buttonHome = new JButton("Tela Inicial");
+        buttonHome.setBackground(Color.LIGHT_GRAY);
+        buttonHome.setForeground(Color.BLACK);
+        buttonHome.setFont(FONT);
+        buttonHome.setBounds(340, standartPos + spacer * 3, 120, 31);
+        buttonHome.addActionListener(this);
+        add(buttonHome);
 
     }
 
+    public JTable scrollViewportView(int index, String[] header) {
+        return Sales.genTableAll(Sales.toArrayList(Data.getSellers().get(index).getSales(Data.getSales()).toArray()),
+                header);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        controller.execute(e.getSource());
+
+    }
+
+    public JComboBox<Object> getSelector() {
+        return selector;
+    }
+
+    public JScrollPane getScroll() {
+        return scroll;
+    }
+
+    public JButton getButtonHome() {
+        return buttonHome;
+    }
+
+    public String[] getHeader() {
+        return header;
+    }
 }
