@@ -19,7 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
- * Menu option class for StoreManagerMenu DeleteCustomer
+ * Menu option class for StoreManagerMenu - DeleteCustomer
  * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
