@@ -2,9 +2,15 @@ package main;
 
 import java.awt.CardLayout;
 
+import vision.listers.ListSalesById;
 import vision.menu.InicialMenu;
 import vision.menu.StoreManagerMenu;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class MainFrameControl {
     private MainFrame view;
 
@@ -18,6 +24,8 @@ public class MainFrameControl {
             InicialMenu screenDisplaying = (InicialMenu) screen;
         } else if (screen == view.getStoreManagerMenu()) {
             StoreManagerMenu screenDisplaying = (StoreManagerMenu) screen;
+        } else if (screen == view.getListSalesById()) {
+            ListSalesById screenDisplaying = (ListSalesById) screen;
         }
     }
 
@@ -56,4 +64,34 @@ public class MainFrameControl {
         cl.show(MainFrame.getCont(), "listSalesByName");
     }
 
+    public static void showDeleteCustomer() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "deleteCustomer");
+    }
+
+    public static void showDeleteSeller() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "deleteSeller");
+    }
+
+    public static void showDeleteProduct() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "deleteProduct");
+    }
+
+    public static void showListSellers() {
+
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "listSellers");
+    }
+
+    public static void showListProducts() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "listProducts");
+    }
+
+    public static void showListCustomers() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "listCustomers");
+    }
 }
