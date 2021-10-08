@@ -3,6 +3,11 @@ package control;
 import main.MainFrameControl;
 import vision.menu.ListSalesMenu;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class ListSalesMenuControl {
     private ListSalesMenu view;
 

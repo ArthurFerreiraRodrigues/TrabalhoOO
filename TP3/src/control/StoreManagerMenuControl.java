@@ -3,6 +3,11 @@ package control;
 import main.MainFrameControl;
 import vision.menu.StoreManagerMenu;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class StoreManagerMenuControl {
     private StoreManagerMenu view;
 
@@ -24,17 +29,17 @@ public class StoreManagerMenuControl {
         } else if (actioned == view.getButtonUpdateStoreManager()) {
             // MainFrameControl.showInicialMenu();
         } else if (actioned == view.getButtonDeleteProduct()) {
-            // MainFrameControl.showInicialMenu();
+            MainFrameControl.showDeleteProduct();
         } else if (actioned == view.getButtonDeleteSeller()) {
-            // MainFrameControl.showInicialMenu();
+            MainFrameControl.showDeleteSeller();
         } else if (actioned == view.getButtonDeleteCustomer()) {
-            // MainFrameControl.showInicialMenu();
+            MainFrameControl.showDeleteCustomer();
         } else if (actioned == view.getButtonListProducts()) {
-            // MainFrameControl.showInicialMenu();
+            MainFrameControl.showListProducts();
         } else if (actioned == view.getButtonListSellers()) {
-            // MainFrameControl.showInicialMenu();
+            MainFrameControl.showListSellers();
         } else if (actioned == view.getButtonListCustomers()) {
-            // MainFrameControl.showInicialMenu();
+            MainFrameControl.showListCustomers();
         } else if (actioned == view.getButtonHome()) {
             MainFrameControl.showInicialMenu();
         }
