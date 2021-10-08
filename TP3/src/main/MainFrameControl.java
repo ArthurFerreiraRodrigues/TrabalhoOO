@@ -7,9 +7,13 @@ import vision.menu.InicialMenu;
 import vision.menu.StoreManagerMenu;
 
 /**
+ * 
+ * Controller for MainFrame class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
+ * @see main.MainFrame
  */
 public class MainFrameControl {
     private MainFrame view;

@@ -2,12 +2,12 @@ package model;
 
 import products.Book;
 import products.Miscellaneous;
-import util.Print;
-import util.Read;
-import util.ReadMenu;
-import util.Screen;
 
 /**
+ * Model class of a store manager.
+ * <p>
+ * System administrator.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -17,7 +17,7 @@ public class StoreManager {
     private boolean loginStatus;
 
     /**
-     * Gera o profile do Gerente
+     * Initialize a StoreManager Object
      * 
      * @param name     : Store Manager name
      * @param username : Store Manager login username
@@ -57,13 +57,11 @@ public class StoreManager {
     // Info Updater
 
     public void updateInfo() {
-        Print.title("Alterar Dados do Gerente");
-        System.out.printf("Novo Nome :");
-        name = Read.Line();
-        System.out.printf("Novo Nome de Usuário :");
-        username = Read.Line();
-        System.out.printf("Nova Senha :");
-        password = Read.Line();
+        /*
+         * Print.title("Alterar Dados do Gerente"); System.out.printf("Novo Nome :");
+         * name = Read.Line(); System.out.printf("Novo Nome de Usuário :"); username =
+         * Read.Line(); System.out.printf("Nova Senha :"); password = Read.Line();
+         */
     }
 
     /*----------------------------------------------------------------------*/
@@ -92,26 +90,20 @@ public class StoreManager {
      */
     public static StoreManager login() {
         String inputUser, inputPass;
-        StoreManager loginModel;
+        StoreManager loginModel = null;
 
-        Print.titleAndDescription("Login de Gerente", "Usuario e Senha padrao : Gerente");
-        do {
-            System.out.printf("Usuario : ");
-            inputUser = Read.Line();
-            System.out.printf("Senha : ");
-            inputPass = Read.Line();
-
-            loginModel = verifyLogin(inputUser, inputPass);
-            if (loginModel == null) {
-                System.out.printf("\nUsuario ou Senha sem correspondentes. Tente novamente.");
-            }
-            Print.split();
-        } while (loginModel == null);
-        loginModel.loginStatus = true;
-        Screen.clear();
-        System.out.printf("Login realizado com sucesso !\n");
-        Print.split();
-        Screen.pressEnterCont();
+        /*
+         * do { System.out.printf("Usuario : "); inputUser = Read.Line();
+         * System.out.printf("Senha : "); inputPass = Read.Line();
+         * 
+         * loginModel = verifyLogin(inputUser, inputPass); if (loginModel == null) {
+         * System.out.printf("\nUsuario ou Senha sem correspondentes. Tente novamente."
+         * ); }
+         * 
+         * } while (loginModel == null); loginModel.loginStatus = true;
+         * 
+         * System.out.printf("Login realizado com sucesso !\n");
+         */
 
         return loginModel;
     }
@@ -175,75 +167,59 @@ public class StoreManager {
     public static void registerProduct() {
         int choice;
 
-        Print.title("Cadastro de Novo Produto");
-
-        System.out.printf("Quantidade de produtos a serem cadastrados : ");
-        int quantProducts = Read.Int();
-        for (int i = 0; i < quantProducts; i++) {
-            do {
-                System.out.printf("Deseja cadastrar :\n\t1-Livro\t2-Outros\n");
-                choice = Read.Int();
-                switch (choice) {
-                    case 1: // Book
-                        Book profileBook = inputProfileBook();
-                        addProfileToDataProduct(profileBook);
-                        break;
-                    case 2: // Miscellaneous
-                        Miscellaneous profileMiscellaneous = inputProfileMiscellaneous();
-                        addProfileToDataProduct(profileMiscellaneous);
-                        break;
-                    default:
-                        System.out.printf("Digite uma alternativa válida.\n");
-                }
-            } while (choice != 1 && choice != 2);
-            Screen.clear();
-            System.out.printf("Registro de Produto Realizado com Sucesso.");
-            Screen.pressEnterCont();
-        }
+        /*
+         * Print.title("Cadastro de Novo Produto");
+         * 
+         * System.out.printf("Quantidade de produtos a serem cadastrados : "); int
+         * quantProducts = Read.Int(); for (int i = 0; i < quantProducts; i++) { do {
+         * System.out.printf("Deseja cadastrar :\n\t1-Livro\t2-Outros\n"); choice =
+         * Read.Int(); switch (choice) { case 1: // Book Book profileBook =
+         * inputProfileBook(); addProfileToDataProduct(profileBook); break; case 2: //
+         * Miscellaneous Miscellaneous profileMiscellaneous =
+         * inputProfileMiscellaneous(); addProfileToDataProduct(profileMiscellaneous);
+         * break; default: System.out.printf("Digite uma alternativa válida.\n"); } }
+         * while (choice != 1 && choice != 2); Screen.clear();
+         * System.out.printf("Registro de Produto Realizado com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     private static Book inputProfileBook() {
-        System.out.printf("\nProduto %d - Livro\n", Data.getSizeOfProducts() + 1);
-
-        System.out.print("\tCódigo de identificação : ");
-        int id = Read.Int();
-
-        System.out.print("\tPreço : ");
-        double price = Read.Double();
-
-        System.out.print("\tAutor : ");
-        String author = Read.Line();
-        System.out.print("\tTítulo : ");
-        String title = Read.Line();
-        System.out.print("\tTipo : ");
-        String type = Read.Line();
-        System.out.print("\tGênero : ");
-        String genre = Read.Line();
-
-        System.out.print("\tQuantidade em Estoque : ");
-        int inStockQuant = Read.Int();
-
-        return new Book(id, price, inStockQuant, author, title, type, genre);
+        /*
+         * System.out.printf("\nProduto %d - Livro\n", Data.getSizeOfProducts() + 1);
+         * 
+         * System.out.print("\tCódigo de identificação : "); int id = Read.Int();
+         * 
+         * System.out.print("\tPreço : "); double price = Read.Double();
+         * 
+         * System.out.print("\tAutor : "); String author = Read.Line();
+         * System.out.print("\tTítulo : "); String title = Read.Line();
+         * System.out.print("\tTipo : "); String type = Read.Line();
+         * System.out.print("\tGênero : "); String genre = Read.Line();
+         * 
+         * System.out.print("\tQuantidade em Estoque : "); int inStockQuant =
+         * Read.Int();
+         */
+        // return new Book(id, price, inStockQuant, author, title, type, genre);
+        return null;
     }
 
     private static Miscellaneous inputProfileMiscellaneous() {
-        System.out.printf("\nProduto %d - Outros\n", Data.getSizeOfProducts() + 1);
-
-        System.out.print("\tCódigo de identificação : ");
-        int id = Read.Int();
-
-        System.out.print("\tPreço : ");
-        double price = Read.Double();
-
-        System.out.print("\tNome : ");
-        String name = Read.Line();
-        System.out.print("\tMarca : ");
-        String brand = Read.Line();
-
-        System.out.print("\tQuantidade em Estoque : ");
-        int inStockQuant = Read.Int();
-
-        return new Miscellaneous(id, price, inStockQuant, name, brand);
+        /*
+         * System.out.printf("\nProduto %d - Outros\n", Data.getSizeOfProducts() + 1);
+         * 
+         * System.out.print("\tCódigo de identificação : "); int id = Read.Int();
+         * 
+         * System.out.print("\tPreço : "); double price = Read.Double();
+         * 
+         * System.out.print("\tNome : "); String name = Read.Line();
+         * System.out.print("\tMarca : "); String brand = Read.Line();
+         * 
+         * System.out.print("\tQuantidade em Estoque : "); int inStockQuant =
+         * Read.Int();
+         */
+        // return new Miscellaneous(id, price, inStockQuant, name, brand);
+        return null;
     }
 
     /*----------------------------------------------------------------------*/
@@ -254,32 +230,32 @@ public class StoreManager {
      * @see model.Data
      */
     public static void registerSeller() {
-        Print.title("Cadastro de Novo Vendedor");
-
-        System.out.print("Quantidade de vendedores a serem cadastrados : ");
-        int quantCustomers = Read.Int();
-        for (int i = 0; i < quantCustomers; i++) {
-            Seller profile = inputProfileSeller();
-            addProfileToDataSeller(profile);
-        }
-        Screen.clear();
-        System.out.printf("Registro de Vendedor Realizado com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * Print.title("Cadastro de Novo Vendedor");
+         * 
+         * System.out.print("Quantidade de vendedores a serem cadastrados : "); int
+         * quantCustomers = Read.Int(); for (int i = 0; i < quantCustomers; i++) {
+         * Seller profile = inputProfileSeller(); addProfileToDataSeller(profile); }
+         * Screen.clear();
+         * System.out.printf("Registro de Vendedor Realizado com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     private static Seller inputProfileSeller() {
-        System.out.printf("\nVendedor %d\n", Data.getSizeOfSellers() + 1);
+        /*
+         * System.out.printf("\nVendedor %d\n", Data.getSizeOfSellers() + 1);
+         * 
+         * System.out.print("\tCódigo de identificação : "); int id = Read.Int();
+         * 
+         * System.out.print("\tNome : "); String name = Read.Line();
+         * 
+         * double cashFlow = 0; int productsSold = 0;
+         * 
+         * return new Seller(id, name, cashFlow, productsSold);
+         */
+        return null;
 
-        System.out.print("\tCódigo de identificação : ");
-        int id = Read.Int();
-
-        System.out.print("\tNome : ");
-        String name = Read.Line();
-
-        double cashFlow = 0;
-        int productsSold = 0;
-
-        return new Seller(id, name, cashFlow, productsSold);
     }
 
     // Updaters
@@ -292,41 +268,28 @@ public class StoreManager {
         int searchId;
         Product match;
 
-        Print.titleAndDescription("Atualizar Produto", "Tipo | Autor/Marca | Título/Nome");
-
-        do {
-            Product.listAll();
-            System.out.printf("Buscar Produto (ID) : ");
-            searchId = Read.Int();
-            match = Product.searchById(searchId);
-
-            if (match == null) {
-                System.out.printf("\nProduto não encontrado!\n");
-            } else {
-
-                System.out.printf("\nAtualizar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getId());
-                switch (ReadMenu.choice(2)) {
-                    case 1:
-                        if (match instanceof Book) {
-                            ((Book) match).updateInfo();
-                        } else { // if (match instanceof Miscellaneous)
-                            ((Miscellaneous) match).updateInfo();
-                        }
-                        break;
-                    case 2:
-                        Screen.pressEnterBack();
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.\n");
-                        break;
-                }
-
-            }
-        } while (match == null);
-        Screen.clear();
-        System.out.printf("Atualização de Produto Realizada com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * Print.titleAndDescription("Atualizar Produto",
+         * "Tipo | Autor/Marca | Título/Nome");
+         * 
+         * do { Product.listAll(); System.out.printf("Buscar Produto (ID) : "); searchId
+         * = Read.Int(); match = Product.searchById(searchId);
+         * 
+         * if (match == null) { System.out.printf("\nProduto não encontrado!\n"); } else
+         * {
+         * 
+         * System.out.
+         * printf("\nAtualizar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu"
+         * , match.getId()); switch (ReadMenu.choice(2)) { case 1: if (match instanceof
+         * Book) { ((Book) match).updateInfo(); } else { // if (match instanceof
+         * Miscellaneous) ((Miscellaneous) match).updateInfo(); } break; case 2:
+         * Screen.pressEnterBack(); break; default:
+         * System.out.printf("\nDigite uma opção válida.\n"); break; }
+         * 
+         * } } while (match == null); Screen.clear();
+         * System.out.printf("Atualização de Produto Realizada com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     /*----------------------------------------------------------------------*/
@@ -337,37 +300,26 @@ public class StoreManager {
         int searchId;
         Seller match;
 
-        Print.titleAndDescription("Alterar Dados de Vendedor", "ID | Nome");
-
-        Seller.list();
-        do {
-            System.out.printf("Buscar Vendedor (ID) : ");
-            searchId = Read.Int();
-            match = Seller.searchById(searchId);
-
-            if (match == null) {
-                System.out.printf("\nVendedor não encontrado!\n");
-            } else {
-
-                System.out.printf("\nAlterar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getId());
-                switch (ReadMenu.choice(2)) {
-                    case 1:
-                        match.updateInfo();
-                        break;
-                    case 2:
-                        Screen.pressEnterBack();
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.\n");
-                        break;
-                }
-            }
-        } while (match == null);
-
-        Screen.clear();
-        System.out.printf("Atualização de Vendedor Realizada com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * Print.titleAndDescription("Alterar Dados de Vendedor", "ID | Nome");
+         * 
+         * Seller.list(); do { System.out.printf("Buscar Vendedor (ID) : "); searchId =
+         * Read.Int(); match = Seller.searchById(searchId);
+         * 
+         * if (match == null) { System.out.printf("\nVendedor não encontrado!\n"); }
+         * else {
+         * 
+         * System.out.
+         * printf("\nAlterar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu"
+         * , match.getId()); switch (ReadMenu.choice(2)) { case 1: match.updateInfo();
+         * break; case 2: Screen.pressEnterBack(); break; default:
+         * System.out.printf("\nDigite uma opção válida.\n"); break; } } } while (match
+         * == null);
+         * 
+         * Screen.clear();
+         * System.out.printf("Atualização de Vendedor Realizada com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     /*----------------------------------------------------------------------*/
@@ -378,37 +330,26 @@ public class StoreManager {
         String searchUsername;
         StoreManager match;
 
-        Print.title("Alterar Dados de Gerente de Loja");
-
-        System.out.printf("Buscar Gerente de Loja (Username) : ");
-        searchUsername = Read.Line();
-        match = StoreManager.searchByUsername(searchUsername);
-        do {
-            if (match == null) {
-                System.out.printf("\nGerente de Loja não encontrado!\n");
-            } else {
-
-                System.out.printf(
-                        "\nAlterar Dados do Gerente de Loja Username : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getUsername());
-
-                switch (ReadMenu.choice(2)) {
-                    case 1:
-                        match.updateInfo();
-                        break;
-                    case 2:
-                        Screen.pressEnterBack();
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.\n");
-                        break;
-                }
-
-            }
-        } while (match == null);
-        Screen.clear();
-        System.out.printf("Atualização de Gerente de Loja Realizada com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * Print.title("Alterar Dados de Gerente de Loja");
+         * 
+         * System.out.printf("Buscar Gerente de Loja (Username) : "); searchUsername =
+         * Read.Line(); match = StoreManager.searchByUsername(searchUsername); do { if
+         * (match == null) { System.out.printf("\nGerente de Loja não encontrado!\n"); }
+         * else {
+         * 
+         * System.out.printf(
+         * "\nAlterar Dados do Gerente de Loja Username : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu"
+         * , match.getUsername());
+         * 
+         * switch (ReadMenu.choice(2)) { case 1: match.updateInfo(); break; case 2:
+         * Screen.pressEnterBack(); break; default:
+         * System.out.printf("\nDigite uma opção válida.\n"); break; }
+         * 
+         * } } while (match == null); Screen.clear();
+         * System.out.printf("Atualização de Gerente de Loja Realizada com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     private static StoreManager searchByUsername(String searchInput) {
@@ -431,36 +372,25 @@ public class StoreManager {
         int searchId;
         Product match;
 
-        Print.titleAndDescription("Deletar Dados de Produto", "Tipo | Autor/Marca | Título/Nome");
-        Product.listAll();
-        do {
-            System.out.printf("Buscar Produto (ID) : ");
-            searchId = Read.Int();
-            match = Product.searchById(searchId);
-
-            if (match == null) {
-                System.out.printf("\nProduto não encontrado!\n");
-            } else {
-
-                System.out.printf("\nDeletar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getId());
-                switch (ReadMenu.choice(2)) {
-                    case 1:
-                        Data.getProducts().remove(match);
-                        break;
-                    case 2:
-                        Screen.pressEnterBack();
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.\n");
-                        break;
-                }
-
-            }
-        } while (match == null);
-        Screen.clear();
-        System.out.printf("Deleção de Produto Realizada com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * Print.titleAndDescription("Deletar Dados de Produto",
+         * "Tipo | Autor/Marca | Título/Nome"); Product.listAll(); do {
+         * System.out.printf("Buscar Produto (ID) : "); searchId = Read.Int(); match =
+         * Product.searchById(searchId);
+         * 
+         * if (match == null) { System.out.printf("\nProduto não encontrado!\n"); } else
+         * {
+         * 
+         * System.out.
+         * printf("\nDeletar Dados do Produto ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu"
+         * , match.getId()); switch (ReadMenu.choice(2)) { case 1:
+         * Data.getProducts().remove(match); break; case 2: Screen.pressEnterBack();
+         * break; default: System.out.printf("\nDigite uma opção válida.\n"); break; }
+         * 
+         * } } while (match == null); Screen.clear();
+         * System.out.printf("Deleção de Produto Realizada com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     /*----------------------------------------------------------------------*/
@@ -468,40 +398,28 @@ public class StoreManager {
      * Deletes Seller.
      */
     public static void deleteSeller() {
-        int searchId;
-        Seller match;
-
-        Print.titleAndDescription("Deletar Dados de Vendedor", "ID | Nome");
-        Seller.list();
-        do {
-            System.out.printf("Buscar Vendedor (ID) : ");
-            searchId = Read.Int();
-            match = Seller.searchById(searchId);
-
-            if (match == null) {
-                System.out.printf("\nVendedor não encontrado!\n");
-            } else {
-
-                System.out.printf("\nDeletar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getId());
-
-                switch (ReadMenu.choice(2)) {
-                    case 1:
-                        Data.getSellers().remove(match);
-                        break;
-                    case 2:
-                        Screen.pressEnterBack();
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.\n");
-                        break;
-                }
-
-            }
-        } while (match == null);
-        Screen.clear();
-        System.out.printf("Deleção de Vendedor Realizada com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * int searchId; Seller match;
+         * 
+         * Print.titleAndDescription("Deletar Dados de Vendedor", "ID | Nome");
+         * Seller.list(); do { System.out.printf("Buscar Vendedor (ID) : "); searchId =
+         * Read.Int(); match = Seller.searchById(searchId);
+         * 
+         * if (match == null) { System.out.printf("\nVendedor não encontrado!\n"); }
+         * else {
+         * 
+         * System.out.
+         * printf("\nDeletar Dados do Vendedor ID : %d ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu"
+         * , match.getId());
+         * 
+         * switch (ReadMenu.choice(2)) { case 1: Data.getSellers().remove(match); break;
+         * case 2: Screen.pressEnterBack(); break; default:
+         * System.out.printf("\nDigite uma opção válida.\n"); break; }
+         * 
+         * } } while (match == null); Screen.clear();
+         * System.out.printf("Deleção de Vendedor Realizada com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 
     /*----------------------------------------------------------------------*/
@@ -512,36 +430,25 @@ public class StoreManager {
         String searchId;
         Customer match;
 
-        Print.titleAndDescription("Deletar Dados de Cliente", "Nome | Telefone");
-        Customer.list();
-        do {
-            System.out.printf("Buscar Cliente (Nome Completo) : ");
-            searchId = Read.Line();
-            match = Customer.searchByName(searchId);
-
-            if (match == null) {
-                System.out.printf("\nCliente não encontrado!\n");
-            } else {
-
-                System.out.printf("\nDeletar Dados do Cliente : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu",
-                        match.getName());
-
-                switch (ReadMenu.choice(2)) {
-                    case 1:
-                        Data.getCustomers().remove(match);
-                        break;
-                    case 2:
-                        Screen.pressEnterBack();
-                        break;
-                    default:
-                        System.out.printf("\nDigite uma opção válida.\n");
-                        break;
-                }
-
-            }
-        } while (match == null);
-        Screen.clear();
-        System.out.printf("Deleção de Cliente Realizada com Sucesso.");
-        Screen.pressEnterCont();
+        /*
+         * Print.titleAndDescription("Deletar Dados de Cliente", "Nome | Telefone");
+         * Customer.list(); do { System.out.printf("Buscar Cliente (Nome Completo) : ");
+         * searchId = Read.Line(); match = Customer.searchByName(searchId);
+         * 
+         * if (match == null) { System.out.printf("\nCliente não encontrado!\n"); } else
+         * {
+         * 
+         * System.out.
+         * printf("\nDeletar Dados do Cliente : %s ?\n\t.1 - Sim\n\t.2 - Não, voltar ao menu"
+         * , match.getName());
+         * 
+         * switch (ReadMenu.choice(2)) { case 1: Data.getCustomers().remove(match);
+         * break; case 2: Screen.pressEnterBack(); break; default:
+         * System.out.printf("\nDigite uma opção válida.\n"); break; }
+         * 
+         * } } while (match == null); Screen.clear();
+         * System.out.printf("Deleção de Cliente Realizada com Sucesso.");
+         * Screen.pressEnterCont();
+         */
     }
 }

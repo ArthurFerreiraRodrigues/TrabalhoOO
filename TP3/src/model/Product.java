@@ -1,10 +1,8 @@
 package model;
 
-import products.Book;
-import products.Miscellaneous;
-import util.Print;
-
 /**
+ * Model class of a product.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -17,9 +15,9 @@ public abstract class Product {
     /**
      * Gera o profile do produto
      * 
-     * @param id           : Product identification code
-     * @param price        : Product price
-     * @param inStockQuant : Product quantities in stock
+     * @param id           - int
+     * @param price        - double
+     * @param inStockQuant - int
      */
     public Product(int id, double price, int inStockQuant) {
         this.id = id;
@@ -60,37 +58,6 @@ public abstract class Product {
      */
     public void uptateStockQuant(int quantSold) {
         this.inStockQuant = inStockQuant - quantSold;
-    }
-
-    // Lister
-    public static void listInStock() {
-        Print.titleAndDescription("Lista de Produtos em Estoque",
-                "ID | Tipo | Preço | Estoque | Autor/Marca | Título/Nome");
-        for (Product product : Data.getProducts()) {
-            if (product.getInStockQuant() > 0) {
-                if (product instanceof Book) {
-                    System.out.printf(((Book) product).toString() + "\n");
-                } else {
-                    System.out.printf(((Miscellaneous) product).toString() + "\n");
-                }
-            }
-        }
-        Print.split();
-    }
-
-    public static void listAll() {
-        Print.titleAndDescription("Lista de Todos os Produtos",
-                "ID | Tipo | Preço | Estoque | Autor/Marca | Título/Nome");
-        for (Product product : Data.getProducts()) {
-
-            if (product instanceof Book) {
-                System.out.printf(((Book) product).toString() + "\n");
-            } else {
-                System.out.printf(((Miscellaneous) product).toString() + "\n");
-            }
-
-        }
-        Print.split();
     }
 
     // Search by ID

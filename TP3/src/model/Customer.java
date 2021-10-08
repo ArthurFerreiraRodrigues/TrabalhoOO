@@ -1,9 +1,8 @@
 package model;
 
-import util.Print;
-import util.Read;
-
 /**
+ * Model class of a customer.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -68,41 +67,30 @@ public class Customer {
         this.timesInStore += 1;
     }
 
-    /**
-     * Updates Customer Info.
-     * 
-     * @see appmain.Search
-     */
     public void updateCustomerInfo() {
-        Print.title("Alterar Cliente");
-        System.out.printf("Novo Nome :");
-        this.name = Read.Line();
-        System.out.printf("Novo Endereço :");
-        this.adress = Read.Line();
-        System.out.printf("Novo Telefone :");
-        this.celNumber = Read.Line();
-    }
 
-    // Lister
-    public static void list() {
-        Print.titleAndDescription("Lista de Clientes", "Nome | Endereço | Telefone | Qtd.Visitas");
-        int i = 1;
-        for (Customer customer : Data.getCustomers()) {
-
-            System.out.printf("%d. %s | %s | %s | %d\n", i, customer.getName(), customer.getAdress(),
-                    customer.getCelNumber(), customer.getTimesInStore());
-
-            i++;
-        }
-        Print.split();
+        /*
+         * this.name
+         * 
+         * this.adress
+         * 
+         * this.celNumber
+         */
     }
 
     // Search
 
-    public static Customer searchByName(String name) {
+    /**
+     * Searches, by name, for a Customer in its Data ArrayList
+     * 
+     * @param nameCustomer - String
+     * @return customer or null
+     * 
+     */
+    public static Customer searchByName(String nameCustomer) {
 
         for (Customer customer : Data.getCustomers()) {
-            if (customer.getName().equals(name)) {
+            if (customer.getName().equals(nameCustomer)) {
                 return customer;
             }
         }

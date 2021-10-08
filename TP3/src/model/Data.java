@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Data structure class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -43,9 +45,9 @@ public abstract class Data {
      * <p>
      * if == 2 -> seller.getId()
      * 
-     * @param sellerList
-     * @param selectOpt
-     * @return
+     * @param sellerList - List<Seller>
+     * @param selectOpt  - int
+     * @return Object[]
      */
     public static Object[] getSellersInfo(List<Seller> sellerList, int selectOpt) {
         List<String> array = new ArrayList<String>();

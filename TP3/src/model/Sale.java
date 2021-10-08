@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 
 /**
+ * Model class of a sale.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -16,6 +18,17 @@ public class Sale {
 
     // Constructor
 
+    /**
+     * Initialize a sale and updates Seller and Customer statistics.
+     * 
+     * @param seller       - Seller
+     * @param buyer        - Customer
+     * @param productsSold - ArrayList<ProductsSoldInSale>
+     * @param unitsSold    - int
+     * @param subTotal     - double
+     * 
+     * @see model.ProductsSoldInSale
+     */
     public Sale(Seller seller, Customer buyer, ArrayList<ProductsSoldInSale> productsSold, int unitsSold,
             double subTotal) {
         this.seller = seller;

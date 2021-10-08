@@ -5,7 +5,7 @@ import model.Seller;
 public class Print {
 
     public static void inicial() {
-        util.Print.title("Menu Inicial");
+        // util.Print.title("Menu Inicial");
 
         System.out.printf(".1  - Área do Gerente de Loja   \n");
         System.out.printf(".2  - Área do Vendedor          \n");
@@ -18,14 +18,13 @@ public class Print {
         System.out.printf(".9  - Buscar Vendedores         \n");
         System.out.printf(".0  - Sair                      \n");
 
-        util.Print.split();
     }
 
     /**
      * Option 1 from Incial Menu
      */
     public static void storeManagerActions() {
-        util.Print.title("Área do Gerente de Loja");
+        // util.Print.title("Área do Gerente de Loja");
 
         System.out.printf(".1  - Registrar Produto         \n");
         System.out.printf(".2  - Registrar Vendedor        \n");
@@ -39,15 +38,13 @@ public class Print {
         System.out.printf(".10 - Listar Produtos           \n");
         System.out.printf(".11 - Listar Clientes           \n");
         System.out.printf(".0  - Voltar ao Menu Inicial    \n");
-
-        util.Print.split();
     }
 
     /**
      * Option 2 from Incial Menu
      */
     public static void sellerActions(Seller selected) {
-        util.Print.title("Área do Vendedor");
+        // util.Print.title("Área do Vendedor");
         System.out.printf("Vendedor Selecionado\n");
         System.out.printf("ID : %d | Nome : %s\n\n", selected.getId(), selected.getName());
 
@@ -56,21 +53,17 @@ public class Print {
         System.out.printf("\t.3 - Atualizar Cliente      \n");
         System.out.printf("\t.4 - Listar Clientes        \n");
         System.out.printf("\t.0 - Voltar ao Menu Inicial \n");
-
-        util.Print.split();
     }
 
     /**
      * Option 3 from Incial Menu
      */
     public static void listSalesOptions() {
-        util.Print.title("Listar Vendas Realiazadas");
+        // util.Print.title("Listar Vendas Realiazadas");
 
         System.out.printf(".1 - Listar Todas as Vendas                    \n");
         System.out.printf(".2 - Listar Vendas Feitas por Vendedor (ID)    \n");
         System.out.printf(".3 - Listar Vendas Feitas por vendedor (Nome)  \n");
         System.out.printf(".0 - Voltar ao Menu Inicial                    \n");
-
-        util.Print.split();
     }
 }

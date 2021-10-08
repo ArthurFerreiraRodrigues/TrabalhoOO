@@ -23,6 +23,8 @@ import vision.listers.ListSellers;
 import util.Fill;
 
 /**
+ * Main Graphical Interface class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 

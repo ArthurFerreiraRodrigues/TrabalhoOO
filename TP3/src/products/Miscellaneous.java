@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import model.Data;
 import model.Product;
-import util.Print;
-import util.Read;
 
 /**
  * @author ArthuFerreiraRodrigues <a href="
@@ -43,23 +41,6 @@ public class Miscellaneous extends Product {
         return brand;
     }
 
-    // Lister
-
-    /**
-     * 
-     */
-    public static void list() {
-        Print.titleAndDescription("Lista de Produtos Variados", "ID | Tipo | Preço | Estoque | Marca | Nome");
-        int i = 1;
-        for (Product product : Data.getProducts()) {
-            if (product instanceof Miscellaneous) {
-                System.out.printf("%d. " + ((Miscellaneous) product).toString() + "\n", i);
-                i++;
-            }
-        }
-        Print.split();
-    }
-
     @Override
     public String toString() {
         return this.getId() + " | Variados | R$ " + this.getPrice() + " | " + this.getInStockQuant() + " | "
@@ -69,25 +50,27 @@ public class Miscellaneous extends Product {
     // Setter
 
     public void updateInfo() {
-        Print.title("Alterar Dados de Produtos Variados");
-        System.out.printf("Novo Código de Identificação :");
-        this.id = Read.Int();
-        System.out.printf("Novo Nome :");
-        this.name = Read.Line();
-        System.out.printf("Nova Marca :");
-        this.brand = Read.Line();
-        System.out.printf("Novo Preço :");
-        this.price = Read.Double();
-        System.out.printf("Nova Quantidade em Estoque :");
-        this.inStockQuant = Read.Int();
+        /*
+         * this.id = Read.Int();
+         * 
+         * this.name = Read.Line();
+         * 
+         * this.brand = Read.Line();
+         * 
+         * this.price = Read.Double();
+         * 
+         * this.inStockQuant = Read.Int();
+         */
     }
 
     // Searches
 
     /**
+     * Searches, by name, for a Product in its Data ArrayList
      * 
      * @param searchInput - String
-     * @return Search Match or Null if there is no matches
+     * @return miscellaneous or null
+     * 
      */
     public static ArrayList<Miscellaneous> searchByName(String searchInput) {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
@@ -110,6 +93,13 @@ public class Miscellaneous extends Product {
 
     }
 
+    /**
+     * Searches, by brand, for a Product in its Data ArrayList
+     * 
+     * @param searchInput - String
+     * @return miscellaneous or null
+     * 
+     */
     public static ArrayList<Miscellaneous> searchByBrand(String searchInput) {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
         boolean hasMatches = false;

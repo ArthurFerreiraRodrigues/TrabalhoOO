@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import model.Data;
 import model.Product;
-import util.Print;
-import util.Read;
 
 /**
  * @author ArthuFerreiraRodrigues <a href="
@@ -46,19 +44,6 @@ public class Book extends Product {
 
     // Lister
 
-    public static void list() {
-        Print.titleAndDescription("Lista de Livros", "ID | Tipo | Preço | Estoque | Autor | Título | Gênero | Tipo");
-        int i = 1;
-        for (Product product : Data.getProducts()) {
-            if (product instanceof Book) {
-                System.out.printf("%d. " + ((Book) product).toString() + " | %s | %s\n", i, ((Book) product).getGenre(),
-                        ((Book) product).getType());
-                i++;
-            }
-        }
-        Print.split();
-    }
-
     @Override
     public String toString() {
         return this.getId() + " | Livro | R$ " + this.getPrice() + " | " + this.getInStockQuant() + " | "
@@ -68,25 +53,31 @@ public class Book extends Product {
     // Setter
 
     public void updateInfo() {
-        Print.title("Alterar Dados de Livro");
-        System.out.printf("Novo Código de Identificação :");
-        this.id = Read.Int();
-        System.out.printf("Novo Autor :");
-        this.author = Read.Line();
-        System.out.printf("Novo Título :");
-        this.title = Read.Line();
-        System.out.printf("Novo Tipo :");
-        this.type = Read.Line();
-        System.out.printf("Novo Gênero :");
-        this.genre = Read.Line();
-        System.out.printf("Novo Preço :");
-        this.price = Read.Double();
-        System.out.printf("Nova Quantidade em Estoque :");
-        this.inStockQuant = Read.Int();
+        /*
+         * this.id = Read.Int();
+         * 
+         * this.author = Read.Line();
+         * 
+         * this.title = Read.Line();
+         * 
+         * this.type = Read.Line();
+         * 
+         * this.genre = Read.Line();
+         * 
+         * this.price = Read.Double();
+         * 
+         * this.inStockQuant = Read.Int();
+         */
     }
 
     // Searches
-
+    /**
+     * Searches, by author, for a Product in its Data ArrayList
+     * 
+     * @param searchInput
+     * @return book or null
+     * 
+     */
     public static ArrayList<Book> searchByAuthor(String searchInput) {
         ArrayList<Book> matches = new ArrayList<>();
         boolean hasMatches = false;
@@ -108,6 +99,13 @@ public class Book extends Product {
         }
     }
 
+    /**
+     * Searches, by title, for a Product in its Data ArrayList
+     * 
+     * @param searchInput
+     * @return book or null
+     * 
+     */
     public static ArrayList<Book> searchByTitle(String searchInput) {
         ArrayList<Book> matches = new ArrayList<>();
         boolean hasMatches = false;
