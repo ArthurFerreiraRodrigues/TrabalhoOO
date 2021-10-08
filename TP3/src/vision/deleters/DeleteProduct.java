@@ -18,6 +18,8 @@ import model.Data;
 import vision.table.Products;
 
 /**
+ * ContentPanel class : StoreManagerOption DeleteProduct
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -37,6 +39,9 @@ public class DeleteProduct extends JPanel implements ActionListener {
 
     private final DeleteProductControl controller;
 
+    /**
+     * Add a Table, a button to delete and a button do go back to the menu.
+     */
     public DeleteProduct() {
         int standartPos = 80, spacer = 50;
         controller = new DeleteProductControl(this);
@@ -53,8 +58,8 @@ public class DeleteProduct extends JPanel implements ActionListener {
         labelTitle.setBounds(150, 5, 800, 800);
         add(labelTitle);
 
-        // table.setSelectionMode(0);
         table = new JTable(Products.genTable(Products.toArrayList(Data.getProducts().toArray()), header, false));
+        table.setSelectionMode(0);
         scroll = new JScrollPane();
         scroll.setViewportView(table);
         add(scroll);
@@ -67,7 +72,7 @@ public class DeleteProduct extends JPanel implements ActionListener {
         buttonDelete.addActionListener(this);
         add(buttonDelete);
 
-        buttonHome = new JButton("Tela Inicial");
+        buttonHome = new JButton("Voltar");
         buttonHome.setBackground(Color.LIGHT_GRAY);
         buttonHome.setForeground(Color.BLACK);
         buttonHome.setFont(FONT);
@@ -76,10 +81,22 @@ public class DeleteProduct extends JPanel implements ActionListener {
         add(buttonHome);
     }
 
+    /**
+     * Generates a new DefaultTableModel.
+     * 
+     * @param header
+     * @param isEditable
+     * @return TableModel
+     */
     public DefaultTableModel scrollViewportView(String[] header, boolean isEditable) {
         return Products.genTable(Products.toArrayList(Data.getProducts().toArray()), header, isEditable);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

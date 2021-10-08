@@ -19,6 +19,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
+ * ContentPanel class : StoreManagerOption DeleteSeller
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -36,6 +38,9 @@ public class DeleteSeller extends JPanel implements ActionListener {
 
     private final DeleteSellerControl controller;
 
+    /**
+     * Add a Table, a button to delete and a button do go back to the menu.
+     */
     public DeleteSeller() {
         int standartPos = 80, spacer = 50;
         controller = new DeleteSellerControl(this);
@@ -53,7 +58,7 @@ public class DeleteSeller extends JPanel implements ActionListener {
         add(labelTitle);
 
         table = new JTable(Sellers.genTable(Sellers.toArrayList(Data.getSellers().toArray()), header, false));
-        // table.setSelectionMode(0);
+        table.setSelectionMode(0);
         scroll = new JScrollPane();
         scroll.setViewportView(table);
         add(scroll);
@@ -76,10 +81,22 @@ public class DeleteSeller extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Generates a new DefaultTableModel.
+     * 
+     * @param header
+     * @param isEditable
+     * @return TableModel
+     */
     public DefaultTableModel scrollViewportView(String[] header, boolean isEditable) {
         return Sellers.genTable(Sellers.toArrayList(Data.getSellers().toArray()), header, isEditable);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

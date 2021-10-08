@@ -19,11 +19,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 /**
+ * ContentPanel class : StoreManagerOption DeleteCustomer
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
  * @see javax.swing.JPanel
  * @see java.awt.event.ActionListener
+ * 
+ * @see vision.menu.StoreManagerMenu
  */
 public class DeleteCustomer extends JPanel implements ActionListener {
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
@@ -36,6 +40,9 @@ public class DeleteCustomer extends JPanel implements ActionListener {
 
     private final DeleteCustomerControl controller;
 
+    /**
+     * Add a Table, a button to delete and a button do go back to the menu.
+     */
     public DeleteCustomer() {
         int standartPos = 80, spacer = 50, mult = 0;
         controller = new DeleteCustomerControl(this);
@@ -52,8 +59,8 @@ public class DeleteCustomer extends JPanel implements ActionListener {
         labelTitle.setBounds(150, 5, 800, 800);
         add(labelTitle);
 
-        // table.setSelectionMode(0);
         table = new JTable(this.scrollViewportView(header, false));
+        table.setSelectionMode(0);
         scroll = new JScrollPane();
         scroll.setViewportView(table);
         add(scroll);
@@ -67,7 +74,7 @@ public class DeleteCustomer extends JPanel implements ActionListener {
         add(buttonDelete);
         mult++;
 
-        buttonHome = new JButton("Tela Inicial");
+        buttonHome = new JButton("Voltar");
         buttonHome.setBackground(Color.LIGHT_GRAY);
         buttonHome.setForeground(Color.BLACK);
         buttonHome.setFont(FONT);
@@ -76,10 +83,22 @@ public class DeleteCustomer extends JPanel implements ActionListener {
         add(buttonHome);
     }
 
+    /**
+     * Generates a new DefaultTableModel.
+     * 
+     * @param header
+     * @param isEditable
+     * @return TableModel
+     */
     public DefaultTableModel scrollViewportView(String[] header, boolean isEditable) {
         return Customers.genTable(Customers.toArrayList(Data.getCustomers().toArray()), header, isEditable);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());
