@@ -3,6 +3,11 @@ package model;
 import util.Print;
 import util.Read;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class Customer {
 
     private String name, adress;
@@ -17,7 +22,7 @@ public class Customer {
      * @param celNumber    : Customer cellphone number
      * @param timesInStore : Number of times a Customer has visited the store
      */
-    public Customer(String name, String adress, String celNumber, int timesInStore) {
+    public Customer(String name, String adress, String celNumber) {
         this.name = name;
         this.adress = adress;
         this.celNumber = celNumber;
