@@ -15,6 +15,13 @@ import model.StoreManager;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see javax.swing.JPanel
+ * @see java.awt.event.ActionListener
+ */
 public class StoreManagerMenu extends JPanel implements ActionListener {
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
 
@@ -56,7 +63,7 @@ public class StoreManagerMenu extends JPanel implements ActionListener {
         labelTitle.setBounds(145, 5, 800, 800);
         add(labelTitle);
 
-        if (manager == null) {
+        if (manager != null) {
             buttonLogin = new JButton("Realizar Login");
             buttonLogin.setBackground(Color.LIGHT_GRAY);
             buttonLogin.setForeground(Color.BLACK);

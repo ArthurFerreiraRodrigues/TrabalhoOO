@@ -13,6 +13,13 @@ import javax.swing.SwingConstants;
 
 import control.ListSalesMenuControl;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see javax.swing.JPanel
+ * @see java.awt.event.ActionListener
+ */
 public class ListSalesMenu extends JPanel implements ActionListener {
 
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
@@ -54,7 +61,7 @@ public class ListSalesMenu extends JPanel implements ActionListener {
         buttonListSalesById.addActionListener(this);
         add(buttonListSalesById);
 
-        buttonListSalesByName = new JButton("Vendas Feitas por vendedor (Nome)");
+        buttonListSalesByName = new JButton("Vendas Feitas por Vendedor (Nome)");
         buttonListSalesByName.setBackground(Color.LIGHT_GRAY);
         buttonListSalesByName.setForeground(Color.BLACK);
         buttonListSalesByName.setFont(FONT);

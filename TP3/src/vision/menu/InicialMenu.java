@@ -14,6 +14,13 @@ import control.InicialMenuControl;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see javax.swing.JPanel
+ * @see java.awt.event.ActionListener
+ */
 public class InicialMenu extends JPanel implements ActionListener {
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
 
@@ -59,7 +66,7 @@ public class InicialMenu extends JPanel implements ActionListener {
         buttonSpaceSeller.addActionListener(this);
         add(buttonSpaceSeller);
 
-        buttonListSales = new JButton("Listar Vendas Realiazadas");
+        buttonListSales = new JButton("Listar Vendas Realizadas");
         // buttonListSales.setEnabled(false);
         buttonListSales.setBackground(Color.LIGHT_GRAY);
         buttonListSales.setForeground(Color.BLACK);
@@ -76,21 +83,21 @@ public class InicialMenu extends JPanel implements ActionListener {
         buttonListProducts.addActionListener(this);
         add(buttonListProducts);
 
-        buttonListSellers = new JButton("Listar Clientes");
-        buttonListSellers.setBackground(Color.LIGHT_GRAY);
-        buttonListSellers.setForeground(Color.BLACK);
-        buttonListSellers.setFont(FONT);
-        buttonListSellers.setBounds(280, standartPos + spacer * 4, 267, 31);
-        buttonListSellers.addActionListener(this);
-        add(buttonListSellers);
-
-        buttonListCustomers = new JButton("Listar Vendedores");
+        buttonListCustomers = new JButton("Listar Clientes");
         buttonListCustomers.setBackground(Color.LIGHT_GRAY);
         buttonListCustomers.setForeground(Color.BLACK);
         buttonListCustomers.setFont(FONT);
-        buttonListCustomers.setBounds(280, standartPos + spacer * 5, 267, 31);
+        buttonListCustomers.setBounds(280, standartPos + spacer * 4, 267, 31);
         buttonListCustomers.addActionListener(this);
         add(buttonListCustomers);
+
+        buttonListSellers = new JButton("Listar Vendedores");
+        buttonListSellers.setBackground(Color.LIGHT_GRAY);
+        buttonListSellers.setForeground(Color.BLACK);
+        buttonListSellers.setFont(FONT);
+        buttonListSellers.setBounds(280, standartPos + spacer * 5, 267, 31);
+        buttonListSellers.addActionListener(this);
+        add(buttonListSellers);
 
         JLabel labelBackground = new JLabel("");
         labelBackground.setBounds(0, 0, 830, 522);

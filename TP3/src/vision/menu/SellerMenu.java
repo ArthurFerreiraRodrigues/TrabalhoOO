@@ -14,6 +14,13 @@ import control.SellerMenuControl;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see javax.swing.JPanel
+ * @see java.awt.event.ActionListener
+ */
 public class SellerMenu extends JPanel implements ActionListener {
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
 
@@ -111,7 +118,7 @@ public class SellerMenu extends JPanel implements ActionListener {
         // Background
         JLabel labelBackground = new JLabel("");
         labelBackground.setBounds(0, 0, 830, 522);
-        labelBackground.setIcon(new ImageIcon(StoreManagerMenu.class.getResource("/vision/images/libraryBack.png")));
+        labelBackground.setIcon(new ImageIcon(SellerMenu.class.getResource("/vision/images/libraryBack.png")));
         add(labelBackground);
 
     }
