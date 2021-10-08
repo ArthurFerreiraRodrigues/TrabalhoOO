@@ -18,7 +18,7 @@ import model.Data;
 import vision.table.Products;
 
 /**
- * Menu option class for StoreManagerMenu DeleteProduct
+ * Menu option class for StoreManagerMenu - DeleteProduct
  * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
