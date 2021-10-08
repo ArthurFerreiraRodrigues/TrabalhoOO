@@ -17,11 +17,15 @@ import model.Data;
 import vision.table.Sales;
 
 /**
+ * Menu option class for ListSalesMenu - ListAllSales.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
  * @see javax.swing.JPanel
  * @see java.awt.event.ActionListener
+ * 
+ * @see vision.menu.ListSalesMenu
  */
 public class ListAllSales extends JPanel implements ActionListener {
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
@@ -33,6 +37,11 @@ public class ListAllSales extends JPanel implements ActionListener {
 
     private final ListAllSalesControl controller;
 
+    /**
+     * Adds a Table and a button do go back to the main menu.
+     * 
+     * @see vision.table.Sales
+     */
     public ListAllSales() {
         int standartPos = 80, spacer = 50;
         controller = new ListAllSalesControl(this);
@@ -41,12 +50,7 @@ public class ListAllSales extends JPanel implements ActionListener {
 
         panel.setBounds(100, 100, 830, 522);
         panel.setLayout(null);
-        /*
-         * JLabel labelBackground = new JLabel(""); labelBackground.setBounds(0, 0, 830,
-         * 522); labelBackground.setIcon(new
-         * ImageIcon(ListAllSales.class.getResource("/vision/images/libraryBack.png")));
-         * panel.add(labelBackground);
-         */
+
         JLabel labelTitle = new JLabel("Listar Todas as Vendas");
         labelTitle.setVerticalAlignment(SwingConstants.TOP);
         labelTitle.setForeground(Color.GRAY);
@@ -55,7 +59,6 @@ public class ListAllSales extends JPanel implements ActionListener {
         add(labelTitle);
 
         String[] header = { "  ", "ID Vendedor", "Nome Vendedor", "Cliente", "Qtd.Unidades", "Total (R$)" };
-        // table.setSelectionMode(0);
         scroll = new JScrollPane();
         scroll.setViewportView(Sales.genTableAll(Sales.toArrayList(Data.getSales().toArray()), header));
 
@@ -71,6 +74,11 @@ public class ListAllSales extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

@@ -14,6 +14,8 @@ import javax.swing.SwingConstants;
 import control.ListSalesMenuControl;
 
 /**
+ * Class with all list sales menu options.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -31,6 +33,14 @@ public class ListSalesMenu extends JPanel implements ActionListener {
 
     private final ListSalesMenuControl controller;
 
+    /**
+     * Adds 3 menu options and a home button.
+     * 
+     * @see vision.table.Sales
+     * @see vision.listers.ListAllSales
+     * @see vision.listers.ListSalesById
+     * @see vision.listers.ListSalesByName
+     */
     public ListSalesMenu() {
         int standartPos = 80, spacer = 50;
         controller = new ListSalesMenuControl(this);
@@ -99,6 +109,11 @@ public class ListSalesMenu extends JPanel implements ActionListener {
         return buttonHome;
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

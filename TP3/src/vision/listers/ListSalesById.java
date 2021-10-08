@@ -18,11 +18,14 @@ import model.Data;
 import vision.table.Sales;
 
 /**
+ * Menu option class for ListSalesMenu - ListSalesById.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
  * @see javax.swing.JPanel
  * @see java.awt.event.ActionListener
+ * @see vision.menu.ListSalesMenu
  */
 public class ListSalesById extends JPanel implements ActionListener {
 
@@ -39,6 +42,13 @@ public class ListSalesById extends JPanel implements ActionListener {
 
     private final ListSalesByIdControl controller;
 
+    /**
+     * Adds a Table, a JComboBox with all Sellers Id's and a button do go back to
+     * the main menu.
+     * 
+     * @see javax.swing.JComboBox
+     * @see vision.table.Sales
+     */
     public ListSalesById() {
         int standartPos = 80, spacer = 50;
         controller = new ListSalesByIdControl(this);
@@ -76,11 +86,23 @@ public class ListSalesById extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Generates a new DefaultTableModel.
+     * 
+     * @param header
+     * @param isEditable
+     * @return TableModel
+     */
     public JTable scrollViewportView(int index, String[] header) {
         return Sales.genTableAll(Sales.toArrayList(Data.getSellers().get(index).getSales(Data.getSales()).toArray()),
                 header);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

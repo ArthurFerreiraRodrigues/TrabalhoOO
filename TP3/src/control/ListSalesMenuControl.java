@@ -8,6 +8,7 @@ import vision.menu.ListSalesMenu;
  * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
  * @see vision.menu.ListSalesMenu
  */
 public class ListSalesMenuControl {

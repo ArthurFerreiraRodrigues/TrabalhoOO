@@ -39,6 +39,13 @@ public class ListSalesByName extends JPanel implements ActionListener {
 
     private final ListSalesByNameControl controller;
 
+    /**
+     * Adds a Table, a JComboBox with all Sellers Names and a button do go back to
+     * the main menu.
+     * 
+     * @see javax.swing.JComboBox
+     * @see vision.table.Sales
+     */
     public ListSalesByName() {
         int standartPos = 80, spacer = 50;
         controller = new ListSalesByNameControl(this);
@@ -47,12 +54,7 @@ public class ListSalesByName extends JPanel implements ActionListener {
 
         panel.setBounds(100, 100, 830, 522);
         panel.setLayout(null);
-        /*
-         * JLabel labelBackground = new JLabel(""); labelBackground.setBounds(0, 0, 830,
-         * 522); labelBackground.setIcon(new
-         * ImageIcon(ListAllSales.class.getResource("/vision/images/libraryBack.png")));
-         * panel.add(labelBackground);
-         */
+
         JLabel labelTitle = new JLabel("Listar Vendas por Nome");
         labelTitle.setVerticalAlignment(SwingConstants.TOP);
         labelTitle.setForeground(Color.GRAY);
@@ -80,11 +82,23 @@ public class ListSalesByName extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Generates a new DefaultTableModel.
+     * 
+     * @param header
+     * @param isEditable
+     * @return TableModel
+     */
     public JTable scrollViewportView(int index, String[] header) {
         return Sales.genTableAll(Sales.toArrayList(Data.getSellers().get(index).getSales(Data.getSales()).toArray()),
                 header);
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());
