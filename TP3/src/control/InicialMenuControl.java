@@ -4,15 +4,20 @@ import main.MainFrameControl;
 import vision.menu.InicialMenu;
 
 /**
+ * Controller for InicialMenu class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
+ * @see vision.menu.InicialMenu
  */
 public class InicialMenuControl {
     private InicialMenu view;
 
     /**
-     * Constructor for InicialMenuControl
+     * View initializer
+     * 
+     * @param view - InicialMenu
      */
     public InicialMenuControl(InicialMenu view) {
         this.view = view;
@@ -20,7 +25,9 @@ public class InicialMenuControl {
     }
 
     /**
-     * Receives user input button and shows the selected screen
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
      */
     public void execute(Object actioned) {
         if (actioned == view.getButtonSpaceStoreManager()) {

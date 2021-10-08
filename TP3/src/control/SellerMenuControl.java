@@ -3,19 +3,31 @@ package control;
 import main.MainFrameControl;
 import vision.menu.SellerMenu;
 
+/**
+ * Controller for SellerMenu class.
+ * 
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * @see vision.menu.SellerMenu
+ */
 public class SellerMenuControl {
 
     private SellerMenu view;
 
     /**
-     * @author ArthuFerreiraRodrigues <a href="
-     *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+     * View initializer
      * 
+     * @param view - SellerMenu
      */
     public SellerMenuControl(SellerMenu view) {
         this.view = view;
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     public void execute(Object actioned) {
 
         if (actioned == view.getButtonRegisterSale()) {

@@ -4,17 +4,29 @@ import main.MainFrameControl;
 import vision.menu.StoreManagerMenu;
 
 /**
+ * Controller for StoreManagerMenu class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
- * 
+ * @see vision.menu.StoreManagerMenu
  */
 public class StoreManagerMenuControl {
     private StoreManagerMenu view;
 
+    /**
+     * View initializer
+     * 
+     * @param view - StoreManagerMenu
+     */
     public StoreManagerMenuControl(StoreManagerMenu view) {
         this.view = view;
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     public void execute(Object actioned) {
         if (actioned == view.getButtonLogin()) {
             // MainFrameControl.showListAllSales();
