@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
- * 
+ * @see model.ProductsSoldInSale
  */
 public class Sale {
     private Seller seller;
