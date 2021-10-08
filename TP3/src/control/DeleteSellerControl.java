@@ -9,6 +9,8 @@ import vision.table.Sellers;
 import javax.swing.JTable;
 
 /**
+ * Controller for DeleteSeller class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 

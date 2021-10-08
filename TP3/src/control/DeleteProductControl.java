@@ -9,6 +9,8 @@ import vision.deleters.DeleteProduct;
 import vision.table.Products;
 
 /**
+ * Controller for DeleteProduct class.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
