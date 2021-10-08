@@ -12,14 +12,25 @@ import javax.swing.JTable;
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
+ * @see vision.deleters.DeleteSeller
  */
 public class DeleteSellerControl {
     private DeleteSeller view;
 
+    /**
+     * View initializer
+     * 
+     * @param view - DeleteSeller
+     */
     public DeleteSellerControl(DeleteSeller view) {
         this.view = view;
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     public void execute(Object actioned) {
         if (actioned == view.getButtonHome()) {
             MainFrameControl.showStoreManagerMenu();

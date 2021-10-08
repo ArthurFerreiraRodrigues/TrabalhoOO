@@ -12,14 +12,25 @@ import vision.table.Products;
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
+ * @see vision.deleters.DeleteProduct
  */
 public class DeleteProductControl {
     private DeleteProduct view;
 
+    /**
+     * View initializer
+     * 
+     * @param view - DeleteProduct
+     */
     public DeleteProductControl(DeleteProduct view) {
         this.view = view;
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     public void execute(Object actioned) {
         if (actioned == view.getButtonHome()) {
             MainFrameControl.showStoreManagerMenu();
