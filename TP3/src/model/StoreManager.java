@@ -7,6 +7,11 @@ import util.Read;
 import util.ReadMenu;
 import util.Screen;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class StoreManager {
     private String name, username, password;
     private boolean loginStatus;

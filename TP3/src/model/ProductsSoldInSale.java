@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class ProductsSoldInSale {
     private Product productSold;
     private int quantSold;

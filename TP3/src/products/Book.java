@@ -7,6 +7,12 @@ import model.Product;
 import util.Print;
 import util.Read;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see model.Product
+ */
 public class Book extends Product {
     private String author, title, type, genre;
 

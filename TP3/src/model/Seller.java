@@ -7,6 +7,11 @@ import util.Print;
 import util.Read;
 import util.Screen;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class Seller {
     int id;
     String name;
@@ -67,6 +72,26 @@ public class Seller {
         return unitsSold;
     }
 
+    public void setUnitsSold(int unitsSold) {
+        this.unitsSold += unitsSold;
+    }
+
+    public void setCashFlow(double subTotal) {
+        this.cashFlow += subTotal;
+    }
+
+    public List<Sale> getSales(List<Sale> sales) {
+        List<Sale> sellerSales = new ArrayList<Sale>();
+
+        for (Sale sale : sales) {
+            if (sale.getSeller().getId() == this.getId()) {
+                sellerSales.add(sale);
+            }
+        }
+
+        return sellerSales;
+
+    }
     // Listers
 
     public static void list() {
@@ -102,7 +127,7 @@ public class Seller {
         Print.titleAndDescription("Listar Vendas Feitas por Vendedor (ID)",
                 "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
         for (Sale sale : Data.getSales()) {
-            if (sale.getseller().getId() == inputId) {
+            if (sale.getSeller().getId() == inputId) {
                 System.out.printf("%d. " + sale.toString(), i);
             }
             i++;
@@ -285,8 +310,7 @@ public class Seller {
         System.out.print("\tTelefone : ");
         String celNumber = Read.Line();
 
-        int timesInStore = 0;
-        return new Customer(name, adress, celNumber, timesInStore);
+        return new Customer(name, adress, celNumber);
     }
 
     public void updateCustomer() {

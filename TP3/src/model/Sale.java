@@ -2,8 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
-import util.Print;
-
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public class Sale {
     private Seller seller;
     private Customer buyer;
@@ -20,23 +23,28 @@ public class Sale {
         this.productsSold = productsSold;
         this.unitsSold = unitsSold;
         this.subTotal = subTotal;
+
+        seller.setUnitsSold(unitsSold);
+        seller.setCashFlow(subTotal);
+
+        buyer.setTimesInStore();
     }
 
     // Getters
 
-    public Seller getseller() {
+    public Seller getSeller() {
         return seller;
     }
 
-    public Customer getbuyer() {
+    public Customer getBuyer() {
         return buyer;
     }
 
-    public ArrayList<ProductsSoldInSale> getproductsSold() {
+    public ArrayList<ProductsSoldInSale> getProductsSold() {
         return productsSold;
     }
 
-    public int getunitsSold() {
+    public int getUnitsSold() {
         return unitsSold;
     }
 
@@ -44,24 +52,4 @@ public class Sale {
         return subTotal;
     }
 
-    // Overload
-    @Override
-    public String toString() {
-        return this.seller.getId() + " | " + this.seller.getName() + " | " + this.buyer.getName() + " | "
-                + this.unitsSold + " | R$ " + this.subTotal;
-    }
-
-    // Lister
-
-    public static void list() {
-        Print.titleAndDescription("Listar Todas as Vendas",
-                "ID Vendedor | Nome Vendedor | Cliente | Qtd.Unidades | Total");
-        int i = 1;
-
-        for (Sale sale : Data.getSales()) {
-            System.out.printf("%d. " + sale.toString() + "\n", i);
-            i++;
-        }
-        Print.split();
-    }
 }

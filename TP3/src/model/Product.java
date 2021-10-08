@@ -4,6 +4,11 @@ import products.Book;
 import products.Miscellaneous;
 import util.Print;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ */
 public abstract class Product {
     protected int id;
     protected double price;

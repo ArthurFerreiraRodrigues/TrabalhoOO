@@ -7,11 +7,26 @@ import model.Product;
 import util.Print;
 import util.Read;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
+ * @see model.Product
+ */
 public class Miscellaneous extends Product {
     private String name, brand;
 
     // Constructor
 
+    /**
+     * Cria um produto variado
+     * 
+     * @param id           - int
+     * @param price        - double
+     * @param inStockQuant - int
+     * @param name         - String
+     * @param brand        - String
+     */
     public Miscellaneous(int id, double price, int inStockQuant, String name, String brand) {
         super(id, price, inStockQuant);
         this.name = name;
@@ -30,6 +45,9 @@ public class Miscellaneous extends Product {
 
     // Lister
 
+    /**
+     * 
+     */
     public static void list() {
         Print.titleAndDescription("Lista de Produtos Variados", "ID | Tipo | Preço | Estoque | Marca | Nome");
         int i = 1;
@@ -66,6 +84,11 @@ public class Miscellaneous extends Product {
 
     // Searches
 
+    /**
+     * 
+     * @param searchInput - String
+     * @return Search Match or Null if there is no matches
+     */
     public static ArrayList<Miscellaneous> searchByName(String searchInput) {
         ArrayList<Miscellaneous> matches = new ArrayList<>();
         boolean hasMatches = false;

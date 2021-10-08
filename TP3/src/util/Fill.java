@@ -6,6 +6,10 @@ import model.*; // Import All classes from model package
 import products.Book;
 import products.Miscellaneous;
 
+/**
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ */
 public class Fill {
     // Customer
 
@@ -32,7 +36,7 @@ public class Fill {
         String adress = "Endereço" + i;
         String celNumber = "" + (i * 25042002 / 2);
 
-        return new Customer(name, adress, celNumber, i);
+        return new Customer(name, adress, celNumber);
     }
 
     /**
@@ -110,8 +114,8 @@ public class Fill {
     }
 
     public static void seller() {
-        int quantCustomers = 10;
-        for (int i = 0; i < quantCustomers; i++) {
+        int quantSellers = 10;
+        for (int i = 0; i < quantSellers; i++) {
             Seller seller = fillProffileSeller(i);
             Data.getSellers().add(seller);
         }
@@ -120,7 +124,7 @@ public class Fill {
     private static Seller fillProffileSeller(int i) {
         i = i + 1;
         int id = i;
-        double cashFlow = i * 25.04;
+        double cashFlow = 0;
         String name = "Vendedor" + i;
 
         int unitsSold = 0;
@@ -129,11 +133,12 @@ public class Fill {
     }
 
     public static void sale() {
-        int quant = 5;
+        int quant = 10;
         for (int i = 0; i < quant; i++) {
             Seller seller = Data.getSellers().get(i);
             Customer customer = Data.getCustomers().get(i);
             Product product = Data.getProducts().get(i);
+            Data.getSales().add(fillProfileSale(seller, customer, product));
             Data.getSales().add(fillProfileSale(seller, customer, product));
         }
     }

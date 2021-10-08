@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Dataa Storage Class
+ * @author ArthuFerreiraRodrigues <a href="
+ *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
+ * 
  */
 public abstract class Data {
     private static final ArrayList<StoreManager> storeManagers = new ArrayList<>();
@@ -33,6 +35,31 @@ public abstract class Data {
      */
     public static List<Seller> getSellers() {
         return sellers;
+    }
+
+    /**
+     * <p>
+     * If selected option == 1 -> seller.getName()
+     * <p>
+     * if == 2 -> seller.getId()
+     * 
+     * @param sellerList
+     * @param selectOpt
+     * @return
+     */
+    public static Object[] getSellersInfo(List<Seller> sellerList, int selectOpt) {
+        List<String> array = new ArrayList<String>();
+
+        if (selectOpt == 1) {
+            for (Seller seller : sellerList) {
+                array.add(seller.getName());
+            }
+        } else if (selectOpt == 2) {
+            for (Seller seller : sellerList) {
+                array.add(Integer.toString(seller.getId()));
+            }
+        }
+        return array.toArray();
     }
 
     /**
