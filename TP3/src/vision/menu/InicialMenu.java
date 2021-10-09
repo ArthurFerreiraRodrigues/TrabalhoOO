@@ -15,6 +15,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 /**
+ * Class with all root menu options.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -34,6 +36,9 @@ public class InicialMenu extends JPanel implements ActionListener {
 
     private final InicialMenuControl controller;
 
+    /**
+     * Main Menu Initializer
+     */
     public InicialMenu() {
         int standartPos = 80, spacer = 50;
         controller = new InicialMenuControl(this);
@@ -48,7 +53,7 @@ public class InicialMenu extends JPanel implements ActionListener {
         labelMenu.setBounds(285, 5, 500, 500);
         add(labelMenu);
 
-        buttonSpaceStoreManager = new JButton("Área do Gerente de Loja");
+        buttonSpaceStoreManager = new JButton("Area do Gerente de Loja");
         // buttonSpaceStoreManager.setEnabled(false);
         buttonSpaceStoreManager.setBackground(Color.LIGHT_GRAY);
         buttonSpaceStoreManager.setForeground(Color.BLACK);
@@ -57,7 +62,7 @@ public class InicialMenu extends JPanel implements ActionListener {
         buttonSpaceStoreManager.addActionListener(this);
         add(buttonSpaceStoreManager);
 
-        buttonSpaceSeller = new JButton("Área do Vendedor");
+        buttonSpaceSeller = new JButton("Area do Vendedor");
         // buttonSpaceSeller.setEnabled(false);
         buttonSpaceSeller.setBackground(Color.LIGHT_GRAY);
         buttonSpaceSeller.setForeground(Color.BLACK);
@@ -106,6 +111,11 @@ public class InicialMenu extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

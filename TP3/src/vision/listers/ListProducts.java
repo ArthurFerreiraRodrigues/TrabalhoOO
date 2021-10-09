@@ -55,7 +55,7 @@ public class ListProducts extends JPanel implements ActionListener {
         labelTitle.setBounds(150, 5, 800, 800);
         add(labelTitle);
 
-        String[] header = { "  ", "ID Produto", "Tipo do Produto", "Preço (R$)", "Estoque", " Autor/Marca",
+        String[] header = { "  ", "ID Produto", "Tipo do Produto", "Preco (R$)", "Estoque", " Autor/Marca",
                 "Título/Nome" };
         scroll = new JScrollPane();
         scroll.setViewportView(

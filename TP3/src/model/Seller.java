@@ -157,7 +157,7 @@ public class Seller {
      * System.out.printf("Vendedor %d : %s\n", this.id, this.name); do {
      * System.out.printf("Digite o Nome Completo do Cliente : "); String searchName
      * = Read.Line(); buyer = Customer.searchByName(searchName); if (buyer == null)
-     * { System.out.printf("\nCliente com nome '%s' não encontrado.\n", searchName);
+     * { System.out.printf("\nCliente com nome '%s' nao encontrado.\n", searchName);
      * } } while (buyer == null);
      * 
      * Sale sale = inputProfileSale(this, buyer); this.updateCashFlow(sale);
@@ -177,7 +177,7 @@ public class Seller {
      * 
      * do { System.out.printf("\t\tID : "); searchId = Read.Int(); product =
      * Product.searchById(searchId); if (product == null) {
-     * System.out.printf("\t\t\nDigite uma ID válida.\n"); } } while (product ==
+     * System.out.printf("\t\t\nDigite uma ID valida.\n"); } } while (product ==
      * null);
      * 
      * do { System.out.printf("\t\tQuantidade : "); units = Read.Int(); if (units >
@@ -205,10 +205,10 @@ public class Seller {
      * Data.getSizeOfCustomers() + 1);
      * 
      * System.out.print("\tNome : "); String name = Read.Line();
-     * System.out.print("\tEndereço : "); String adress = Read.Line();
+     * System.out.print("\tEndereco : "); String address = Read.Line();
      * System.out.print("\tTelefone : "); String celNumber = Read.Line();
      * 
-     * return new Customer(name, adress, celNumber); }
+     * return new Customer(name, address, celNumber); }
      * 
      * public void updateCustomer() { Customer customer;
      * 
@@ -219,7 +219,7 @@ public class Seller {
      * searchName); } } while (customer == null); customer.updateCustomerInfo();
      * 
      * Screen.clear();
-     * System.out.printf("Atualização de Cliente Realizada com Sucesso.");
+     * System.out.printf("Atualizacao de Cliente Realizada com Sucesso.");
      * Screen.pressEnterCont(); }
      */
 }

@@ -8,6 +8,8 @@ import model.Product;
 import products.*;
 
 /**
+ * Contains helper functions to create a JTable
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -34,10 +36,10 @@ public class Products {
     }
 
     /**
+     * Receives a colection of Object and transforms it to ArrayList
      * 
-     * 
-     * @param products - Object[]
-     * @return ArrayList - Products
+     * @param sellers - Object[]
+     * @return customerData - ArrayList
      */
     public static ArrayList<Products> toArrayList(Object[] products) {
         ArrayList<Products> productData = new ArrayList<Products>();
@@ -60,11 +62,12 @@ public class Products {
     }
 
     /**
+     * Generates a DefaultTableModel
      * 
-     * @param productData - ArrayList<Products>
+     * @param productData - ArrayList
      * @param header      - Object[]
      * @param isEditable  - Boolean
-     * @return new JTable
+     * @return tableModel - DefaultTableModel
      */
     public static DefaultTableModel genTable(ArrayList<Products> productData, Object[] header, Boolean isEditable) {
         DefaultTableModel tableModel;

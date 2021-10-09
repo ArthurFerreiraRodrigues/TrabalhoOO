@@ -18,6 +18,8 @@ import model.Data;
 import vision.table.Sales;
 
 /**
+ * Menu option class for ListSalesMenu - ListSalesByName.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 

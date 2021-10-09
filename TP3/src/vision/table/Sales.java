@@ -8,6 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import model.Sale;
 
 /**
+ * Contains helper functions to create a JTable
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  */
@@ -21,6 +23,15 @@ public class Sales {
     private String unitsSold;
     private String subTotal;
 
+    /**
+     * 
+     * @param pos        - int
+     * @param sellerId   - int
+     * @param sellerName - String
+     * @param buyerName  - String
+     * @param unitsSold  - int
+     * @param subTotal   - double
+     */
     public Sales(int pos, int sellerId, String sellerName, String buyerName, int unitsSold, double subTotal) {
         this.pos = Integer.toString(pos);
         this.sellerId = Integer.toString(sellerId);
@@ -30,6 +41,12 @@ public class Sales {
         this.subTotal = Double.toString(subTotal);
     }
 
+    /**
+     * Receives a colection of Object and transforms it to ArrayList
+     * 
+     * @param sellers - Object[]
+     * @return customerData - ArrayList
+     */
     public static ArrayList<Sales> toArrayList(Object[] sales) {
         ArrayList<Sales> salesData = new ArrayList<Sales>();
 
@@ -42,6 +59,14 @@ public class Sales {
         return salesData;
     }
 
+    /**
+     * Generates a DefaultTableModel
+     * 
+     * @param customerData - ArrayList
+     * @param header       - Object[]
+     * @param isEditable   - Boolean
+     * @return tableModel - DefaultTableModel
+     */
     public static JTable genTableAll(ArrayList<Sales> salesData, Object[] header) {
 
         DefaultTableModel tableModel = new DefaultTableModel(header, 0) {

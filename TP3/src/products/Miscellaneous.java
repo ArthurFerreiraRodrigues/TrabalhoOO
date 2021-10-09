@@ -6,6 +6,8 @@ import model.Data;
 import model.Product;
 
 /**
+ * Model class of a miscellaneous.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 

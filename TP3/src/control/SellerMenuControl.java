@@ -33,9 +33,9 @@ public class SellerMenuControl {
         if (actioned == view.getButtonRegisterSale()) {
             // MainFrameControl.showListAllSales();
         } else if (actioned == view.getButtonRegisterCustomer()) {
-            // MainFrameControl.showListSalesMenuById();
-        } else if (actioned == view.getButtonUpdaterCustomer()) {
-            // MainFrameControl.showListSalesMenuByName();
+            MainFrameControl.showRegisterCustomer();
+        } else if (actioned == view.getButtonUpdateCustomer()) {
+            MainFrameControl.showUpdateCustomer();
         } else if (actioned == view.getButtonListCustomers()) {
             MainFrameControl.showListCustomers();
         } else if (actioned == view.getButtonListProducts()) {

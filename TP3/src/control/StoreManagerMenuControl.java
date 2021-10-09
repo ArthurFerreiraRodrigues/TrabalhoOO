@@ -31,7 +31,7 @@ public class StoreManagerMenuControl {
         if (actioned == view.getButtonLogin()) {
             // MainFrameControl.showListAllSales();
         } else if (actioned == view.getButtonRegisterProduct()) {
-            // MainFrameControl.showListSalesMenuById();
+            MainFrameControl.showRegisterProduct();
         } else if (actioned == view.getButtonRegisterSeller()) {
             // MainFrameControl.showListSalesMenuByName();
         } else if (actioned == view.getButtonUpdateProduct()) {

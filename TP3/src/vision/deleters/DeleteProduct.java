@@ -28,7 +28,7 @@ import vision.table.Products;
  */
 public class DeleteProduct extends JPanel implements ActionListener {
     private static final Font FONT = new Font("Default", Font.PLAIN, 16);
-    private static final String[] header = { "  ", "ID Produto", "Tipo do Produto", "Preço (R$)", "Estoque",
+    private static final String[] header = { "  ", "ID Produto", "Tipo do Produto", "Preco (R$)", "Estoque",
             " Autor/Marca", "Título/Nome" };
 
     private JTable table;

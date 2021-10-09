@@ -8,6 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import model.Customer;
 
 /**
+ * Contains helper functions to create a JTable
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  */
@@ -15,24 +17,38 @@ public class Customers {
 
     private String pos;
     private String name;
-    private String adress;
+    private String address;
     private String celNumber;
     private String timesInStore;
 
-    public Customers(int pos, String name, String adress, String celNumber, int timesInStore) {
+    /**
+     * 
+     * @param pos          - int
+     * @param name         - String
+     * @param address      - String
+     * @param celNumber    - String
+     * @param timesInStore - int
+     */
+    public Customers(int pos, String name, String address, String celNumber, int timesInStore) {
         this.pos = Integer.toString(pos);
         this.name = name;
-        this.adress = adress;
+        this.address = address;
         this.celNumber = celNumber;
         this.timesInStore = Integer.toString(timesInStore);
     }
 
+    /**
+     * Receives a colection of Object and transforms it to ArrayList
+     * 
+     * @param sellers - Object[]
+     * @return customerData - ArrayList
+     */
     public static ArrayList<Customers> toArrayList(Object[] sellers) {
         ArrayList<Customers> customerData = new ArrayList<Customers>();
 
         int i = 1;
         for (Object customer : sellers) {
-            customerData.add(new Customers(i, ((Customer) customer).getName(), ((Customer) customer).getAdress(),
+            customerData.add(new Customers(i, ((Customer) customer).getName(), ((Customer) customer).getAddress(),
                     ((Customer) customer).getCelNumber(), ((Customer) customer).getTimesInStore()));
             i++;
         }
@@ -40,6 +56,14 @@ public class Customers {
         return customerData;
     }
 
+    /**
+     * Generates a DefaultTableModel
+     * 
+     * @param customerData - ArrayList
+     * @param header       - Object[]
+     * @param isEditable   - Boolean
+     * @return tableModel - DefaultTableModel
+     */
     public static DefaultTableModel genTable(ArrayList<Customers> customerData, Object[] header, Boolean isEditable) {
         DefaultTableModel tableModel;
 
@@ -56,7 +80,7 @@ public class Customers {
 
         for (int i = 0; i < customerData.size(); i++) {
             Object[] data = { customerData.get(i).getPos(), customerData.get(i).getName(),
-                    customerData.get(i).getAdress(), customerData.get(i).getCelNumber(),
+                    customerData.get(i).getAddress(), customerData.get(i).getCelNumber(),
                     customerData.get(i).getTimesInStore() };
             tableModel.addRow(data);
         }
@@ -79,12 +103,12 @@ public class Customers {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCelNumber() {

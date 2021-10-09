@@ -12,6 +12,9 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 
 import vision.menu.*;
+import vision.registers.RegisterCustomer;
+import vision.registers.RegisterProduct;
+import vision.registers.UpdateCustomer;
 import vision.deleters.*;
 
 import vision.listers.ListAllSales;
@@ -40,6 +43,11 @@ public class MainFrame extends JFrame implements AncestorListener {
     private StoreManagerMenu storeManagerMenu;
     private SellerMenu sellerMenu;
     private ListSalesMenu listSalesMenu;
+
+    private RegisterCustomer registerCustomer;
+    private RegisterProduct registerProduct;
+
+    private UpdateCustomer updateCustomer;
 
     private DeleteProduct deleteProduct;
     private DeleteCustomer deleteCustomer;
@@ -124,6 +132,23 @@ public class MainFrame extends JFrame implements AncestorListener {
         getContentPane().add(deleteSeller, "deleteSeller");
         getContentPane().add(deleteProduct, "deleteProduct");
         // ------------------------------------------------------------------------------//
+
+        // StoreManager options
+
+        registerProduct = new RegisterProduct();
+        registerProduct.addAncestorListener(this);
+
+        getContentPane().add(registerProduct, "registerProduct");
+        // SellerMenu options
+
+        registerCustomer = new RegisterCustomer();
+        registerCustomer.addAncestorListener(this);
+
+        updateCustomer = new UpdateCustomer();
+        updateCustomer.addAncestorListener(this);
+
+        getContentPane().add(registerCustomer, "registerCustomer");
+        getContentPane().add(updateCustomer, "updateCustomer");
 
         // Listers
 

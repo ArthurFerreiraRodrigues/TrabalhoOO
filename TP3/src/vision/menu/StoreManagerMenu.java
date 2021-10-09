@@ -16,6 +16,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 /**
+ * Class with all store manager menu options.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -46,7 +48,11 @@ public class StoreManagerMenu extends JPanel implements ActionListener {
 
     private final StoreManagerMenuControl controller;
 
+    /**
+     * StoreManagerMenu initializer
+     */
     public StoreManagerMenu() {
+
         int standartPos = 80, spacer = 50, mult = 0;
         controller = new StoreManagerMenuControl(this);
 
@@ -56,7 +62,7 @@ public class StoreManagerMenu extends JPanel implements ActionListener {
         setBounds(100, 100, 830, 522);
         setLayout(null);
 
-        JLabel labelTitle = new JLabel("Área do Gerente de Loja");
+        JLabel labelTitle = new JLabel("Area do Gerente de Loja");
         labelTitle.setVerticalAlignment(SwingConstants.TOP);
         labelTitle.setForeground(Color.GRAY);
         labelTitle.setFont(new Font("Default", Font.BOLD, 45));
@@ -216,6 +222,11 @@ public class StoreManagerMenu extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());

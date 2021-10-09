@@ -34,7 +34,7 @@ public class DeleteCustomer extends JPanel implements ActionListener {
 
     private JTable table;
     private JScrollPane scroll;
-    private final String[] header = { "  ", "Nome", "Endereço", "Telefone", "Qtd.Visitas" };
+    private final String[] header = { "  ", "Nome", "Endereco", "Telefone", "Qtd.Visitas" };
     private final JButton buttonDelete;
     private final JButton buttonHome;
 

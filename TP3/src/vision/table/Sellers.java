@@ -8,6 +8,8 @@ import javax.swing.table.DefaultTableModel;
 import model.Seller;
 
 /**
+ * Contains helper functions to create a JTable
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  */
@@ -18,6 +20,14 @@ public class Sellers {
     private String cashFlow;
     private String unitsSold;
 
+    /**
+     * 
+     * @param pos       - int
+     * @param id        - int
+     * @param name      - String
+     * @param cashFlow  - double
+     * @param unitsSold - int
+     */
     public Sellers(int pos, int id, String name, double cashFlow, int unitsSold) {
         this.pos = Integer.toString(pos);
         this.id = Integer.toString(id);
@@ -26,6 +36,12 @@ public class Sellers {
         this.unitsSold = Integer.toString(unitsSold);
     }
 
+    /**
+     * Receives a colection of Object and transforms it to ArrayList
+     * 
+     * @param sellers - Object[]
+     * @return customerData - ArrayList
+     */
     public static ArrayList<Sellers> toArrayList(Object[] sellers) {
         ArrayList<Sellers> sellerData = new ArrayList<Sellers>();
 
@@ -39,6 +55,14 @@ public class Sellers {
         return sellerData;
     }
 
+    /**
+     * Generates a DefaultTableModel
+     * 
+     * @param sellerData - ArrayList
+     * @param header     - Object[]
+     * @param isEditable - Boolean
+     * @return tableModel - DefaultTableModel
+     */
     public static DefaultTableModel genTable(ArrayList<Sellers> sellerData, Object[] header, Boolean isEditable) {
         DefaultTableModel tableModel;
 

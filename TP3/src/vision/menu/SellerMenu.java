@@ -15,6 +15,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 /**
+ * Class with all seller menu options.
+ * 
  * @author ArthuFerreiraRodrigues <a href="
  *         #{@link}">{@link https://github.com/ArthurFerreiraRodrigues/TrabalhoOO}</a>
  * 
@@ -26,7 +28,7 @@ public class SellerMenu extends JPanel implements ActionListener {
 
     private final JButton buttonRegisterSale;
     private final JButton buttonRegisterCustomer;
-    private final JButton buttonUpdaterCustomer;
+    private final JButton buttonUpdateCustomer;
 
     private final JButton buttonListProducts;
     private final JButton buttonListSellers;
@@ -36,6 +38,9 @@ public class SellerMenu extends JPanel implements ActionListener {
 
     private final SellerMenuControl controller;
 
+    /**
+     * Adds all menu options for Seller and a home button.
+     */
     public SellerMenu() {
         int standartPos = 80, spacer = 50, mult = 0, x_pos = 280;
         controller = new SellerMenuControl(this);
@@ -43,7 +48,7 @@ public class SellerMenu extends JPanel implements ActionListener {
         setBounds(100, 100, 830, 522);
         setLayout(null);
 
-        JLabel labelTitle = new JLabel("Área do Vendedor");
+        JLabel labelTitle = new JLabel("Area do Vendedor");
         labelTitle.setVerticalAlignment(SwingConstants.TOP);
         labelTitle.setForeground(Color.GRAY);
         labelTitle.setFont(new Font("Default", Font.BOLD, 45));
@@ -68,13 +73,13 @@ public class SellerMenu extends JPanel implements ActionListener {
         add(buttonRegisterCustomer);
         mult++;
 
-        buttonUpdaterCustomer = new JButton("Atualizar Cliente");
-        buttonUpdaterCustomer.setBackground(Color.LIGHT_GRAY);
-        buttonUpdaterCustomer.setForeground(Color.BLACK);
-        buttonUpdaterCustomer.setFont(FONT);
-        buttonUpdaterCustomer.setBounds(x_pos, standartPos + spacer * mult, 267, 31);
-        buttonUpdaterCustomer.addActionListener(this);
-        add(buttonUpdaterCustomer);
+        buttonUpdateCustomer = new JButton("Atualizar Cliente");
+        buttonUpdateCustomer.setBackground(Color.LIGHT_GRAY);
+        buttonUpdateCustomer.setForeground(Color.BLACK);
+        buttonUpdateCustomer.setFont(FONT);
+        buttonUpdateCustomer.setBounds(x_pos, standartPos + spacer * mult, 267, 31);
+        buttonUpdateCustomer.addActionListener(this);
+        add(buttonUpdateCustomer);
         mult++;
 
         // Listers
@@ -123,6 +128,11 @@ public class SellerMenu extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * Executes the actioned button actions
+     * 
+     * @param actioned - Object
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         controller.execute(e.getSource());
@@ -137,8 +147,8 @@ public class SellerMenu extends JPanel implements ActionListener {
         return buttonRegisterCustomer;
     }
 
-    public JButton getButtonUpdaterCustomer() {
-        return buttonUpdaterCustomer;
+    public JButton getButtonUpdateCustomer() {
+        return buttonUpdateCustomer;
     }
 
     public JButton getButtonListProducts() {
@@ -160,5 +170,4 @@ public class SellerMenu extends JPanel implements ActionListener {
     public SellerMenuControl getController() {
         return controller;
     }
-
 }

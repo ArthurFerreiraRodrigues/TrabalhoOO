@@ -34,13 +34,13 @@ public class MainFrameControl {
      */
     public void screenRefresh(Object screen) {
 
-        if (screen == view.getInicialMenu()) {
-            InicialMenu screenDisplaying = (InicialMenu) screen;
-        } else if (screen == view.getStoreManagerMenu()) {
-            StoreManagerMenu screenDisplaying = (StoreManagerMenu) screen;
-        } else if (screen == view.getListSalesById()) {
-            ListSalesById screenDisplaying = (ListSalesById) screen;
-        }
+        /*
+         * if (screen == view.getInicialMenu()) { InicialMenu screenDisplaying =
+         * (InicialMenu) screen; } else if (screen == view.getStoreManagerMenu()) {
+         * StoreManagerMenu screenDisplaying = (StoreManagerMenu) screen; } else if
+         * (screen == view.getListSalesById()) { ListSalesById screenDisplaying =
+         * (ListSalesById) screen; }
+         */
     }
 
     /**
@@ -146,5 +146,20 @@ public class MainFrameControl {
     public static void showListCustomers() {
         CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
         cl.show(MainFrame.getCont(), "listCustomers");
+    }
+
+    public static void showRegisterCustomer() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "registerCustomer");
+    }
+
+    public static void showUpdateCustomer() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "updateCustomer");
+    }
+
+    public static void showRegisterProduct() {
+        CardLayout cl = (CardLayout) MainFrame.getCont().getLayout();
+        cl.show(MainFrame.getCont(), "registerProduct");
     }
 }

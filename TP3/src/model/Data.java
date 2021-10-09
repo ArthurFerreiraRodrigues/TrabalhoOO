@@ -64,6 +64,16 @@ public abstract class Data {
         return array.toArray();
     }
 
+    public static Object[] getCustomersInfo(List<Customer> customerList) {
+        List<String> array = new ArrayList<String>();
+
+        for (Customer customer : customerList) {
+            array.add(customer.getName());
+        }
+
+        return array.toArray();
+    }
+
     /**
      * @return List of Products
      */

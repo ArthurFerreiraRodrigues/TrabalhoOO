@@ -25,18 +25,18 @@ public class Fill {
     }
 
     /**
-     * Recebe as informações do cliente.
+     * Recebe as informacões do cliente.
      * 
-     * @return Novo profile de cliente (name, adress, celNumber)
+     * @return Novo profile de cliente (name, address, celNumber)
      * @see model.Customer
      */
     private static Customer fillProfileCustomer(int i) {
         i = i + 1;
         String name = "Cliente" + i;
-        String adress = "Endereço" + i;
+        String address = "Endereco" + i;
         String celNumber = "" + (i * 25042002 / 2);
 
-        return new Customer(name, adress, celNumber);
+        return new Customer(name, address, celNumber);
     }
 
     /**
@@ -69,7 +69,7 @@ public class Fill {
     }
 
     /**
-     * Recebe as informações do produto.
+     * Recebe as informacões do produto.
      * 
      * @return Novo profile de produto (name, description, value, profitPercentage,
      *         inStockQuant)
@@ -95,7 +95,7 @@ public class Fill {
         int inStockQuant = i * 2;
 
         String name = "Variedade" + i;
-        String brand = "FábricaFamosa";
+        String brand = "FabricaFamosa";
         return new Miscellaneous(id, price, inStockQuant, name, brand);
     }
 

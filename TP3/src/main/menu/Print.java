@@ -7,8 +7,8 @@ public class Print {
     public static void inicial() {
         // util.Print.title("Menu Inicial");
 
-        System.out.printf(".1  - Área do Gerente de Loja   \n");
-        System.out.printf(".2  - Área do Vendedor          \n");
+        System.out.printf(".1  - Area do Gerente de Loja   \n");
+        System.out.printf(".2  - Area do Vendedor          \n");
         System.out.printf(".3  - Listar Vendas Realiazadas \n");
         System.out.printf(".4  - Listar Produtos           \n");
         System.out.printf(".5  - Listar Clientes           \n");
@@ -24,7 +24,7 @@ public class Print {
      * Option 1 from Incial Menu
      */
     public static void storeManagerActions() {
-        // util.Print.title("Área do Gerente de Loja");
+        // util.Print.title("Area do Gerente de Loja");
 
         System.out.printf(".1  - Registrar Produto         \n");
         System.out.printf(".2  - Registrar Vendedor        \n");
@@ -44,7 +44,7 @@ public class Print {
      * Option 2 from Incial Menu
      */
     public static void sellerActions(Seller selected) {
-        // util.Print.title("Área do Vendedor");
+        // util.Print.title("Area do Vendedor");
         System.out.printf("Vendedor Selecionado\n");
         System.out.printf("ID : %d | Nome : %s\n\n", selected.getId(), selected.getName());
 

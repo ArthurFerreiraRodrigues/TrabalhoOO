@@ -56,7 +56,7 @@ public class ListCustomers extends JPanel implements ActionListener {
         labelTitle.setBounds(150, 5, 800, 800);
         add(labelTitle);
 
-        String[] header = { "  ", "Nome", "Endereço", "Telefone", "Qtd.Visitas" };
+        String[] header = { "  ", "Nome", "Endereco", "Telefone", "Qtd.Visitas" };
         scroll = new JScrollPane();
         scroll.setViewportView(
                 new JTable(Customers.genTable(Customers.toArrayList(Data.getCustomers().toArray()), header, false)));

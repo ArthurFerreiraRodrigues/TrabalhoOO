@@ -9,7 +9,7 @@ package model;
  */
 public class Customer {
 
-    private String name, adress;
+    private String name, address;
     private String celNumber;
     private int timesInStore;
 
@@ -17,13 +17,13 @@ public class Customer {
      * Gera o profile do cliente
      * 
      * @param name         : Customer name
-     * @param adress       : Customer adress
+     * @param address      : Customer address
      * @param celNumber    : Customer cellphone number
      * @param timesInStore : Number of times a Customer has visited the store
      */
-    public Customer(String name, String adress, String celNumber) {
+    public Customer(String name, String address, String celNumber) {
         this.name = name;
-        this.adress = adress;
+        this.address = address;
         this.celNumber = celNumber;
         this.timesInStore = 0;
     }
@@ -38,10 +38,10 @@ public class Customer {
     }
 
     /**
-     * @return Customer adress
+     * @return Customer address
      */
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     /**
@@ -67,15 +67,12 @@ public class Customer {
         this.timesInStore += 1;
     }
 
-    public void updateCustomerInfo() {
+    public void updateCustomerInfo(String name, String address, String celNumber) {
 
-        /*
-         * this.name
-         * 
-         * this.adress
-         * 
-         * this.celNumber
-         */
+        this.name = name;
+        this.address = address;
+        this.celNumber = celNumber;
+
     }
 
     // Search
